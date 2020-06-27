@@ -1,33 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import TwitterSearch from "./TwitterSearch";
+import { AuthContext } from "../Providers/AuthContext";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
+import { logOut } from "../Util/firebaseFunction";
 import "../Css/NavBar.css";
-import LogOut from "./LogOut";
 
-const NavBar = () => {
-  // const { currentUser } = useContext();
-  // const loginDisplay = () => {
-  //   if (currentUser) {
-  //     return <button onClick={logout}>Log Out</button>;
-  //   } else {
-  //     return (
-  //       <>
-  //         <NavLink to={"/signup"}>Sign Up</NavLink>
-  //         <NavLink to={"/login"}>Log In</NavLink>
-  //       </>
-  //     );
-  //   }
-  // };
+export default function NavBar(params) {
+  const { currentUser } = useContext(AuthContext);
+
+  const buttonDisplay = () => {
+    debugger;
+    if (currentUser) {
+      return <button onClick={logOut}>Log Out</button>;
+    } else {
+      return (
+        <>
+          <li className="navLi">
+            <NavLink to={"/signup"}>Sign Up</NavLink>
+          </li>
+          <li className="navLi">
+            <NavLink to={"/login"}>Log In</NavLink>
+          </li>
+        </>
+      );
+    }
+  };
   const imgWandH = {
     width: "32px",
     height: "32px",
   };
 
-  // const ulCss = {
-  //   listStyleType: "none",
-  // };
-  // style={ulCss}
   return (
     <nav className="navBar">
       <ul className="navUl">
@@ -46,24 +49,8 @@ const NavBar = () => {
             Show all users
           </NavLink>
         </li>
-        <li className="navLi">
-          <NavLink exact to={"/login"}>
-            Log In
-          </NavLink>
-        </li>
-        <li className="navLi">
-          <NavLink exact to={"/signup"}>
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <LogOut />
-        </li>
-
-        {/* {loginDisplay()} */}
+        {buttonDisplay()}
       </ul>
     </nav>
   );
-};
-
-export default NavBar;
+}

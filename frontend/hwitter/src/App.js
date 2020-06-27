@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
+        
       <NavBar />
       <Switch>
         <Route exact path="/">
@@ -26,7 +27,8 @@ function App() {
         <Route exact path="/login">
           <Login />
         </Route>
-      </Switch>
+        </Switch>
+  
       </AuthProvider>
     </div>
   );
