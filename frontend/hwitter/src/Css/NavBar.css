@@ -1,0 +1,27 @@
+:root{
+    --babyBlue: #1DA1F2;
+    --black: #14171A;
+    --darkGrey: #657786;
+    --lightGrey: #AAB8C2;
+    --extraLightGray: #E1E8ED;
+    --extraExtraLightGray: #F5F8FA;
+    --white: #ffffff;
+    --newTwitterBlue: #15212b;
+
+}
+
+.navBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--newTwitterBlue);
+}
+
+.navBar > .navUl {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  z-index: 2;
+}
