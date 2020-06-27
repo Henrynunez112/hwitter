@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
+import {logIn } from "../Util/firebaseFunction"
 import "../Css/Login.css"
 
 
@@ -13,6 +14,8 @@ const Login = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         try{
+            await logIn(email, password);
+
             //sign in with firebase then change route
             history.push("/");
         }catch(err){

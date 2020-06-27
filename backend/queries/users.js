@@ -13,9 +13,9 @@ const createUser = async (req, res, next) =>{
 
 const fetchAllUsers = async (req, res, next) =>{
     try{
-        const hwitters = await db.any("SELECT * FROM users");
+        const users = await db.any("SELECT * FROM users");
         res.json({
-            hwitters,
+            users,
             message: "BLACK LIVES MATTER"
         })
     }catch(err){

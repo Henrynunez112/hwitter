@@ -13,7 +13,7 @@ const Users = () => {
               method: "get",
               url: `${API}/api/users`,
             });
-            setUsers(res.data.hwitters);
+            setUsers(res.data.users);
     };
     fetchUsers();
   }, [API]);

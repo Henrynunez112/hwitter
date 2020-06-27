@@ -3,6 +3,7 @@ import TwitterSearch from "./TwitterSearch";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
 import "../Css/NavBar.css";
+import LogOut from "./LogOut";
 
 const NavBar = () => {
   // const { currentUser } = useContext();
@@ -54,6 +55,9 @@ const NavBar = () => {
           <NavLink exact to={"/signup"}>
             Sign Up
           </NavLink>
+        </li>
+        <li>
+          <LogOut />
         </li>
 
         {/* {loginDisplay()} */}

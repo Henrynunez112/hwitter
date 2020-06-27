@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { apiURL } from "../Util/apiUrl";
-import "../Css/SignUp.css"
+import "../Css/SignUp.css";
+import { signUp } from "../Util/firebaseFunction";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -12,19 +13,22 @@ const SignUp = () => {
   const API = apiURL();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      //sign up with firebase and send results to our backend
-      history.push("/");
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
+      e.preventDefault();
+      try {
+          let res = await signUp(email, password);
+          await axios.post(`${API}/api/users`, {id: res.user.uid, email});
+          debugger;
+          history.push("/");
+        } catch (error) {
+            setError(error.message);
+            console.log("ALERT", error.message)
+        }
+    };
+    
   return (
     <div className="signUpContainer">
       <h1>This is the sign up page</h1>
-      {error ? <div>error</div> : null}
+      {error ? <div>{error}</div> : null}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
