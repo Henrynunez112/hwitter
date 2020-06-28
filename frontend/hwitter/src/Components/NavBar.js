@@ -6,7 +6,7 @@ import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
 import { logOut } from "../Util/firebaseFunction";
 import "../Css/NavBar.css";
 
-export default function NavBar(params) {
+export default function NavBar() {
   const { currentUser } = useContext(AuthContext);
 
   const buttonDisplay = () => {

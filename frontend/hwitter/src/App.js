@@ -7,26 +7,27 @@ import './App.css';
 import SignUp from './Components/SignUp';
 import Login from './Components/Login';
 import AuthProvider from './Providers/AuthContext';
+import {AuthRoute, ProtectedRoute} from "./Util/routesUtil";
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
-        
+
       <NavBar />
       <Switch>
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route exact path="/users">
+        <ProtectedRoute exact path="/users">
           <Users />
-        </Route>
-        <Route exact path="/signup">
+        </ProtectedRoute>
+        <AuthRoute exact path="/signup">
           <SignUp />
-        </Route>
-        <Route exact path="/login">
+        </AuthRoute>
+        <AuthRoute exact path="/login">
           <Login />
-        </Route>
+        </AuthRoute>
         </Switch>
   
       </AuthProvider>
