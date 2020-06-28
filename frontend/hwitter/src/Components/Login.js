@@ -7,7 +7,7 @@ import "../Css/Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+
 
   const history = useHistory();
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const Login = () => {
       //sign in with firebase then change route
       history.push("/");
     } catch (err) {
-      setError(err.message);
+      console.log("YERRRRR", err)
     }
   };
 

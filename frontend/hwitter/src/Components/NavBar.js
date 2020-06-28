@@ -3,16 +3,21 @@ import TwitterSearch from "./TwitterSearch";
 import { AuthContext } from "../Providers/AuthContext";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
-import { logOut } from "../Util/firebaseFunction";
+import LogOut from "../Components/LogOut"
 import "../Css/NavBar.css";
 
 export default function NavBar() {
   const { currentUser } = useContext(AuthContext);
 
   const buttonDisplay = () => {
-    debugger;
     if (currentUser) {
-      return <button onClick={logOut}>Log Out</button>;
+      return (
+        <>
+        <li className="navLi">
+          <LogOut />
+        </li>
+        </>
+      );
     } else {
       return (
         <>
