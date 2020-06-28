@@ -26,7 +26,7 @@ const Login = () => {
     <div className="loginContainer">
       <img alt="twitter logo" src={Logo} />
       <h1>Log In to Twitter</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           onChange={(e) => setEmail(e.target.value)}
