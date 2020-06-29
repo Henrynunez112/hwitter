@@ -20,30 +20,31 @@ const Styles = styled.div`
   }
 `;
 
-function Navigation() {
-  // const { currentUser } = useContext(AuthContext);
+function Navigation(params) {
 
-  const buttonDisplay = () => {
-    // if (currentUser) {
-    //   return (
-    //     <>
-    //     <Nav.Item><LogOut /></Nav.Item>
-    //       {/* <LogOut /> */}
-    //     </>
-    //   );
-    // } else {
-    //   return (
-    //     <>
-    //       <Nav.Item><Nav.Link href ="/signup">Sign Up</Nav.Link></Nav.Item>
-    //       <Nav.Item><Nav.Link href ="/login">Log In</Nav.Link></Nav.Item>
+  const { currentUser } = useContext(AuthContext);
 
-    //         {/* <NavLink to={"/signup"}>Sign Up</NavLink>
-    //         <NavLink to={"/login"}>Log In</NavLink> */}
+  // const buttonDisplay = () => {
+  // if (currentUser) {
+  //   return (
+  //     <>
+  //     <Nav.Item><LogOut /></Nav.Item>
+  //       {/* <LogOut /> */}
+  //     </>
+  //   );
+  // } else {
+  //   return (
+  //     <>
+  //       <Nav.Item><Nav.Link href ="/signup">Sign Up</Nav.Link></Nav.Item>
+  //       <Nav.Item><Nav.Link href ="/login">Log In</Nav.Link></Nav.Item>
 
-    //     </>
-    //   );
-    // }
-  };
+  //         {/* <NavLink to={"/signup"}>Sign Up</NavLink>
+  //         <NavLink to={"/login"}>Log In</NavLink> */}
+
+  //     </>
+  //   );
+  // }
+  // };
   const imgWandH = {
     width: "32px",
     height: "32px",
@@ -51,13 +52,13 @@ function Navigation() {
 
   return (
     <>
-    <Styles>
-      <Navbar expand="lg">
-         <Navbar.Brand exact to={"/"}>
-          <img alt="twitter logo" src={Logo} style={imgWandH} />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        {/* 
+      <Styles>
+        <Navbar expand="lg">
+          <Navbar.Brand href ="/">
+            <img alt="twitter logo" src={Logo} style={imgWandH} />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {/* 
         <Navbar.Collapse id="basic-navbar-nav"> */}
           <Nav className="mr-auto">
             <Nav.Item>
@@ -68,12 +69,27 @@ function Navigation() {
             <Nav.Item>
               <Nav.Link href="/users">Users</Nav.Link>
             </Nav.Item>
-            {buttonDisplay()}
-            </Nav>
+             {currentUser ? (
+              <>
+                <Nav.Item>
+                  <LogOut />
+                </Nav.Item>
+              </>
+            ) : (
+              <>
+                <Nav.Item>
+                  <Nav.Link href="/signup">Sign Up</Nav.Link>
+                </Nav.Item>
 
-      </Navbar>
-    </Styles>
+                <Nav.Item>
+                  <Nav.Link href="/login">Log In</Nav.Link>
+                </Nav.Item>
+              </>
+            )}
+          </Nav>
+        </Navbar>
+      </Styles>
     </>
   );
 }
-export default Navigation;   
+export default Navigation;
