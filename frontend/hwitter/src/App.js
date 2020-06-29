@@ -11,7 +11,8 @@ import { AuthRoute, ProtectedRoute } from './Util/routesUtil';
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
+    {/* // <div className="App"> */}
     <AuthProvder>
 
      <NavBar />
@@ -28,9 +29,12 @@ function App() {
         <AuthRoute path="/login" >
           <Login />
         </AuthRoute>
+        {/* would need to add an error page eventually */}
      </Switch>
+
     </AuthProvder>
-    </div>
+    </React.Fragment>
+    // </div>
   );
 };
 
