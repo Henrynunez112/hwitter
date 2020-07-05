@@ -7,7 +7,7 @@ import "../Css/Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+
 
   const history = useHistory();
   const handleSubmit = async (e) => {
@@ -18,14 +18,20 @@ const Login = () => {
       //sign in with firebase then change route
       history.push("/");
     } catch (err) {
-      setError(err.message);
+      console.log("YERRRRR", err)
     }
+  };
+  const imgWandH = {
+    //creating a size for the twitter bird
+    width: "43.9px",
+    height: "44.9px",
+    position: "relative"
   };
 
   return (
     <div className="loginContainer">
-      <img alt="twitter logo" src={Logo} />
-      <h1>Log In to Twitter</h1>
+      <img alt="twitter logo" src={Logo} style={imgWandH} />
+      <h1 className="loginHeader">Log In to Twitter</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

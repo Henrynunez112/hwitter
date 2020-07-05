@@ -31,7 +31,6 @@ const Users = () => {
             return <li key={user.id}>{user.email}</li>
           })}
       </ul>
-
     </div>
   );
 };

@@ -1,4 +1,29 @@
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+}
+
 .loginContainer {
-    top: 30px;
-    position: relative;
-  }
+  top: 30px;
+  position: relative;
+  background-color: var(--newTwitterBlue);
+  height: 100%;
+  width: 100%;
+}
+
+.loginHeader{
+  color: var(--white);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: larger;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+
+
+}
