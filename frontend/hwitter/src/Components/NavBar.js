@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import TwitterSearch from "./TwitterSearch";
-import { AuthContext } from "../Providers/AuthContext";
+import { AuthContext } from "../Providers/AuthProvider";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
 import { logOut } from "../Util/firebaseFunction";
