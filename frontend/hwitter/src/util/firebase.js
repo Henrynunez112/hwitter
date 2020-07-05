@@ -11,7 +11,6 @@ const {
   REACT_APP_APPID,
   REACT_APP_MEASUREMENTID,
 } = process.env;
-debugger;
 
 const config = {
   apiKey: REACT_APP_APIKEY,

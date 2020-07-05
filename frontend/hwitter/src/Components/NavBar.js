@@ -10,7 +10,6 @@ export default function NavBar() {
   const { currentUser } = useContext(AuthContext);
 
   const buttonDisplay = () => {
-    debugger;
     if (currentUser) {
       return <button onClick={logOut}>Log Out</button>;
     } else {
