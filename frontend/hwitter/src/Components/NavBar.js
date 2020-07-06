@@ -11,7 +11,11 @@ export default function NavBar() {
 
   const buttonDisplay = () => {
     if (currentUser) {
-      return <button onClick={logOut}>Log Out</button>;
+      return(
+        <div className="logoutButton">
+          <button onClick={logOut}>Log Out</button>);
+        </div>
+      )
     } else {
       return (
         <>
@@ -42,8 +46,10 @@ export default function NavBar() {
           <NavLink exact to={"/search"}>
             <div className="formContainer">
                 <div className="searchBar">
-                  <input className="searchInput" type="text" />
-                  <button></button>
+                  <button type="submit" className="searchButton">
+                  <img src="https://img.icons8.com/metro/26/000000/search.png" id="searchIcon"/>
+                  </button>
+                  <input className="searchInput" type="text" placeholder="Search Twitter" />
                 </div>
             </div>
           </NavLink>
