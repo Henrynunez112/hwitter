@@ -19,11 +19,13 @@ export default function NavBar() {
     } else {
       return (
         <>
-          <li className="navLi">
-            <NavLink to={"/signup"}>Sign Up</NavLink>
+        <li className="navLi">
+            <div className="loginButton">
+            <NavLink to={"/login"} className="inactiveLogin" activeClassName="activeLogin">Log In</NavLink>
+            </div>
           </li>
           <li className="navLi">
-            <NavLink to={"/login"}>Log In</NavLink>
+            <NavLink to={"/signup"}>Sign Up</NavLink>
           </li>
         </>
       );

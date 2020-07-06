@@ -61,3 +61,21 @@
   filter: invert(1);
   opacity: .5;
 }
+
+.loginButton{
+  padding: 5px;
+  border: 1px solid var(--babyBlue);
+  border-radius: 50px 50px;
+  width: 69px;
+}
+
+.inactiveLogin{
+  color: var(--babyBlue);
+  background-color: var(--newTwitterBlue);
+  text-decoration: none;
+}
+.activeLogin{
+  color: var(--babyBlue);
+  background-color: var(--newTwitterBlue);
+  text-decoration: none;
+}
