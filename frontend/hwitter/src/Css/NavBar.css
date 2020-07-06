@@ -69,6 +69,10 @@
   width: 69px;
   height: 13px;
 }
+.loginButton:hover{
+  background-color: var(--newTwitterBlue);
+  opacity: .2;
+}
 .signUpButton{
   padding: 6px;
   border: 1px solid var(--babyBlue);
@@ -77,6 +81,10 @@
   width: 69px;
   height: 13px;
 
+}
+.signUpButton:hover{
+  background-color: var(--babyBlue);
+  opacity: .5;
 }
 .inactiveSignUp{
   color: var(--white);
