@@ -63,19 +63,35 @@
 }
 
 .loginButton{
-  padding: 5px;
+  padding: 6px;
   border: 1px solid var(--babyBlue);
   border-radius: 50px 50px;
   width: 69px;
+  height: 13px;
 }
+.signUpButton{
+  padding: 6px;
+  border: 1px solid var(--babyBlue);
+  background-color: var(--babyBlue);
+  border-radius: 50px 50px;
+  width: 69px;
+  height: 13px;
 
+}
+.inactiveSignUp{
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
 .inactiveLogin{
   color: var(--babyBlue);
   background-color: var(--newTwitterBlue);
   text-decoration: none;
+  font-weight: bold;
 }
 .activeLogin{
   color: var(--babyBlue);
   background-color: var(--newTwitterBlue);
   text-decoration: none;
+  font-weight: bold;
 }

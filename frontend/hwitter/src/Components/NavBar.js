@@ -11,21 +11,35 @@ export default function NavBar() {
 
   const buttonDisplay = () => {
     if (currentUser) {
-      return(
+      return (
         <div className="logoutButton">
           <button onClick={logOut}>Log Out</button>);
         </div>
-      )
+      );
     } else {
       return (
         <>
-        <li className="navLi">
+          <li className="navLi">
             <div className="loginButton">
-            <NavLink to={"/login"} className="inactiveLogin" activeClassName="activeLogin">Log In</NavLink>
+              <NavLink
+                to={"/login"}
+                className="inactiveLogin"
+                activeClassName="activeLogin"
+              >
+                Log In
+              </NavLink>
             </div>
           </li>
           <li className="navLi">
-            <NavLink to={"/signup"}>Sign Up</NavLink>
+            <div className="signUpButton">
+              <NavLink
+                to={"/signup"}
+                className="inactiveSignUp"
+                activeClassName="activeSignUp"
+              >
+                Sign Up
+              </NavLink>
+            </div>
           </li>
         </>
       );
@@ -47,12 +61,19 @@ export default function NavBar() {
         <li className="navLi">
           <NavLink exact to={"/search"}>
             <div className="formContainer">
-                <div className="searchBar">
-                  <button type="submit" className="searchButton">
-                  <img src="https://img.icons8.com/metro/26/000000/search.png" id="searchIcon"/>
-                  </button>
-                  <input className="searchInput" type="text" placeholder="Search Twitter" />
-                </div>
+              <div className="searchBar">
+                <button type="submit" className="searchButton">
+                  <img
+                    src="https://img.icons8.com/metro/26/000000/search.png"
+                    id="searchIcon"
+                  />
+                </button>
+                <input
+                  className="searchInput"
+                  type="text"
+                  placeholder="Search Twitter"
+                />
+              </div>
             </div>
           </NavLink>
         </li>
