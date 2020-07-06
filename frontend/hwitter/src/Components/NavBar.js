@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import TwitterSearch from "./TwitterSearch";
+// import TwitterSearch from "./TwitterSearch";
 import { AuthContext } from "../Providers/AuthProvider";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
@@ -40,7 +40,12 @@ export default function NavBar() {
         </li>
         <li className="navLi">
           <NavLink exact to={"/search"}>
-            <TwitterSearch />
+            <div className="formContainer">
+                <div className="searchBar">
+                  <input className="searchInput" type="text" />
+                  <button></button>
+                </div>
+            </div>
           </NavLink>
         </li>
         <li className="navLi">

@@ -9,7 +9,6 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(null);
 
   const updateUser = (user) => {
-    debugger
     if (user) {
       const { email, uid } = user;
       const lastLogin = user.metadata.lastSignInTime;
