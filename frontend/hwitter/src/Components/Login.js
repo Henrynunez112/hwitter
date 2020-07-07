@@ -49,7 +49,6 @@ const Login = () => {
               value={email}
             />
           </div>
-          <br></br>
           <div className="loginPasswordContainer">
             <div className="passwordLabel">
             <label className="loginPassword">Password</label>
