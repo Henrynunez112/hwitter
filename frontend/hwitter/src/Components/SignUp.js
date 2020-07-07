@@ -7,7 +7,7 @@ import { signUp } from "../Util/firebaseFunction";
 import Modal from "react-modal";
 
 const SignUp = () => {
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -29,8 +29,10 @@ const SignUp = () => {
 
   return (
     <div className="signUpContainer">
-      <Modal isOpen={true}>
+      <Modal isOpen={modalIsOpen} shouldCloseOnOverlayClick={false}>
+        
         <h1>This is the sign up page</h1>
+        <button type="submit">Sign Up</button>
         {error ? <div>{error}</div> : null}
         <form onSubmit={handleSubmit}>
           <input
@@ -50,7 +52,6 @@ const SignUp = () => {
               setPassword(e.currentTarget.value);
             }}
           />
-          <button type="submit">Sign Up</button>
         </form>
       </Modal>
     </div>
