@@ -30,6 +30,7 @@ const SignUp = () => {
   const imgWandH = {
     width: "32px",
     height: "32px",
+    marginLeft: "184px"
   };
 
   return (
@@ -45,7 +46,7 @@ const SignUp = () => {
             backgroundColor: "#15212b",
             color: "#E1E8ED",
             top: "51px",
-            bottom: "50px",
+            bottom: "80px",
             left: "350px",
             right: "350px",
             border: "1px solid #15212b",
@@ -61,7 +62,7 @@ const SignUp = () => {
             <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
           </div>
           <div className="signUpNextBttn">
-            <input type="submit" value="next" />
+            <input type="submit" value="next" id="nextBttn" />
           </div>
           </div>
           <div className="signUpTitle">

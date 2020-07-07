@@ -13,15 +13,26 @@
 
 .modalHeader{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 80% 20%;
 
 }
 /* .signUpLogo{
   width: 60%;
 } */
-/* .signUpNextBttn{
-  width: 40%;
-} */
+.signUpNextBttn{
+  background-color: var(--babyBlue);
+  border-radius: 50px;
+  text-align: center;
+}
+#nextBttn{
+  background-color: var(--babyBlue);
+  border: 0px solid var(--babyBlue);
+  color: var(--white);
+  font-size: large;
+  font-weight: bold;
+  position: relative;
+  top: 5px;
+}
 
 .signUpEmail{
   background-color: var(--inputText);
