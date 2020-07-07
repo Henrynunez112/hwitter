@@ -1,1 +1,46 @@
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+  --inputText: #253441;
+}
 
+
+
+
+.signUpEmail{
+  background-color: var(--inputText);
+  font-size: smaller;
+  color: var(--lightGrey)
+}
+.emailLabel{
+  text-align: left;
+  background-color: var(--inputText);
+  margin-bottom: -18px;
+}
+.passwordLabel{
+  text-align: left;
+  background-color: var(--inputText);
+  margin-bottom: -19px;
+}
+#inputSignUpPassword {
+  background-color: #253441;
+  width: 400px;
+  height: 30px;
+  border: .5px solid #253441;
+  border-bottom: 1px solid var(--lightGrey);
+  color: var(--babyBlue)
+}
+#inputSignUpEmail {
+  background-color: #253441;
+  width: 405px;
+  height: 30px;
+  border: .5px solid #253441;
+  border-bottom: 1px solid var(--lightGrey);
+  color: var(--babyBlue)
+}

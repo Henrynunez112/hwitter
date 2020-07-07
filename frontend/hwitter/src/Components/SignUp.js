@@ -67,23 +67,25 @@ const SignUp = () => {
           </div>
           <div className="signUpEmailContainer">
             <div className="signUpEmail">
-              <label>Email</label>
+              <label className="emailLabel">Email</label>
             </div>
             <input
               type="text"
-              placeholder="email"
+              id="inputSignUpEmail"
               value={email}
               onChange={(e) => {
                 setEmail(e.currentTarget.value);
               }}
             />
           </div>
+          <br></br>
           <div className="signUpPasswordContainer">
             <div className="signUpPassword">
-              <label>Password</label>
+              <label className="passwordLabel">Password</label>
             </div>
             <input
               type="password"
+              id="inputSignUpPassword"
               placeholder="password"
               autoComplete="on"
               value={password}
