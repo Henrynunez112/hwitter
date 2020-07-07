@@ -38,12 +38,14 @@ const Login = () => {
       <div className="loginForm">
         <form onSubmit={handleSubmit}>
           <div className="loginNameContainer">
-            <label for="loginName">Phone, email, or username</label>
+            <div className="nameLabel">
+            <label className="loginName">Phone, email, or username</label>
+            </div>
             <br></br>
             <input
               type="text"
+              id="inputLoginName"
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email"
               value={email}
             />
           </div>
