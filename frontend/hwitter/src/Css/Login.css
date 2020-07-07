@@ -51,6 +51,7 @@
   height: 30px;
   border: .5px solid #253441;
   border-bottom: 1px solid var(--lightGrey);
+  color: var(--babyBlue)
 }
 .loginPasswordContainer {
   border: 1px solid var(--newTwitterBlue);
@@ -71,6 +72,7 @@
   height: 30px;
   border: .5px solid #253441;
   border-bottom: 1px solid var(--lightGrey);
+  color: var(--babyBlue)
 }
 .passwordLabel{
   text-align: left;
