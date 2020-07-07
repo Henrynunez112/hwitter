@@ -90,12 +90,16 @@
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+  top: -3px;
 }
 .inactiveLogin{
   color: var(--babyBlue);
   background-color: var(--newTwitterBlue);
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+  top: -3px;
 }
 .activeLogin{
   color: var(--babyBlue);

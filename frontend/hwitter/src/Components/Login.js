@@ -30,23 +30,36 @@ const Login = () => {
 
   return (
     <div className="loginContainer">
+      <div className="loginLogin">
       <img alt="twitter logo" src={Logo} style={imgWandH} />
+      </div>
+      <div className="loginHeader">
       <h1 className="loginHeader">Log In to Twitter</h1>
+      </div>
+      <div className="loginForm">
       <form onSubmit={handleSubmit}>
+        <label for="loginName">Phone, email, or username</label>
+        <br></br>
         <input
           type="text"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           value={email}
         />
+        <br></br>
+        <label for="loginPassword">Password</label>
+        <br></br>
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           value={password}
         />
-        <button type="submit">Log In</button>
+        <div className="loginButtonPage">
+        <input type="submit" value="Login" />
+        </div>
       </form>
+      </div>
     </div>
   );
 };
