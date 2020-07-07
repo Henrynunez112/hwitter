@@ -9,21 +9,26 @@
   --newTwitterBlue: #15212b;
 }
 
-.loginContainer {
-  top: 30px;
-  position: relative;
+.loginContainer{
+  border: 1px solid var(--darkGrey);
   background-color: var(--newTwitterBlue);
-  height: 100%;
-  width: 100%;
-}
-
-.loginHeader{
   color: var(--white);
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: larger;
-  font-family: "Helvetica Neue", sans-serif;
-  font-weight: bold;
-
-
+  max-width: 600px;
+  width: 100%;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.loginHeader{
+  border: 1px solid #ffffff;
+}
+.loginForm{
+  border: 1px solid #ffffff;
+}
+.loginNameContainer{
+  border: 1px solid #ffffff;
+}
+.loginPasswordContainer{
+  border: 1px solid #ffffff;
 }
