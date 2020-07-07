@@ -51,17 +51,20 @@ const Login = () => {
           </div>
           <br></br>
           <div className="loginPasswordContainer">
-            <label for="loginPassword">Password</label>
+            <div className="passwordLabel">
+            <label className="loginPassword">Password</label>
+            </div>
             <br></br>
             <input
               type="password"
+              id="inputLoginPassword"
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password"
+              
               value={password}
             />
           </div>
           <div className="loginButtonPage">
-            <input type="submit" value="Login" />
+            <input type="submit" value="Login" id="mainLoginButton" />
           </div>
         </form>
       </div>

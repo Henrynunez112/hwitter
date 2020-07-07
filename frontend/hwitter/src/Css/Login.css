@@ -54,4 +54,32 @@
 }
 .loginPasswordContainer {
   border: 1px solid #ffffff;
+  padding: 10px 24px;
+  background-color: var(--newTwitterBlue);
 }
+.loginPassword{
+  border: 2px solid var(--inputText);
+  color: var(--lightGrey);
+  background-color: var(--inputText);
+  height: 192px;
+  font-size: small;
+  text-align: left;
+}
+#inputLoginPassword{
+  background-color: #253441;
+  width: 540px;
+  height: 30px;
+  border: .5px solid #253441;
+  border-bottom: 1px solid var(--lightGrey);
+}
+.passwordLabel{
+  text-align: left;
+  background-color: var(--inputText);
+  margin-bottom: -19px;
+}
+
+#mainLoginButton{
+  background-color: var(--babyBlue);
+  color: white;
+}
+
