@@ -64,6 +64,7 @@ export default function NavBar() {
               <div className="searchBar">
                 <button type="submit" className="searchButton">
                   <img
+                    alt="search icon"
                     src="https://img.icons8.com/metro/26/000000/search.png"
                     id="searchIcon"
                   />
