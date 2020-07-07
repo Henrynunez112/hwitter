@@ -22,7 +22,7 @@
   margin-top: 20px;
 }
 .loginHeader {
-  border: 1px solid #ffffff;
+  border: 1px solid var(--newTwitterBlue)
 }
 .loginForm {
   border: 1px solid #ffffff;
@@ -77,9 +77,18 @@
   background-color: var(--inputText);
   margin-bottom: -19px;
 }
+.loginButtonPage{
+  height: 50px;
+}
 
 #mainLoginButton{
   background-color: var(--babyBlue);
+  border: 2px solid var(--babyBlue);
   color: white;
+  font-weight: bold;
+  width: 548px;
+  border-radius: 50px;
+  height: 40px;
+  opacity: .7;
 }
 
