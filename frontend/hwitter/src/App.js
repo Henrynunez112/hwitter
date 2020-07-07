@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Modal from "react-modal";
 import NavBar from './Components/NavBar';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Components/Home';
@@ -9,6 +10,7 @@ import Login from './Components/Login';
 import AuthProvder from './Providers/AuthProvider';
 import { AuthRoute, ProtectedRoute } from './Util/routesUtil';
 
+Modal.setAppElement('#root');
 function App() {
   return (
     <div className="App">
