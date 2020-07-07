@@ -56,11 +56,13 @@ const SignUp = () => {
       >
         {error ? <div className="errorSignUp">{error}</div> : null}
         <form onSubmit={handleSubmit} className="formSignUp">
+          <div className="modalHeader">
           <div className="signUpLogo">
             <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
           </div>
           <div className="signUpNextBttn">
             <input type="submit" value="next" />
+          </div>
           </div>
           <div className="signUpTitle">
             <h3>Create an account</h3>
@@ -86,7 +88,6 @@ const SignUp = () => {
             <input
               type="password"
               id="inputSignUpPassword"
-              placeholder="password"
               autoComplete="on"
               value={password}
               onChange={(e) => {

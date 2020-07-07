@@ -11,9 +11,24 @@
 }
 
 
+.modalHeader{
+  display: grid;
+  grid-template-columns: 70% 30%;
 
+}
+/* .signUpLogo{
+  width: 60%;
+} */
+/* .signUpNextBttn{
+  width: 40%;
+} */
 
 .signUpEmail{
+  background-color: var(--inputText);
+  font-size: smaller;
+  color: var(--lightGrey)
+}
+.signUpPassword{
   background-color: var(--inputText);
   font-size: smaller;
   color: var(--lightGrey)
@@ -26,11 +41,11 @@
 .passwordLabel{
   text-align: left;
   background-color: var(--inputText);
-  margin-bottom: -19px;
+  margin-bottom: -18px;
 }
 #inputSignUpPassword {
   background-color: #253441;
-  width: 400px;
+  width: 405px;
   height: 30px;
   border: .5px solid #253441;
   border-bottom: 1px solid var(--lightGrey);
