@@ -30,7 +30,7 @@ const SignUp = () => {
   const imgWandH = {
     width: "32px",
     height: "32px",
-    marginLeft: "184px"
+    marginLeft: "184px",
   };
 
   return (
@@ -58,12 +58,12 @@ const SignUp = () => {
         {error ? <div className="errorSignUp">{error}</div> : null}
         <form onSubmit={handleSubmit} className="formSignUp">
           <div className="modalHeader">
-          <div className="signUpLogo">
-            <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
-          </div>
-          <div className="signUpNextBttn">
-            <input type="submit" value="next" id="nextBttn" />
-          </div>
+            <div className="signUpLogo">
+              <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
+            </div>
+            <div className="signUpNextBttn">
+              <input type="submit" value="next" id="nextBttn" />
+            </div>
           </div>
           <div className="signUpTitle">
             <h3>Create an account</h3>

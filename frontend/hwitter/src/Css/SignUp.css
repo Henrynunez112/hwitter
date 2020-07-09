@@ -35,24 +35,29 @@
 }
 
 .signUpEmail{
+  width: 411px;
   background-color: var(--inputText);
   font-size: smaller;
   color: var(--lightGrey)
 }
 .signUpPassword{
+  width: 411px;
   background-color: var(--inputText);
   font-size: smaller;
-  color: var(--lightGrey)
+  color: var(--lightGrey);
+ 
 }
 .emailLabel{
   text-align: left;
   background-color: var(--inputText);
   margin-bottom: -18px;
+  
 }
 .passwordLabel{
   text-align: left;
   background-color: var(--inputText);
   margin-bottom: -18px;
+  
 }
 #inputSignUpPassword {
   background-color: #253441;
