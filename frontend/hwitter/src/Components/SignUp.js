@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Homebutton from './Homebutton'
 import { useHistory } from "react-router-dom";
 import { apiURL } from "../Util/apiUrl";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
@@ -37,7 +38,6 @@ const SignUp = () => {
     <div className="signUpContainer">
       <Modal
         isOpen={modalIsOpen}
-        shouldCloseOnOverlayClick={true}
         style={{
           overlay: {
             backgroundColor: "rgb(0,0,0, 0.5)",
@@ -97,6 +97,9 @@ const SignUp = () => {
             />
           </div>
         </form>
+        <div>
+          <Homebutton />
+        </div>
       </Modal>
     </div>
   );

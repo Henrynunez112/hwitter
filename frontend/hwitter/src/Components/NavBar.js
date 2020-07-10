@@ -12,9 +12,32 @@ export default function NavBar() {
   const buttonDisplay = () => {
     if (currentUser) {
       return (
-        <div className="logoutButton">
-          <button onClick={logOut}>Log Out</button>);
-        </div>
+        <>
+            <NavLink exact to={"/search"}>
+              <div className="formContainer">
+                <div className="searchBar">
+                  <button type="submit" className="searchButton">
+                    <img
+                      alt="search icon"
+                      src="https://img.icons8.com/metro/26/000000/search.png"
+                      id="searchIcon"
+                    />
+                  </button>
+                  <input
+                    className="searchInput"
+                    type="text"
+                    placeholder="Search Twitter"
+                  />
+                </div>
+              </div>
+            </NavLink>
+          {/* <NavLink exact to={"/users"}>
+            Go to Profile
+          </NavLink> */}
+          <div className="logoutButton">
+            <button onClick={logOut}>Log Out</button>);
+          </div>
+        </>
       );
     } else {
       return (
@@ -58,8 +81,8 @@ export default function NavBar() {
             <img alt="twitter logo" src={Logo} style={imgWandH} />
           </NavLink>
         </li>
-        <li className="navLi">
-          <NavLink exact to={"/search"}>
+        {/* <li className="navLi"> */}
+        {/* <NavLink exact to={"/search"}>
             <div className="formContainer">
               <div className="searchBar">
                 <button type="submit" className="searchButton">
@@ -77,12 +100,12 @@ export default function NavBar() {
               </div>
             </div>
           </NavLink>
-        </li>
-        <li className="navLi">
-          {/* <NavLink exact to={"/users"}>
+        </li> */}
+        {/* <li className="navLi"> */}
+        {/* <NavLink exact to={"/users"}>
             Show all users
           </NavLink> */}
-        </li>
+        {/* </li> */}
         {buttonDisplay()}
       </ul>
     </nav>
