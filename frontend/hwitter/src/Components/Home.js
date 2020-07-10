@@ -46,7 +46,7 @@ const Home = () => {
           <h4 key={news.id} className="newsHeader">
             {news.name}
           </h4>
-          <p>{news.query.text}</p>
+          <p className="queryHeader">{news.query.text}</p>
         </li>
       </div>
     );
@@ -60,7 +60,9 @@ const Home = () => {
         <div className="trendingNewsHeader">
           <h3 id="trendingHeader">Trending News</h3>
         </div>
-        <div className="trendingNewsCard">{trendingNews}</div>
+        <div className="trendingNewsCard">
+          <ul className="trendingUl">{trendingNews}</ul>
+        </div>
       </div>
     </div>
   );

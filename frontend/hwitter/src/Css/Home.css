@@ -38,15 +38,16 @@
   grid-template-columns: 25% 50% 25%;
   grid-column: 2 / span 1;
   border: 1px solid var(--lightGrey);
+  border-radius: 13px;
   color: var(--darkGrey);
   text-align: center;
   font-weight: bolder;
   font-size: large;
 }
-#trendingHeader{
-    grid-column: 2 / span 1;
-    margin: 4%;
-    padding: 8%
+#trendingHeader {
+  grid-column: 2 / span 1;
+  margin: 4%;
+  padding: 4%;
 }
 .trendingNews {
   grid-column: 2 / span 1;
@@ -55,5 +56,32 @@
 .trendingNewsCard {
   grid-area: 2 / 2 / span 1 / span 1;
   border: 1px solid var(--lightGrey);
+  border-radius: 13px;
   height: 100%;
+}
+.trendingUl {
+  padding: 1%;
+  list-style-type: none;
+}
+.newsLi {
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: repeat(4, 25%);
+}
+.trendingNews {
+  border-radius: 13px;
+}
+.newsImg {
+    border: 1px solid var(--lightGrey);
+  border-radius: 13px;
+  grid-area: 1/ 1 / span 1 / span 1;
+  padding: 10%;
+}
+.newsHeader {
+  padding: 6%;
+  color: var(--lightGrey);
+}
+.queryHeader {
+  grid-area: 3 / 2 / span 1 / span 1;
+  color: var(--white)
 }
