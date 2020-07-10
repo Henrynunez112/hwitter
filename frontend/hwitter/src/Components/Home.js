@@ -12,7 +12,7 @@ const Home = () => {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
-        "x-rapidapi-key": "e07ee1c4ecmshb681c99319fb298p15e577jsne5beb7bbfb44",
+        "x-rapidapi-key": API_KEY,
         "x-bingapis-sdk": "true",
         useQueryString: true,
       },
