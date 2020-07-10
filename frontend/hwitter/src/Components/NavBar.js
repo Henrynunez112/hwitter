@@ -79,9 +79,9 @@ export default function NavBar() {
           </NavLink>
         </li>
         <li className="navLi">
-          <NavLink exact to={"/users"}>
+          {/* <NavLink exact to={"/users"}>
             Show all users
-          </NavLink>
+          </NavLink> */}
         </li>
         {buttonDisplay()}
       </ul>

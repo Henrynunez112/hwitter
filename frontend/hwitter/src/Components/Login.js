@@ -15,7 +15,7 @@ const Login = () => {
       await logIn(email, password);
 
       //sign in with firebase then change route
-      history.push("/");
+      history.push("/users");
     } catch (err) {
       console.log("YERRRRR", err);
     }
