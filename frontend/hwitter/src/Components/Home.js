@@ -54,12 +54,13 @@ const Home = () => {
   return (
     <div className="homeComponent">
       <div className="hwitterHomeHeader">
-          <></>
-        <h1>Welcome to Hwitter</h1>
-        <></>
+        <h1 className="hwitterHeader">Welcome to Hwitter</h1>
       </div>
       <div className="trendingNewsDiv">
-      {trendingNews}
+        <div className="trendingNewsHeader">
+          <h3 id="trendingHeader">Trending News</h3>
+        </div>
+        <div className="trendingNewsCard">{trendingNews}</div>
       </div>
     </div>
   );
