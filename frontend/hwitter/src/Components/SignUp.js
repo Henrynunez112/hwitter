@@ -37,7 +37,7 @@ const SignUp = () => {
     <div className="signUpContainer">
       <Modal
         isOpen={modalIsOpen}
-        shouldCloseOnOverlayClick={false}
+        shouldCloseOnOverlayClick={true}
         style={{
           overlay: {
             backgroundColor: "rgb(0,0,0, 0.5)",
