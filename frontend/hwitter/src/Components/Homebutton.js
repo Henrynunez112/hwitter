@@ -9,9 +9,13 @@ const Homebutton = () =>{
     const handleClick = () =>{
         history.push("/")
     }
+    const secondClick = () =>{
+        history.push("/login")
+    }
     return(
         <div>
-            <button onClick={handleClick}>Go Back Home</button>
+            <button className="HomeButton" onClick={handleClick}>Go Back Home</button>
+            <button className="LoginButton" onClick={secondClick}>Login</button>
         </div>
     )
 

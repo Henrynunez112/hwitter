@@ -7,17 +7,18 @@ import "../Css/Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await logIn(email, password);
-
       //sign in with firebase then change route
-      history.push("/users");
+      history.push("/");
     } catch (err) {
       console.log("YERRRRR", err);
+      setError(err.message)
     }
   };
   const imgWandH = {
@@ -35,6 +36,7 @@ const Login = () => {
       <div className="loginHeader">
         <h4>Log In to Twitter</h4>
       </div>
+      {error ? <div className="errorSignUp">{error}</div> : null}
       <div className="loginForm">
         <form onSubmit={handleSubmit}>
           <div className="loginNameContainer">

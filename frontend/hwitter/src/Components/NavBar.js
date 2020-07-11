@@ -31,9 +31,9 @@ export default function NavBar() {
                 </div>
               </div>
             </NavLink>
-          {/* <NavLink exact to={"/users"}>
+          <NavLink exact to={"/users"}>
             Go to Profile
-          </NavLink> */}
+          </NavLink>
           <div className="logoutButton">
             <button onClick={logOut}>Log Out</button>);
           </div>
