@@ -1,5 +1,6 @@
 import app from "firebase/app";
 import "firebase/auth";
+import "firebase/firestore";
 
 const {
   REACT_APP_APIKEY,
@@ -22,6 +23,7 @@ const config = {
   appId: REACT_APP_APPID,
   measurementId: REACT_APP_MEASUREMENTID,
 };
+
 
 app.initializeApp(config);
 export default app;
