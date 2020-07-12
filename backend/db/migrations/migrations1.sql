@@ -1,4 +1,5 @@
--- \c hwitter_auth;
+\c hwitter_auth;
 
--- ALTER TABLE users
--- ADD 
+ALTER TABLE users
+ADD firstname VARCHAR,
+ADD lastname VARCHAR;
