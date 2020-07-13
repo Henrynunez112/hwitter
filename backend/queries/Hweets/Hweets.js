@@ -3,7 +3,7 @@ const db = require("../../db/index");
 
 const addNewHweet = async (req, res, next) =>{
     try{
-        let newHweet = await db.one(`INSERT INTO hweets (content) VALUES('${req.body.content}')RETURNING *`)
+        let newHweet = await db.one(`INSERT INTO hweets (content) VALUES('${req.body.content}')RETURNING *`);
         res.status(200).json({
             success: "got new post",
             payload: newHweet,

@@ -4,3 +4,5 @@ const {addNewHweet, joinHweetsWithUsers, deleteSingleHweet} = require('../../que
 hweetsRouter.get("/", joinHweetsWithUsers);
 hweetsRouter.post('/', addNewHweet);
 hweetsRouter.delete('/:id', deleteSingleHweet);
+
+module.exports = hweetsRouter;
