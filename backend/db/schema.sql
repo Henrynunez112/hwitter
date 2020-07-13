@@ -23,5 +23,6 @@ CREATE TABLE hashtags(
     id VARCHAR PRIMARY KEY,
     hweets_id VARCHAR REFERENCES users(id),
     post_id VARCHAR REFERENCES hweets(id),
-    tag_name TEXT
+    tag_name TEXT,
+    time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
