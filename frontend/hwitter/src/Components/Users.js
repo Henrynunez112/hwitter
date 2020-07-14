@@ -12,11 +12,12 @@ const Users = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
+      debugger
       let res = await axios({
-        method: "get",
+        method: "GET",
         url: `${API}/api/users`,
         headers: {
-          AuthToken: token,
+          'AuthToken': token,
         },
       });
       setUsers(res.data.users);
