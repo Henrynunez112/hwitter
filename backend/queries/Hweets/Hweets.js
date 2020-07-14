@@ -2,15 +2,11 @@ const db = require("../../db/index");
 
 const addNewHweet = async (req, res, next) => {
   try {
-    let { hweets_id, content } = req.body;
     let newHweet = await db.one(
-      `INSERT INTO hweets (hweets_id, content) VALUES($1, $2)RETURNING *`,
-      [hweets_id, content]
-    );
+      `INSERT INTO hweets (hweets_id, content) VALUES('${req.body.hweets_id}', ${req.body.content})RETURNING *`);
     res.status(200).json({
       success: "got new post",
       message: "new post created",
-      body: {newHweet},
     });
   } catch (error) {
     console.log("from addNewHweet:", error);

@@ -13,8 +13,8 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use("/api/users", userRouter);
-app.use("/api/hweets", hweetsRouter);
+app.use("/users", userRouter);
+app.use("/hweets", hweetsRouter);
 
 app.use((err, req, res, next) =>{
     console.log(err);

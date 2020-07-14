@@ -2,13 +2,13 @@ const db = require("../db/index");
 
 const createUser = async (req, res, next) =>{
     try{
-        await db.none(`INSERT INTO users (email, firstname, lastname) VALUES('${req.body.email}', '${req.body.firstname}', '${req.body.lastname}') RETURNING *`);
+        await db.one(`INSERT INTO users (id, email, firstname, lastname) VALUES('${req.body.id}','${req.body.email}', '${req.body.firstname}', '${req.body.lastname}') RETURNING *`);
         res.status(200).json({
             status: "succes",
             message: "New Users created!",
         })
     }catch(err){
-        console.log(err)
+        console.log("vrom createUser", err)
         res.status(400).json({
             status: "error",
             message:"could not create the user",
@@ -35,13 +35,31 @@ const fetchAllUsers = async (req, res, next) =>{
     }
 };
 
+const deleteUsers = async (req, res, next) =>{
+    try{
+        let letGo = await db.none("DELETE FROM users WHERE id = $1", [req.params.id]);
+        res.status(200).json({
+            status: "success",
+            message: "na-na-na-na na-na-na-na hey-hey-hey gooooodbye",
+        })
+
+    }catch(err){
+        console.log(err);
+        res.status(400).json({
+            status: "error",
+            message: "could not delete user"
+        })
+
+    }
+}
+
 const selectSingleUser = async (req, res, next) =>{
     try{
         let singleUser = await db.one("SELECT * FROM users WHERE id = $1", [req.params.id])
         res.status(200).json({
             status: "success",
             message: "Got the Single user",
-            body: singleUser
+            singleUser
 
         })
     }catch(err){
@@ -55,4 +73,4 @@ const selectSingleUser = async (req, res, next) =>{
     }
 }
 
-module.exports = {createUser, fetchAllUsers, selectSingleUser}
+module.exports = {createUser, fetchAllUsers, selectSingleUser, deleteUsers}
