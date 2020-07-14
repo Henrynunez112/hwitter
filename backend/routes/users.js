@@ -1,8 +1,10 @@
 const users = require("express").Router();
-const { createUser, fetchAllUsers } = require("../queries/users");
+const { createUser, fetchAllUsers, selectSingleUser } = require("../queries/users");
 //check for users who are completely logged in
-const { checkFirebaseToken } = require("../middleware/auth");
+// const { checkFirebaseToken } = require("../middleware/auth");
 
+// checkFirebaseToken
 users.post("/", createUser);
-users.get("/", checkFirebaseToken, fetchAllUsers);
+users.get("/:id", selectSingleUser);
+users.get("/", fetchAllUsers);
 module.exports = users;
