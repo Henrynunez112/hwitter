@@ -12,6 +12,8 @@ const SignUp = () => {
   const [modalIsOpen, setModalIsOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("")
   const [error, setError] = useState(null);
   const history = useHistory();
   const API = apiURL();
@@ -20,7 +22,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       let res = await signUp(email, password);
-      await axios.post(`${API}/api/users`, { id: res.user.uid, email });
+      await axios.post(`${API}/api/users`, { id: res.user.uid, email, firstname, lastname });
       debugger;
       history.push("/");
     } catch (error) {
@@ -68,6 +70,34 @@ const SignUp = () => {
           <div className="signUpTitle">
             <h3>Create an account</h3>
           </div>
+          <div className="signUpEmailContainer">
+            <div className="signUpEmail">
+              <label className="emailLabel">First Name</label>
+            </div>
+            <input
+              type="text"
+              id="inputSignUpEmail"
+              value={firstname}
+              onChange={(e) => {
+                setFirstName(e.currentTarget.value);
+              }}
+            />
+          </div>
+          <br></br>
+          <div className="signUpEmailContainer">
+            <div className="signUpEmail">
+              <label className="emailLabel">Last Name</label>
+            </div>
+            <input
+              type="text"
+              id="inputSignUpEmail"
+              value={lastname}
+              onChange={(e) => {
+                setLastName(e.currentTarget.value);
+              }}
+            />
+          </div>
+          <br></br>
           <div className="signUpEmailContainer">
             <div className="signUpEmail">
               <label className="emailLabel">Email</label>
