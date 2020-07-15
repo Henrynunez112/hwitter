@@ -8,7 +8,7 @@ const createUser = async (req, res, next) =>{
             message: "New Users created!",
         })
     }catch(err){
-        console.log("vrom createUser", err)
+        console.log("errom createUser", err)
         res.status(400).json({
             status: "error",
             message:"could not create the user",

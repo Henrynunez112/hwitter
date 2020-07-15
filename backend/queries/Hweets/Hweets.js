@@ -2,18 +2,24 @@ const db = require("../../db/index");
 
 const addNewHweet = async (req, res, next) => {
   try {
+    const { hweets_id, content} = req.body;
     let newHweet = await db.one(
-      `INSERT INTO hweets (hweets_id, content) VALUES('${req.body.hweets_id}', ${req.body.content})RETURNING *`);
+      `INSERT INTO hweets (hweets_id, content) VALUES($1, $2) RETURNING *`,
+      [hweets_id, content]
+    );
     res.status(200).json({
-      success: "got new post",
+      success: "success",
       message: "new post created",
+      payload: newHweet
     });
   } catch (error) {
     console.log("from addNewHweet:", error);
     res.status(400).json({
       status: "error",
       message: "could not retreat the new hweet",
+      payload: error
     });
+    next(error)
   }
 };
 
