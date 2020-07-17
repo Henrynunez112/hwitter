@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const userRouter = require("./routes/users");
 const hweetsRouter = require("./routes/Hweets/Hweets");
+const hashtagsRouter = require("./routes/Hashtags/Hashtags")
 
 const PORT = process.env.PORT;
 const app = express();
@@ -15,9 +16,11 @@ app.use(bodyParser.json());
 
 app.use("/users", userRouter);
 app.use("/hweets", hweetsRouter);
+app.use("/hashtags", hashtagsRouter);
+
 
 app.use((err, req, res, next) =>{
-    console.log(err);
+    console.log("henry",err);
     if(err.status){
         res.status(err.status).json(err);
     }else{
