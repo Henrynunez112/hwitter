@@ -1,5 +1,24 @@
 const db = require("../../db/index");
 
+const getAllHweets = async (req, res, next) =>{
+  try{
+    let allHweets = await db.any("SELECT * FROM hweets");
+    res.status(200).json({
+      status: 'succes',
+      message: 'got all the hweets',
+      body: allHweets
+    })
+
+  }catch(err){
+    console.log(err);
+    res.status(400).json({
+      status: 'error',
+      message: 'could not get all the hweets'
+    })
+
+  }
+}
+
 const addNewHweet = async (req, res, next) => {
   try {
     const { hweets_id, content} = req.body;
@@ -62,4 +81,23 @@ const deleteSingleHweet = async (req, res, next) => {
   }
 };
 
-module.exports = { addNewHweet, joinHweetsWithUsers, deleteSingleHweet };
+const getHweetsByUserId = async (req, res, next) =>{
+  let {hweets_id} = req.params;
+
+  try{
+    let userHweets = await db.any("SELECT * FROM hweets WHERE hweets_id = $1", [hweets_id]);
+    res.status(200).json({
+      status: 'succes',
+      message: `all the hweets by users with hweets_id of ${hweets_id} retrieved`,
+      body: userHweets
+    })
+  }catch(err){
+    console.log(err)
+    res.status(400).json({
+      status: 'error',
+      message: 'could not get hweets by user'
+    })
+  }
+}
+
+module.exports = { addNewHweet, joinHweetsWithUsers, deleteSingleHweet, getAllHweets, getHweetsByUserId };
