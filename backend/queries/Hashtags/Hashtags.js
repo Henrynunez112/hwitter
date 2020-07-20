@@ -21,8 +21,7 @@ const getAllHashtags = async (req, res, next) => {
 
 const getHweettagsBasedOnPost = async (req, res, next) =>{
     try{
-        let hweetPost = await db.any()
-
+        let hweetPost = await db.any(`SELECT hashtags.id AS `)
     }catch(error){
         console.log(error);
         res.status(400).json({

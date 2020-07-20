@@ -18,7 +18,7 @@ CREATE TABLE users
 CREATE TABLE hweets
 (
     id SERIAL NOT NULL PRIMARY KEY,
-    hweets_id VARCHAR REFERENCES users(id),
+    hweets_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
     content VARCHAR(280),
     time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -3,7 +3,8 @@ const {
   createUser,
   fetchAllUsers,
   selectSingleUser,
-  deleteUsers
+  deleteUsers,
+  updateUserInfo
 } = require("../queries/users");
 //check for users who are completely logged in
 // const { checkFirebaseToken } = require("../middleware/auth");
@@ -13,5 +14,6 @@ const {
 users.post("/", createUser);
 users.get("/:id", selectSingleUser);
 users.get("/", fetchAllUsers);
-users.delete("/:id", deleteUsers)
+users.delete("/:id", deleteUsers);
+users.patch("/:id", updateUserInfo);
 module.exports = users;
