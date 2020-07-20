@@ -98,6 +98,28 @@ const getHweetsByUserId = async (req, res, next) =>{
       message: 'could not get hweets by user'
     })
   }
-}
+};
 
-module.exports = { addNewHweet, joinHweetsWithUsers, deleteSingleHweet, getAllHweets, getHweetsByUserId };
+const updateHweet = async (req, res, next) => {
+  let { id } = req.params;
+  let { content } = req.body;
+  try {
+    let newHweet = await db.one(
+      `UPDATE hweets SET  content = $1 WHERE id = $2 RETURNING *`,
+      [ content, id]
+    );
+    res.status(200).json({
+      status: "success",
+      message: "users hweets has been updated",
+      body: newHweet,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({
+      status: "error",
+      message: "could not update the users hweet",
+    });
+  }
+};
+
+module.exports = { addNewHweet, joinHweetsWithUsers, deleteSingleHweet, getAllHweets, getHweetsByUserId, updateHweet };

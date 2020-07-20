@@ -79,7 +79,7 @@ const updateUserInfo = async (req, res, next) => {
   let { email, firstname, lastname } = req.body;
   try {
     let newInfo = await db.one(
-      `UPDATE users SET email = $1, firstname = $2, lastname = $3WHERE id = $4 RETURNING *`,
+      `UPDATE users SET email = $1, firstname = $2, lastname = $3 WHERE id = $4 RETURNING *`,
       [email, firstname, lastname, id]
     );
     res.status(200).json({
