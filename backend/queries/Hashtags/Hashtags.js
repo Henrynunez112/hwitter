@@ -42,10 +42,10 @@ const getHashtagFromUser = async (req, res, next) => {
 
 const addNewHashtag = async (req, res, next) => {
   try {
-    const { hweet_tags } = req.body;
+    const { post_id, hweeter_id, hweet_tags } = req.body;
     let newHashtag = await db.one(
       `INSERT INTO hashtags (post_id, hweeter_id, hweet_tags) VALUES($1, $2, $3) RETURNING *`,
-      [hweet_tags]
+      [post_id, hweeter_id, hweet_tags]
     );
     res.status(200).json({
       success: "success",
@@ -53,13 +53,12 @@ const addNewHashtag = async (req, res, next) => {
       payload: newHashtag,
     });
   } catch (error) {
-    console.log("from addNewHweet:", error);
+    console.log("from addNewHashtag:", error);
     res.status(400).json({
       status: "error",
       message: "could not retreat the new hweet",
       payload: error,
     });
-    next(error);
   }
 };
 

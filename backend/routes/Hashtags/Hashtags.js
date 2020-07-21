@@ -7,6 +7,6 @@ const {
 
 hashtagsRouter.get("/", getAllHashtags);
 hashtagsRouter.get("/:post_id", getHashtagFromUser);
-hashtagsRouter.post("/", addNewHashtag);
+hashtagsRouter.post("/", addNewHashtag);//tested
 
 module.exports = hashtagsRouter;
