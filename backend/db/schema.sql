@@ -26,8 +26,8 @@ CREATE TABLE hweets
 CREATE TABLE hashtags
 (
     id SERIAL NOT NULL PRIMARY KEY,
-    post_id INT REFERENCES hweets(id) ON DELETE CASCADE,
-    user_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
+    post_id SERIAL REFERENCES hweets(id) ON DELETE CASCADE,
+    hweeter_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
     hweet_tags VARCHAR,
     time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -40,5 +40,5 @@ INSERT INTO hweets
     (hweets_id, content)
 VALUES(2, 'hello world');
 INSERT INTO hashtags
-    (post_id, user_id, hweet_tags)
-VALUES(1, 2, 'word')
+    (post_id, hweeter_id, hweet_tags)
+VALUES(1, 3, 'word')

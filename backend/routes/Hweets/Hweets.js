@@ -5,7 +5,7 @@ const {addNewHweet, deleteSingleHweet, getAllHweets, getHweetsByUserId, updateHw
 // hweetsRouter.get("/", joinHweetsWithUsers);
 hweetsRouter.get("/", getAllHweets); //tested
 hweetsRouter.get('/:hweets_id', getHweetsByUserId) //tested
-hweetsRouter.patch("/:id", updateHweet); //tested
+hweetsRouter.put("/:id", updateHweet); //tested
 hweetsRouter.post('/', addNewHweet); //tested
 hweetsRouter.delete('/:id', deleteSingleHweet); //tested
 

@@ -70,7 +70,7 @@ const deleteSingleHweet = async (req, res, next) => {
     res.status(200).json({
       status: "success",
       payload: deleteHweet,
-      message: "managed to delete the single Hweet",
+      message: "managed to delete the single Hweet, goodbye!",
     });
   } catch (error) {
     console.log("from deleteSingleHweet:", error);
