@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import {useInput} from '../Util/useInput';
 import axios from "axios";
-// import { useInput } from "../Components/CustomHook/CustomHook";
 import { apiURL } from "../Util/apiUrl";
 const UserHweet = () => {
-  const [hweet, setHweet] = useState("");
+  let contentObj = useInput("")
   const API = apiURL();
 
   const handleSubmit = async (e) => {
       e.preventDefault();
       try {
           debugger;
-          let res = await axios.post(`${API}/api/hweets`, {});
+          let res = await axios.post(`${API}/hweets`,{});
     } catch (error) {}
     // let newHweet = {
     //     userHweet: hweet.value
