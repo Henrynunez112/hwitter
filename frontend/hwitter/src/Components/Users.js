@@ -10,18 +10,18 @@ const Users = () => {
   const API = apiURL();
   const { token } = useContext(AuthContext);
 
+  const fetchUsers = async () => {
+    debugger
+    let res = await axios({
+      method: "GET",
+      url: `${API}/users`,
+      headers: {
+        'AuthToken': token,
+      },
+    });
+    setUsers(res.data.users);
+  };
   useEffect(() => {
-    const fetchUsers = async () => {
-      debugger
-      let res = await axios({
-        method: "GET",
-        url: `${API}/users`,
-        headers: {
-          'AuthToken': token,
-        },
-      });
-      setUsers(res.data.users);
-    };
     fetchUsers();
   }, [API]);
   return (
