@@ -1,31 +1,37 @@
-import React from "react";
-import {useInput} from '../Util/useInput';
+import React, { useContext } from "react";
+import { useInput } from "../Util/useInput";
 import axios from "axios";
 import { apiURL } from "../Util/apiUrl";
+import { AuthContext } from "../Providers/AuthProvider";
+
 const UserHweet = () => {
-  let contentObj = useInput("")
+  const { currentUser } = useContext(AuthContext);
+  let contentObj = useInput("");
   const API = apiURL();
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          debugger;
-          let res = await axios.post(`${API}/hweets`,{});
-    } catch (error) {}
-    // let newHweet = {
-    //     userHweet: hweet.value
-    // }
-    // if(!post){
-    //     setPost(newHweet);
-    // }else{
-    //     setPost(hweet => [...hweet, newHweet]);
-    // }
+    e.preventDefault();
+    try {
+      debugger;
+      await axios.post(`${API}/hweets`, {
+        hweets_id: currentUser.uid,
+        content: contentObj.value,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="What's Happening?" value={hweet} onChange={(e) =>{setHweet(e.currentTarget.value)}}/>
+        <input
+          type="text"
+          placeholder="What's Happening?"
+          name="content"
+          {...contentObj}
+          maxLength={280}
+        />
         <input type="submit" value="tweet" />
       </form>
     </div>
