@@ -15,7 +15,7 @@ const Users = () => {
       debugger
       let res = await axios({
         method: "GET",
-        url: `${API}/api/users`,
+        url: `${API}/users`,
         headers: {
           'AuthToken': token,
         },
