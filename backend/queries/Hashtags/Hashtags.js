@@ -1,21 +1,21 @@
 const db = require("../../db/index");
 
-const gatherAllHashtags = async (req, res, next) =>{
-  try{
+const gatherAllHashtags = async (req, res, next) => {
+  try {
     let allHashtags = await db.any("SELECT * FROM hashtags");
     res.status(200).json({
-      status: 'success',
-      message: 'got all the hashtags',
-      body: allHashtags
-    })
-  }catch(err){
+      status: "success",
+      message: "got all the hashtags",
+      body: allHashtags,
+    });
+  } catch (err) {
     console.log(err);
     res.status(400).json({
-      status: 'error',
-      message: 'could not get the hashtags'
+      status: "error",
+      message: "could not get the hashtags",
     });
   }
-}
+};
 
 const getAllHashtags = async (req, res, next) => {
   try {
@@ -36,12 +36,11 @@ const getAllHashtags = async (req, res, next) => {
   }
 };
 
-const getHashtagFromUser = async (req, res, next) => {
-  let { post_id } = req.params;
+const getHashtagFromPost = async (req, res, next) => {
+  // let { post_id } = req.params;
   try {
     let singleHashtag = await db.any(
-      "SELECT * FROM hashtags WHERE post_id = $1",
-      [post_id]
+      `SELECT hweets.id as hweetsid, hweets.content, ARRAY_AGG(hashtags.hweet_tags) FROM hashtags LEFT JOIN hweets ON hashtags.post_id = hweets.id GROUP BY hweets.id`
     );
     res.status(200).json({
       status: "success",
@@ -79,24 +78,31 @@ const addNewHashtag = async (req, res, next) => {
   }
 };
 
-const deleteHashtag = async (req, res, next) =>{
-  let {id} = req.params;
-  try{
-    let deleteTag = await db.one('DELETE FROM hashtags WHERE id = $1 RETURNING *', [id]);
+const deleteHashtag = async (req, res, next) => {
+  let { id } = req.params;
+  try {
+    let deleteTag = await db.one(
+      "DELETE FROM hashtags WHERE id = $1 RETURNING *",
+      [id]
+    );
     res.status(200).json({
-      status: 'success',
-      message: 'deleted hashtags was successful',
-      body: deleteTag
-    })
-
-  }catch(err){
+      status: "success",
+      message: "deleted hashtags was successful",
+      body: deleteTag,
+    });
+  } catch (err) {
     console.log(err);
     res.status(400).json({
-      status: 'error',
-      message: 'could not delete the hashtag'
-    })
-
+      status: "error",
+      message: "could not delete the hashtag",
+    });
   }
-}
+};
 
-module.exports = { getAllHashtags, getHashtagFromUser, addNewHashtag, deleteHashtag, gatherAllHashtags };
+module.exports = {
+  getAllHashtags,
+  getHashtagFromPost,
+  addNewHashtag,
+  deleteHashtag,
+  gatherAllHashtags,
+};
