@@ -1,28 +1,82 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Homebutton from './Homebutton'
+import Homebutton from "./Homebutton";
 import { useHistory } from "react-router-dom";
 import { apiURL } from "../Util/apiUrl";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
 import "../Css/SignUp.css";
 import { signUp } from "../Util/firebaseFunction";
 import Modal from "react-modal";
+import { storage } from "../Util/firebase";
 
 const SignUp = () => {
+  const allInputs = { imgUrl: "" };
+  const [imageAsFile, setImageAsFile] = useState("");
+  const [imageAsUrl, setImageAsUrl] = useState(allInputs);
+  const [toggleUploadMsg, setToggleUploadMsg] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("")
+  const [lastname, setLastName] = useState("");
   const [error, setError] = useState(null);
   const history = useHistory();
   const API = apiURL();
+
+  const handleImageAsFile = (e) => {
+    const image = e.target.files[0];
+    const types = ["image/png", "image/jpeg", "image/jpg"];
+    if (types.every((type) => image.type !== type)) {
+      alert(`${image.type} is not a supported format`);
+    } else {
+      setImageAsFile((imageFile) => image);
+    }
+  };
+  const handleFirebasePictureUpload = () => {
+    debugger
+    if (imageAsFile === "") {
+      alert(`Please choose a valid file before uploading`);
+    } else if (imageAsFile !== null) {
+      const uploadTask = storage
+        .ref(`/images/${imageAsFile.name}`)
+        .put(imageAsFile);
+      uploadTask.on(
+        "state_changed",
+        (snapShot) => {
+          var progress =
+            (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          console.log(snapShot);
+        },
+        (err) => {
+          console.log(err);
+        },
+        () => {
+          storage
+            .ref("images")
+            .child(imageAsFile.name)
+            .getDownloadURL()
+            .then((fireBaseUrl) => {
+              setImageAsUrl(fireBaseUrl);
+            });
+        }
+      );
+      setToggleUploadMsg(true);
+    } else {
+      setToggleUploadMsg(false);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let res = await signUp(email, password);
-      await axios.post(`${API}/users`, { id: res.user.uid, email, firstname, lastname });
+      await axios.post(`${API}/users`, {
+        id: res.user.uid,
+        email,
+        firstname,
+        lastname,
+      });
       debugger;
       history.push("/");
     } catch (error) {
@@ -110,6 +164,14 @@ const SignUp = () => {
                 setEmail(e.currentTarget.value);
               }}
             />
+          </div>
+          <div className="signUpProfilePictureContainer">
+            <div className="profilePictureContainer">
+              <label className="uploadImgUpload">Upload Img</label>
+            </div>
+            <input type="file" onChange={handleImageAsFile} />
+            <button onClick={handleFirebasePictureUpload}>Upload</button>
+            {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
           </div>
           <br></br>
           <div className="signUpPasswordContainer">
