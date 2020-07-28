@@ -7,6 +7,7 @@ import UserHweet from "./UserHweet";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const [posts, setPosts] = useState([]);
   const API = apiURL();
   const { token } = useContext(AuthContext);
 
@@ -21,8 +22,18 @@ const Users = () => {
     });
     setUsers(res.data.users);
   };
+  const fetchPost = async () =>{
+    debugger
+    let res = await axios({
+      method: "GET",
+      url: `${API}/hweets`
+    });
+    setPosts(res.data.body);
+  }
+
   useEffect(() => {
     fetchUsers();
+    fetchPost();
   }, [API]);
   return (
     <div className="userContainer">
@@ -33,6 +44,11 @@ const Users = () => {
       <ul>
         {users.map((user) => {
           return <li key={user.id}>{user.email}</li>;
+        })}
+      </ul>
+      <ul>
+        {posts.map((post) => {
+          return <li key={post.id}>{post.content}</li>
         })}
       </ul>
     </div>
