@@ -1,7 +1,7 @@
--- DROP DATABASE IF EXISTS hwitter_auth;
--- CREATE DATABASE hwitter_auth;
+DROP DATABASE IF EXISTS hwitter_auth;
+CREATE DATABASE hwitter_auth;
 
--- \c hwitter_auth;
+\c hwitter_auth;
 
 DROP TABLE IF EXISTS hashtags;
 DROP TABLE IF EXISTS hweets;
@@ -12,7 +12,8 @@ CREATE TABLE users
     id VARCHAR NOT NULL PRIMARY KEY,
     email VARCHAR,
     firstname VARCHAR,
-    lastname VARCHAR
+    lastname VARCHAR,
+    imgurl VARCHAR
 );
 
 CREATE TABLE hweets
