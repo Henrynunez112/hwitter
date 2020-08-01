@@ -15,10 +15,10 @@ const Login = () => {
     try {
       await logIn(email, password);
       //sign in with firebase then change route
-      history.push("/");
+      history.push("/users");
     } catch (err) {
       console.log("YERRRRR", err);
-      setError(err.message)
+      setError(err.message);
     }
   };
   const imgWandH = {
@@ -41,7 +41,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="loginNameContainer">
             <div className="nameLabel">
-            <label className="loginName">Phone, email, or username</label>
+              <label className="loginName">Phone, email, or username</label>
             </div>
             <br></br>
             <input
@@ -53,7 +53,7 @@ const Login = () => {
           </div>
           <div className="loginPasswordContainer">
             <div className="passwordLabel">
-            <label className="loginPassword">Password</label>
+              <label className="loginPassword">Password</label>
             </div>
             <br></br>
             <input
@@ -61,7 +61,6 @@ const Login = () => {
               id="inputLoginPassword"
               autoComplete="on"
               onChange={(e) => setPassword(e.target.value)}
-              
               value={password}
             />
           </div>

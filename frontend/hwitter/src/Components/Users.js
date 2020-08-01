@@ -12,7 +12,6 @@ const Users = () => {
   const { token } = useContext(AuthContext);
 
   const fetchUsers = async () => {
-    debugger
     let res = await axios({
       method: "GET",
       url: `${API}/users`,
@@ -23,7 +22,6 @@ const Users = () => {
     setUsers(res.data.users);
   };
   const fetchPost = async () =>{
-    debugger
     let res = await axios({
       method: "GET",
       url: `${API}/hweets`

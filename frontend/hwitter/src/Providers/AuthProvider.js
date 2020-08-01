@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
       const lastLogin = user.metadata.lastSignInTime;
       setCurrentUser({ email, uid, lastLogin });
       getFirebaseIdToken().then((token) => {
-        debugger
+    
         setToken(token);
         setLoading(false);
       });

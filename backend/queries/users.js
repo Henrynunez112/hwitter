@@ -1,5 +1,14 @@
 const db = require("../db/index");
 
+const getSingleUser = async (req, res, next) =>{
+  try{
+
+  }catch(err){
+    console.log()
+
+  }
+}
+
 const createUser = async (req, res, next) => {
   try {
     await db.one(

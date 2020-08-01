@@ -5,7 +5,7 @@ import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const UserHweet = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   let contentObj = useInput("");
   const API = apiURL();
 
@@ -13,11 +13,13 @@ const UserHweet = () => {
     debugger
     e.preventDefault();
     try {
-      debugger;
       await axios.post(`${API}/hweets`, {
-        hweets_id: currentUser.uid,
+        headers: {
+          AuthToken: token,
+        },
         content: contentObj.value,
       });
+      
     } catch (error) {
       console.log(error);
     }

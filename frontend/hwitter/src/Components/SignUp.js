@@ -33,7 +33,7 @@ const SignUp = () => {
     }
   };
   const handleFirebasePictureUpload = () => {
-    debugger
+  
     if (imageAsFile === "") {
       alert(`Please choose a valid file before uploading`);
     } else if (imageAsFile !== null) {
@@ -77,8 +77,8 @@ const SignUp = () => {
         firstname,
         lastname,
       });
-      debugger;
-      history.push("/");
+    
+      history.push("/users");
     } catch (error) {
       setError(error.message);
       console.log("ALERT", error.message);
