@@ -7,7 +7,6 @@ const IndividualUsers = () =>{
     const [email, setEmail] = useState("");
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
-    const [imgUrl, setImgUrl] = useState("")
 
 
     const match = useRouteMatch();
@@ -17,10 +16,10 @@ const IndividualUsers = () =>{
     useEffect(()=>{
         const getUser = async (id) =>{
             let res = await axios.get(`${API}/users/${id}`);
+            debugger
             setEmail(res.data.body.email);
             setFirstname(res.data.body.firstname);
             setLastname(res.data.body.lastname);
-            setImgUrl(res.data.body.imgurl);
         }
 
         getUser(match.params.id)
@@ -28,8 +27,8 @@ const IndividualUsers = () =>{
     },[])
     return(
         <div>
-            <h1>{firstname}</h1>
-            <img src={imgUrl}/>
+            <h1>{firstname, lastname}</h1>
+            <h3>{email}</h3>
         </div>
     )
 
