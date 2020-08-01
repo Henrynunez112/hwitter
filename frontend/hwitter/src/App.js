@@ -9,7 +9,7 @@ import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
 import AuthProvder from "./Providers/AuthProvider";
 import { AuthRoute, ProtectedRoute } from "./Util/routesUtil";
-import UserHweet from "./Components/UserHweet";
+import IndividualUsers from "./Components/IndividualUsers";
 
 Modal.setAppElement("#root");
 function App() {
@@ -20,13 +20,11 @@ function App() {
       <AuthProvder>
         <NavBar />
         <Switch>
-          {/* <ProtectedRoute path="/profile">
-            <UserHweet />
-          </ProtectedRoute> */}
-
-
           <ProtectedRoute exact path="/users">
             <Users />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/users/:id">
+            <IndividualUsers />
           </ProtectedRoute>
           <AuthRoute path="/signup">
             <SignUp />

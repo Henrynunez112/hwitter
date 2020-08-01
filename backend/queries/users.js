@@ -1,13 +1,7 @@
 const db = require("../db/index");
 
-const getSingleUser = async (req, res, next) =>{
-  try{
 
-  }catch(err){
-    console.log()
 
-  }
-}
 
 const createUser = async (req, res, next) => {
   try {
@@ -70,7 +64,7 @@ const selectSingleUser = async (req, res, next) => {
     res.status(200).json({
       status: "success",
       message: "Got the Single user",
-      singleUser,
+      body: singleUser,
     });
   } catch (err) {
     console.log(err);
