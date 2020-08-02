@@ -14,7 +14,7 @@
   top: 10px;
   /* position: relative; */
   display: grid;
-  grid-template: 15% 10% 2fr/ 1fr 3fr 1fr;
+  grid-template: 8% 8% 2fr/ 1fr 3fr 1fr;
   background-color: var(--newTwitterBlue);
   color: var(--lightGrey);
   border: 1px solid var(var(--lightGrey));

@@ -13,24 +13,35 @@
 .HweetContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
   height: 100%;
 }
 #inputHweet {
-  grid-area: 1/ 2 / span 2 / span 1;
-  height: 100%;
+  grid-area: 2/ 2 / span 2 / span 1;
+  height: 95%;
   background-color: var(--newTwitterBlue);
   color: var(--darkGrey);
-  border: 1px solid var(--babyBlue);
+  border: 3px solid var(--babyBlue);
   border-radius: 13px;
   font-weight: bold;
 }
 #hweetButton {
-  grid-area: 2 / 3 / span 1 / span 1;
+  grid-area: 4 / 3 / span 1 / span 1;
   background-color: var(--babyBlue);
   border: 2px solid var(--babyBlue);
+  text-shadow: 2px 2px 5px var(--black);
   color: var(--white);
   font-weight: bold;
   border-radius: 13px;
   padding: 10px;
+}
+#hweetButton:hover {
+  background-color: var(--newTwitterBlue);
+  text-shadow: 2px 2px 20px var(--white);
+  color: var(--babyBlue);
+  cursor: pointer;
+}
+::placeholder{
+    text-align: start;
 }
