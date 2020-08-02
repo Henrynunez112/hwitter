@@ -12,7 +12,6 @@ const Users = () => {
   const { token } = useContext(AuthContext);
 
   const fetchUsers = async () => {
-    debugger;
     let res = await axios({
       method: "GET",
       url: `${API}/users`,
@@ -27,7 +26,7 @@ const Users = () => {
       method: "GET",
       url: `${API}/hweets`,
     });
-    setPosts(res.data.body);
+    setPosts(res.data.payload);
   };
 
   useEffect(() => {
@@ -46,10 +45,11 @@ const Users = () => {
         })}
       </ul>
       <ul>
-        {posts.map((post) => {
-          return <li key={post.id}>{post.content}</li>;
+        {posts.map((post) =>{
+          return <li key={post.id}>{post.content}</li>
         })}
       </ul>
+
     </div>
   );
 };

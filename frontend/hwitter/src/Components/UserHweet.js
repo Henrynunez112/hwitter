@@ -5,7 +5,8 @@ import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const UserHweet = () => {
-  const { token } = useContext(AuthContext);
+  // const { token } = useContext(AuthContext);
+  const {currentUser} = useContext(AuthContext);
   let contentObj = useInput("");
   const API = apiURL();
 
@@ -14,9 +15,7 @@ const UserHweet = () => {
     e.preventDefault();
     try {
       await axios.post(`${API}/hweets`, {
-        headers: {
-          AuthToken: token,
-        },
+        hweets_id: currentUser.uid,
         content: contentObj.value,
       });
       

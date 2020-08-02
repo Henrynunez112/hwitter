@@ -4,14 +4,13 @@ const {
   fetchAllUsers,
   selectSingleUser,
   deleteUsers,
-  updateUserInfo
+  updateUserInfo,
 } = require("../queries/users");
 //check for users who are completely logged in
-// const { checkFirebaseToken } = require("../middleware/auth");
-
+const { checkFirebaseToken } = require("../middleware/auth");
 
 // checkFirebaseToken
-users.post("/", createUser);
+users.post("/", checkFirebaseToken, createUser);
 users.get("/:id", selectSingleUser);
 users.get("/", fetchAllUsers);
 users.delete("/:id", deleteUsers);
