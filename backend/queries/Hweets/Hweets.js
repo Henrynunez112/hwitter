@@ -19,8 +19,8 @@ const getAllHweets = async (req, res, next) => {
 
 const addNewHweet = async (req, res, next) => {
   try {
-    // const hweets_id = req.user_id;
-    const { hweets_id, content } = req.body;
+    const hweets_id = req.user_id;
+    const { content } = req.body;
     let newHweet = await db.one(
       `INSERT INTO hweets (hweets_id, content) VALUES($1, $2) RETURNING *`,
       [hweets_id, content]

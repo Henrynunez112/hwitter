@@ -5,22 +5,28 @@ import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const UserHweet = () => {
-  // const { token } = useContext(AuthContext);
-  const {currentUser} = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
   let contentObj = useInput("");
   const API = apiURL();
 
   const handleSubmit = async (e) => {
-    debugger
+    debugger;
     e.preventDefault();
+
     try {
-      await axios.post(`${API}/hweets`, {
-        hweets_id: currentUser.uid,
-        content: contentObj.value,
+      await axios({
+        method: "POST",
+        url: `${API}/hweets`,
+        headers: {
+          AuthToken: token,
+        },
+        data: {
+          content: contentObj.value,
+        },
       });
-      
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
 

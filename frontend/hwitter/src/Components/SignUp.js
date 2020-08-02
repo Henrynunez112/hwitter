@@ -167,14 +167,14 @@ const SignUp = () => {
               }}
             />
           </div>
-          <div className="signUpProfilePictureContainer">
+          {/* <div className="signUpProfilePictureContainer">
             <div className="profilePictureContainer">
               <label className="uploadImgUpload">Upload Img</label>
             </div>
             <input type="file" onChange={handleImageAsFile} />
             <button onClick={handleFirebasePictureUpload}>Upload</button>
             {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
-          </div>
+          </div> */}
           <br></br>
           <div className="signUpPasswordContainer">
             <div className="signUpPassword">

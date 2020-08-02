@@ -1,5 +1,5 @@
 const admin = require("../firebase");
-//this
+
 const checkFirebaseToken = async (req, res, next) =>{
     try{
         const token = req.headers.authtoken;

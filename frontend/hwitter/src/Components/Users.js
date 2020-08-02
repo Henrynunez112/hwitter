@@ -35,21 +35,30 @@ const Users = () => {
   }, [API]);
   return (
     <div className="userContainer">
-      <h1>All Users, you are seeing this if you are logged in</h1>
+      <h1>Welcome to Hwitter:</h1>
+      <h3>Post your hweet below</h3>
       <div>
         <UserHweet />
       </div>
       <ul>
-        {users.map((user) => {
-          return <li key={user.id}>{user.email}</li>;
+        {users.map((user) =>{
+          return <li key={user.id}>{user.email}</li>
         })}
       </ul>
       <ul>
-        {posts.map((post) =>{
-          return <li key={post.id}>{post.content}</li>
+        {posts.map((post) => {
+          return (
+            <div>
+              <li key={post.id}>
+                <button>
+                  {post.firstname} {post.lastname}
+                </button>
+                <p>{post.content}</p>
+              </li>
+            </div>
+          );
         })}
       </ul>
-
     </div>
   );
 };
