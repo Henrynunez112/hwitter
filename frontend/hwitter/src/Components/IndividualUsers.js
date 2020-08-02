@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {apiURL} from "../Util/apiUrl"
 import axios from "axios";
-import {useHistory, useRouteMatch} from 'react-router-dom';
+import {useRouteMatch} from 'react-router-dom';
 
 const IndividualUsers = () =>{
     const [email, setEmail] = useState("");
@@ -27,7 +27,7 @@ const IndividualUsers = () =>{
     },[])
     return(
         <div>
-            <h1>{firstname, lastname}</h1>
+            <h1>{firstname}, {lastname}</h1>
             <h3>{email}</h3>
         </div>
     )

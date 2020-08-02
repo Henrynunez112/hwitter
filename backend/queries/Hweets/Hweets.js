@@ -45,7 +45,7 @@ const addNewHweet = async (req, res, next) => {
 const joinHweetsWithUsers = async (req, res, next) => {
   try {
     let postMerge = await db.any(
-      "SELECT hweets.id, hweets.content, users.firstname, users.lastname FROM hweets LEFT JOIN users ON hweets.hweets_id = users.id ORDER BY time_stamp DESC"
+      "SELECT users.id, users.firstname, users.lastname, users.email, hweets.hweets_id, hweets.content FROM users LEFT JOIN hweets ON users.id = hweets.hweets_id ORDER BY time_stamp DESC"
     );
     res.status(200).json({
       status: "succes",
