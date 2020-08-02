@@ -51,3 +51,10 @@
     border: 1px solid var(--babyBlue);
     border-radius: 13px;
 }
+#nameButton:hover{
+    background-color: var(--babyBlue);
+    text-transform: lowercase;
+    color: var(--newTwitterBlue);
+    text-shadow: 2px 2px 5px var(--black);
+
+}
