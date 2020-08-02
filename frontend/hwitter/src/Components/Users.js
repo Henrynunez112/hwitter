@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory} from "react-router-dom"
 import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
 import axios from "axios";
@@ -6,21 +7,22 @@ import "../Css/Users.css";
 import UserHweet from "./UserHweet";
 
 const Users = () => {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const API = apiURL();
-  const { token } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
+  const history = useHistory();
 
-  const fetchUsers = async () => {
-    let res = await axios({
-      method: "GET",
-      url: `${API}/users`,
-      headers: {
-        AuthToken: token,
-      },
-    });
-    setUsers(res.data.users);
-  };
+  // const fetchUsers = async () => {
+  //   let res = await axios({
+  //     method: "GET",
+  //     url: `${API}/users`,
+  //     headers: {
+  //       AuthToken: token,
+  //     },
+  //   });
+  //   setUsers(res.data.users);
+  // };
   const fetchPost = async () => {
     let res = await axios({
       method: "GET",
@@ -30,7 +32,7 @@ const Users = () => {
   };
 
   useEffect(() => {
-    fetchUsers();
+    // fetchUsers();
     fetchPost();
   }, [API]);
   return (
@@ -40,17 +42,19 @@ const Users = () => {
       <div>
         <UserHweet />
       </div>
-      <ul>
+      {/* <ul>
         {users.map((user) =>{
           return <li key={user.id}>{user.email}</li>
         })}
-      </ul>
+      </ul> */}
       <ul>
         {posts.map((post) => {
           return (
             <div>
               <li key={post.id}>
-                <button>
+                <button onClick={() =>{
+                  history.push(`/users/${post.author_id}`)
+                }}>
                   {post.firstname} {post.lastname}
                 </button>
                 <p>{post.content}</p>
