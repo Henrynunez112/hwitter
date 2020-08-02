@@ -30,10 +30,12 @@
 .postsContainer {
   grid-area: 3 / 2 / span 1 / span 1;
   border: 1px solid var(--lightGrey);
+  background-color: var(--newTwitterBlue);
 }
 .postUl {
   list-style-type: none;
   padding: 2%;
+  background-color: var(--newTwitterBlue);
 }
 .eachPost {
   display: grid;
