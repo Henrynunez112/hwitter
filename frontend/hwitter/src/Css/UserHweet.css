@@ -1,0 +1,36 @@
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+  --inputText: #253441;
+}
+
+.HweetContainer {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+#inputHweet {
+  grid-area: 1/ 2 / span 2 / span 1;
+  height: 100%;
+  background-color: var(--newTwitterBlue);
+  color: var(--darkGrey);
+  border: 1px solid var(--babyBlue);
+  border-radius: 13px;
+  font-weight: bold;
+}
+#hweetButton {
+  grid-area: 2 / 3 / span 1 / span 1;
+  background-color: var(--babyBlue);
+  border: 2px solid var(--babyBlue);
+  color: var(--white);
+  font-weight: bold;
+  border-radius: 13px;
+  padding: 10px;
+}
