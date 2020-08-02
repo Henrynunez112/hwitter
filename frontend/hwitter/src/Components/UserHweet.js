@@ -6,7 +6,6 @@ import { AuthContext } from "../Providers/AuthProvider";
 
 const UserHweet = () => {
   const { token } = useContext(AuthContext);
-  const { currentUser } = useContext(AuthContext);
   let contentObj = useInput("");
   const API = apiURL();
 
@@ -39,6 +38,7 @@ const UserHweet = () => {
           name="content"
           {...contentObj}
           maxLength={280}
+          required
         />
         <input type="submit" value="tweet" />
       </form>

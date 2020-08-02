@@ -1,4 +1,51 @@
-.userContainer{
-    top: 70px;
-    position: relative;
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+  --inputText: #253441;
+}
+
+.userContainer {
+  top: 10px;
+  /* position: relative; */
+  display: grid;
+  grid-template: 15% 10% 2fr/ 1fr 3fr 1fr;
+  background-color: var(--newTwitterBlue);
+  color: var(--lightGrey);
+  border: 1px solid var(var(--lightGrey));
+}
+.headerContainer {
+  grid-area: 1 / 2 / span 1 / span 1;
+  border: 1px solid var(--lightGrey);
+}
+.hweetContainer {
+  grid-area: 2 / 2 / span 1 / span 1;
+  border: 1px solid var(--lightGrey);
+}
+.postsContainer {
+  grid-area: 3 / 2 / span 1 / span 1;
+  border: 1px solid var(--lightGrey);
+}
+.postUl {
+  list-style-type: none;
+  padding: 2%;
+}
+.eachPost {
+  display: grid;
+  border: 1px solid var(--lightGrey);
+  border-radius: 13px;
+}
+#nameButton{
+    background-color: var(--newTwitterBlue);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--babyBlue);
+    text-align: left;
+    border: 1px solid var(--babyBlue);
+    border-radius: 13px;
 }
