@@ -35,7 +35,9 @@ const UserHweet = () => {
 
   return (
       <form onSubmit={handleSubmit} className="HweetContainer">
-        <input
+        <textarea
+          rows="5"
+          cols="20"
           type="text"
           placeholder="What's Happening?"
           name="content"
