@@ -44,11 +44,6 @@ const Users = () => {
       <div className="hweetContainer">
         <UserHweet fetchPosts={fetchPosts} />
       </div>
-      {/* <ul>
-        {users.map((user) =>{
-          return <li key={user.id}>{user.email}</li>
-        })}
-      </ul> */}
       <div className="postsContainer">
         <ul className="postUl">
           {posts.map((post) => {
