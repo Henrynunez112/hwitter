@@ -70,7 +70,6 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      debugger
       let res = await signUp(email, password);
       await axios.post(`${API}/users`, {
         id: res.user.uid,

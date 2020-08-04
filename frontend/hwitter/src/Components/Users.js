@@ -23,7 +23,7 @@ const Users = () => {
   //   });
   //   setUsers(res.data.users);
   // };
-  const fetchPost = async () => {
+  const fetchPosts = async () => {
     let res = await axios({
       method: "GET",
       url: `${API}/hweets`,
@@ -33,7 +33,7 @@ const Users = () => {
 
   useEffect(() => {
     // fetchUsers();
-    fetchPost();
+    fetchPosts();
   }, [API]);
   return (
     <div className="userContainer">
@@ -42,7 +42,7 @@ const Users = () => {
         <h3>Post your hweet below</h3>
       </div>
       <div className="hweetContainer">
-        <UserHweet />
+        <UserHweet fetchPosts={fetchPosts} />
       </div>
       {/* <ul>
         {users.map((user) =>{
@@ -54,8 +54,12 @@ const Users = () => {
           {posts.map((post) => {
             return (
               <div>
-                <li key={post.id} className="eachPost" /*style={{width: "100%"}}*/ >
-                  <button id="nameButton"
+                <li
+                  key={post.id}
+                  className="eachPost" /*style={{width: "100%"}}*/
+                >
+                  <button
+                    id="nameButton"
                     onClick={() => {
                       history.push(`/users/${post.author_id}`);
                     }}

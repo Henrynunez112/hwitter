@@ -26,7 +26,7 @@ const addNewHweet = async (req, res, next) => {
       [hweets_id, content]
     );
     res.status(200).json({
-      success: "success",
+      status: "success",
       message: "new post created",
       body: newHweet,
     });

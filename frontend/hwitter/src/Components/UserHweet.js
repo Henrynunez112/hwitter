@@ -6,15 +6,36 @@ import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
 import "../Css/UserHweet.css";
 
-const UserHweet = () => {
+const UserHweet = ({fetchPosts}) => {
   const { token } = useContext(AuthContext);
   let contentObj = useInput("");
   const API = apiURL();
-  const history = useHistory()
+  const history = useHistory();
+
+  const findHashtags = async (str) =>{
+    //this is the code that puts all hashtags into an array
+    let hashtagArr = str.match(/#\S+/g);
+    
+    try{
+      await axios({
+        method: "POST",
+        url: `${API}/hashtags`,
+        headers: {
+          AuthToken: token
+        },
+        data:{
+          hweet_tags: hashtagArr
+        }
+      })
+
+    }catch(error){
+      console.log(error.message)
+    }
+
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       await axios({
         method: "POST",
@@ -26,8 +47,9 @@ const UserHweet = () => {
           content: contentObj.value,
         },
       });
-      debugger
-      history.push("/users");
+      findHashtags(contentObj.value);
+      fetchPosts();
+
     } catch (error) {
       console.log(error.message);
     }

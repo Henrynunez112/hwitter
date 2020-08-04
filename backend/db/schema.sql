@@ -28,18 +28,22 @@ CREATE TABLE hashtags
 (
     id SERIAL NOT NULL PRIMARY KEY,
     post_id SERIAL REFERENCES hweets(id) ON DELETE CASCADE,
-    hweeter_id VARCHAR REFERENCES users(id) ON DELETE CASCADE,
     hweet_tags VARCHAR,
     time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users
-    (id, email, firstname, lastname)
-VALUES(2, 'little.s@gmail.com', 'henry', 'nunez'),
-    (3, 'shorty.s@gmail.com', 'saul', 'nunez');
-INSERT INTO hweets
-    (hweets_id, content)
-VALUES(2, 'hello world');
-INSERT INTO hashtags
-    (post_id, hweeter_id, hweet_tags)
-VALUES(1, 3, 'word')
+
+
+
+
+
+-- INSERT INTO users
+--     (id, email, firstname, lastname)
+-- VALUES(2, 'little.s@gmail.com', 'henry', 'nunez'),
+--     (3, 'shorty.s@gmail.com', 'saul', 'nunez');
+-- INSERT INTO hweets
+--     (hweets_id, content)
+-- VALUES(2, 'hello world');
+-- INSERT INTO hashtags
+--     (post_id, hweeter_id, hweet_tags)
+-- VALUES(1, 3, 'word')

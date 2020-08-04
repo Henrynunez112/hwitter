@@ -17,13 +17,11 @@ const IndividualUsers = () =>{
     useEffect(()=>{
         const getUser = async (id) =>{
             let res = await axios.get(`${API}/users/${id}`);
-            debugger
             setEmail(res.data.body.email);
             setFirstname(res.data.body.firstname);
             setLastname(res.data.body.lastname);
         }
         const userHweet = async (id) =>{
-            debugger
             let res = await axios.get(`${API}/hweets/${id}`);
             setPost(res.data.body);
         }
