@@ -12,16 +12,6 @@ const Users = () => {
   const { token } = useContext(AuthContext);
   const history = useHistory();
 
-  // const fetchUsers = async () => {
-  //   let res = await axios({
-  //     method: "GET",
-  //     url: `${API}/users`,
-  //     headers: {
-  //       AuthToken: token,
-  //     },
-  //   });
-  //   setUsers(res.data.users);
-  // };
   const fetchPosts = async () => {
     let res = await axios({
       method: "GET",
