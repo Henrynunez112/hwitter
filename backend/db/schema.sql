@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS hwitter_auth;
-CREATE DATABASE hwitter_auth;
+-- DROP DATABASE IF EXISTS hwitter_auth;
+-- CREATE DATABASE hwitter_auth;
 
-\c hwitter_auth;
+-- \c hwitter_auth;
 
 DROP TABLE IF EXISTS hashtags;
 DROP TABLE IF EXISTS hweets;
