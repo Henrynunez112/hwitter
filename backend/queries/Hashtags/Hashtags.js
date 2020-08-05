@@ -56,12 +56,19 @@ const getHashtagFromPost = async (req, res, next) => {
   }
 };
 
+const strBuilder = (post_id, arr) => {
+  let styleArr = arr.map((el) =>{
+    return `(${post_id}, '${el}')`;
+  });
+   return styleArr.join(", ");
+}
+
 const addNewHashtag = async (req, res, next) => {
+
   try {
     const { post_id, hweet_tags } = req.body;
     let newHashtag = await db.one(
-      `INSERT INTO hashtags (post_id, hweet_tags) VALUES($1, $2) RETURNING *`,
-      [post_id, hweet_tags]
+      "INSERT INTO hashtags (post_id, hweet_tags) VALUES" + strBuilder(post_id, hweet_tags)
     );
     res.status(200).json({
       success: "success",
