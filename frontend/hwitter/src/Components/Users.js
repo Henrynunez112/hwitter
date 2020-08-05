@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
+import { apiURL } from "../Util/apiUrl";
 import axios from "axios";
 import "../Css/Users.css";
 import UserHweet from "./UserHweet";
 
 const Users = () => {
-  // const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const API = apiURL();
-  // const { currentUser } = useContext(AuthContext);
+  const { token } = useContext(AuthContext);
   const history = useHistory();
 
   // const fetchUsers = async () => {
@@ -27,12 +26,14 @@ const Users = () => {
     let res = await axios({
       method: "GET",
       url: `${API}/hweets`,
+      headers: {
+        AuthToken: token,
+      },
     });
     setPosts(res.data.payload);
   };
 
   useEffect(() => {
-    // fetchUsers();
     fetchPosts();
   }, [API]);
   return (

@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
+import SearchBar from "../Components/SearchBar"
 import { logOut } from "../Util/firebaseFunction";
 import "../Css/NavBar.css";
 
@@ -14,22 +15,7 @@ export default function NavBar() {
       return (
         <>
             <NavLink exact to={"/search"}>
-              <div className="formContainer">
-                <div className="searchBar">
-                  <button type="submit" className="searchButton">
-                    <img
-                      alt="search icon"
-                      src="https://img.icons8.com/metro/26/000000/search.png"
-                      id="searchIcon"
-                    />
-                  </button>
-                  <input
-                    className="searchInput"
-                    type="text"
-                    placeholder="Search Twitter"
-                  />
-                </div>
-              </div>
+            <SearchBar />
             </NavLink>
           <NavLink exact to={"/users"}>
             Go to Profile
