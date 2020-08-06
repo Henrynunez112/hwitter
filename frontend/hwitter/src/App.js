@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import NavBar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
+import SearchResults from "./Components/SearchResults";
 import Users from "./Components/Users";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
@@ -25,6 +26,9 @@ function App() {
           </ProtectedRoute>
           <ProtectedRoute exact path="/users/:id">
             <IndividualUsers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/hashtags/:search">
+            <SearchResults />
           </ProtectedRoute>
           <AuthRoute path="/signup">
             <SignUp />
