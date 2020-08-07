@@ -12,6 +12,7 @@ const Users = () => {
   const { token } = useContext(AuthContext);
   const history = useHistory();
 
+
   const fetchPosts = async () => {
     let res = await axios({
       method: "GET",

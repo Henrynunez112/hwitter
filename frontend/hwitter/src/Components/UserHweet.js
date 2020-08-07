@@ -60,7 +60,7 @@ const UserHweet = ({ fetchPosts }) => {
   return (
     <form onSubmit={handleSubmit} className="formHweetContainer">
       <img />
-      <input
+      <textarea
         type="text"
         placeholder="What's Happening?"
         value={hweet}

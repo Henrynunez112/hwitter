@@ -12,17 +12,17 @@ import AuthProvder from "./Providers/AuthProvider";
 import { AuthRoute, ProtectedRoute } from "./Util/routesUtil";
 import IndividualUsers from "./Components/IndividualUsers";
 
+
 Modal.setAppElement("#root");
 function App() {
 
   return (
-    
     <div className="App">
       <AuthProvder>
         <NavBar />
         <Switch>
           <ProtectedRoute exact path="/users">
-            <Users />
+              <Users />
           </ProtectedRoute>
           <ProtectedRoute exact path="/users/:id">
             <IndividualUsers />
