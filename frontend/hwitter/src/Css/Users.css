@@ -80,6 +80,7 @@
 }
 #nameButton {
   grid-area: 2/ 2 / span 1/ span 1;
+  text-transform: uppercase;
 }
 #postContent {
   grid-area: 2/ 1 / span 1 / span 2;

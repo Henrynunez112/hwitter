@@ -37,14 +37,17 @@ const IndividualUsers = () =>{
             <h1 id="individualName">{firstname}, {lastname}</h1>
             <h3 id="individualEmail">{email}</h3>
             </div>
-
+            <div className="individualPostContainter">
             <ul className="individualUl">
             {posts.map((post)=>{
              return(
+                 <div className="individualLiContainer">
                  <li className="individualLi">{post.content}</li>
+                 </div>
              )
             })}
             </ul>
+            </div>
         </div>
     )
 
