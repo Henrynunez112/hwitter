@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { NavLink } from "react-router-dom";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
-import SearchBar from "../Components/SearchBar"
+import SearchBar from "../Components/SearchBar";
 import { logOut } from "../Util/firebaseFunction";
 import "../Css/NavBar.css";
 
@@ -14,14 +14,19 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-            <NavLink exact to={"/search"}>
+          <NavLink exact to={"/search"}>
             <SearchBar />
-            </NavLink>
-          <NavLink exact to={"/users"}>
-            Go to Profile
+          </NavLink>
+          <NavLink
+            exact
+            to={"/users"}
+            className="inactiveHweet"
+            activeClassName="activeHweet"
+          >
+            Hweet Here
           </NavLink>
           <div className="logoutButton">
-            <button onClick={logOut}>Log Out</button>);
+            <button onClick={logOut}>Log Out</button>
           </div>
         </>
       );

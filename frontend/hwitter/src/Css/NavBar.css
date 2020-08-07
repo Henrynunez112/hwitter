@@ -1,13 +1,13 @@
-:root{
-    --babyBlue: #1DA1F2;
-    --black: #14171A;
-    --darkGrey: #657786;
-    --lightGrey: #AAB8C2;
-    --extraLightGray: #E1E8ED;
-    --extraExtraLightGray: #F5F8FA;
-    --white: #ffffff;
-    --newTwitterBlue: #15212b;
-
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+  --inputText: #253441;
 }
 
 .navBar {
@@ -27,38 +27,37 @@
   z-index: 2;
 }
 
-.loginButton{
+.loginButton {
   padding: 6px;
   border: 1px solid var(--babyBlue);
   border-radius: 50px 50px;
   width: 69px;
   height: 13px;
 }
-.loginButton:hover{
+.loginButton:hover {
   background-color: var(--newTwitterBlue);
-  opacity: .2;
+  opacity: 0.2;
 }
-.signUpButton{
+.signUpButton {
   padding: 6px;
   border: 1px solid var(--babyBlue);
   background-color: var(--babyBlue);
   border-radius: 50px 50px;
   width: 69px;
   height: 13px;
-
 }
-.signUpButton:hover{
+.signUpButton:hover {
   background-color: var(--babyBlue);
-  opacity: .5;
+  opacity: 0.5;
 }
-.inactiveSignUp{
+.inactiveSignUp {
   color: var(--white);
   text-decoration: none;
   font-weight: bold;
   position: relative;
   top: -3px;
 }
-.inactiveLogin{
+.inactiveLogin {
   color: var(--babyBlue);
   background-color: var(--newTwitterBlue);
   text-decoration: none;
@@ -66,9 +65,25 @@
   position: relative;
   top: -3px;
 }
-.activeLogin{
+.activeLogin {
   color: var(--babyBlue);
   background-color: var(--newTwitterBlue);
   text-decoration: none;
   font-weight: bold;
+}
+.inactiveHweet {
+  background-color: var(--babyBlue);
+  color: var(--white);
+  border-radius: 13px;
+  width: 110px;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+.inactiveHweet:hover {
+  background-color: var(--babyBlue);
+  opacity: 0.5;
+  color: var(--white);
+  font-weight: bold;
+  text-decoration: none;
 }

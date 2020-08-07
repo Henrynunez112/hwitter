@@ -22,7 +22,7 @@
   grid-template-rows: 1fr 1fr;
   border: 1px solid var(--darkGrey);
   grid-area: 1/2 / span 1 / span 1;
-  color: var(--white);
+  color: var(--babyBlue);
 }
 #welcomeTitle {
   grid-area: 1/ 2 / span 1 / span 1;
