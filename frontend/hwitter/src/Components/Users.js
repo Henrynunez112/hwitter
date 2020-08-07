@@ -39,20 +39,20 @@ const Users = () => {
         <ul className="postUl">
           {posts.map((post) => {
             return (
-              <div>
+              <div className="postLi">
                 <li
                   key={post.id}
                   className="eachPost" /*style={{width: "100%"}}*/
+                  onClick={() => {
+                    history.push(`/users/${post.author_id}`);
+                  }}
                 >
-                  <button
-                    id="nameButton"
-                    onClick={() => {
-                      history.push(`/users/${post.author_id}`);
-                    }}
-                  >
+                  <div className="h5Container">
+                  <h5 id="nameButton">
                     {post.firstname} {post.lastname}
-                  </button>
-                  <p>{post.content}</p>
+                  </h5>
+                  </div>
+                  <p id="postContent">{post.content}</p>
                 </li>
               </div>
             );
