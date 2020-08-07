@@ -71,6 +71,15 @@
   text-decoration: none;
   font-weight: bold;
 }
+.hweetButton {
+  padding: 6px;
+  border: 1px solid var(--babyBlue);
+  background-color: var(--babyBlue);
+  border-radius: 50px 50px;
+  width: 100px;
+  height: 18px;
+}
+
 .inactiveHweet {
   background-color: var(--babyBlue);
   color: var(--white);
@@ -78,9 +87,8 @@
   width: 110px;
   font-weight: bold;
   text-decoration: none;
-
 }
-.inactiveHweet:hover {
+.hweetButton:hover {
   background-color: var(--babyBlue);
   opacity: 0.5;
   color: var(--white);

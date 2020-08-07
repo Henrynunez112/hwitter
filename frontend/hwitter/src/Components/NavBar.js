@@ -17,6 +17,7 @@ export default function NavBar() {
           <NavLink exact to={"/search"}>
             <SearchBar />
           </NavLink>
+          <div className="hweetButton">
           <NavLink
             exact
             to={"/users"}
@@ -25,6 +26,7 @@ export default function NavBar() {
           >
             Hweet Here
           </NavLink>
+          </div>
           <div className="logoutButton">
             <button onClick={logOut}>Log Out</button>
           </div>
