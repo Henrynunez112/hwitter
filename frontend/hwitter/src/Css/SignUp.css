@@ -38,13 +38,15 @@
   width: 411px;
   background-color: var(--inputText);
   font-size: smaller;
-  color: var(--lightGrey)
+  color: var(--lightGrey);
+
 }
 .signUpPassword{
   width: 411px;
   background-color: var(--inputText);
   font-size: smaller;
   color: var(--lightGrey);
+
  
 }
 .emailLabel{
@@ -65,7 +67,8 @@
   height: 30px;
   border: .5px solid #253441;
   border-bottom: 1px solid var(--lightGrey);
-  color: var(--babyBlue)
+  color: var(--babyBlue);
+  outline: none;
 }
 #inputSignUpEmail {
   background-color: #253441;
@@ -73,5 +76,6 @@
   height: 30px;
   border: .5px solid #253441;
   border-bottom: 1px solid var(--lightGrey);
-  color: var(--babyBlue)
+  color: var(--babyBlue);
+  outline: none;
 }

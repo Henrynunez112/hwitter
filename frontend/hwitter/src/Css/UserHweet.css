@@ -39,6 +39,7 @@ textarea {
   resize: none;
   font-family: inherit;
   color: var(--lightGrey);
+  outline: none;
 }
 ::placeholder {
   color: var(--babyBlue);
