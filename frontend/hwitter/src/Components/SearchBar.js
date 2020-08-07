@@ -14,8 +14,7 @@ const SearchBar = () => {
 
   return (
     <div className="formContainer">
-      <div className="searchBar">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="formSearch">
         <button type="submit" className="searchButton" onClick={handleSubmit}>
           <img
             alt="search icon"
@@ -31,7 +30,6 @@ const SearchBar = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
         </form>
-      </div>
     </div>
   );
 };
