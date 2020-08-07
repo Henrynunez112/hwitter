@@ -29,8 +29,8 @@ const Users = () => {
   return (
     <div className="userContainer">
       <div className="headerContainer">
-        <h1 id="welcomeTitle">Welcome to Hwitter:</h1>
-        <h3 id="postTitle">Post your hweet below</h3>
+        <h1 id="welcomeTitle">Welcome to Hwitter</h1>
+        <h3 id="postTitle">Please Post your hweet below</h3>
       </div>
       <div className="hweetContainer">
         <UserHweet fetchPosts={fetchPosts} />
