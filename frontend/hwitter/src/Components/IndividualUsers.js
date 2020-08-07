@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {apiURL} from "../Util/apiUrl"
 import axios from "axios";
 import {useRouteMatch} from 'react-router-dom';
+import "../Css/IndividualUsers.css"
 
 const IndividualUsers = () =>{
     const [email, setEmail] = useState("");
@@ -31,14 +32,16 @@ const IndividualUsers = () =>{
 
     },[])
     return(
-        <div>
-            <h1>{firstname}, {lastname}</h1>
-            <h3>{email}</h3>
+        <div className="individualUsersContainer">
+            <div className="individualHeader">
+            <h1 id="individualName">{firstname}, {lastname}</h1>
+            <h3 id="individualEmail">{email}</h3>
+            </div>
 
-            <ul>
+            <ul className="individualUl">
             {posts.map((post)=>{
              return(
-                 <li>{post.content}</li>
+                 <li className="individualLi">{post.content}</li>
              )
             })}
             </ul>
