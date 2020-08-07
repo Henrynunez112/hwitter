@@ -28,7 +28,7 @@ export default function NavBar() {
           </NavLink>
           </div>
           <div className="logoutButton">
-            <button onClick={logOut}>Log Out</button>
+            <button id="logoutBtn" onClick={logOut}>Log Out</button>
           </div>
         </>
       );
