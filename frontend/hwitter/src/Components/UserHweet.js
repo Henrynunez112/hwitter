@@ -9,15 +9,14 @@ import "../Css/UserHweet.css";
 const UserHweet = ({ fetchPosts }) => {
   const { token } = useContext(AuthContext);
   // let contentObj = useInput("");
-  const [hweet, setHweet] = useState("")
+  const [hweet, setHweet] = useState("");
   const API = apiURL();
 
   const findHashtags = async (postId, str) => {
     //this is the code that puts all hashtags into an array
     let hashtagArr = str.match(/#\S+/g);
-    debugger
-    if(hashtagArr){
-      
+    debugger;
+    if (hashtagArr) {
       try {
         await axios({
           method: "POST",
@@ -33,7 +32,7 @@ const UserHweet = ({ fetchPosts }) => {
       } catch (error) {
         console.log(error.message);
       }
-    };
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -51,7 +50,7 @@ const UserHweet = ({ fetchPosts }) => {
       });
       let postId = res.data.body.id;
       findHashtags(postId, hweet);
-      setHweet("")
+      setHweet("");
       fetchPosts();
     } catch (error) {
       console.log(error.message);
@@ -59,13 +58,14 @@ const UserHweet = ({ fetchPosts }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="HweetContainer">
+    <form onSubmit={handleSubmit} className="formHweetContainer">
+      <img />
       <input
         type="text"
         placeholder="What's Happening?"
         value={hweet}
-        onChange={(e) =>{
-          setHweet(e.currentTarget.value)
+        onChange={(e) => {
+          setHweet(e.currentTarget.value);
         }}
         maxLength={280}
         required
