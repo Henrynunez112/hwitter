@@ -9,3 +9,14 @@
   --newTwitterBlue: #15212b;
   --inputText: #253441;
 }
+
+.userContainer{
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 10% 15% 3fr;
+}
+/* .headerContainer{
+  display: grid;
+  border: 2px solid brown
+} */
