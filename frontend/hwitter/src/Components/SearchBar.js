@@ -6,16 +6,18 @@ const SearchBar = () => {
   const history = useHistory();
   const [search, setSearch] = useState("");
 
-  const handleSubmit = async (e) => {
-    debugger;
+  const handleSearch = (e) =>{
     e.preventDefault();
-    history.push(`/hashtags/${search}`);
-  };
+    history.push(`search/${search}`)
+    setSearch("")
+  }
+
+
 
   return (
     <div className="formContainer">
-        <form onSubmit={handleSubmit} className="formSearch">
-        <button type="submit" className="searchButton" onClick={handleSubmit}>
+      <form onSubmit={handleSearch} className="formSearch">
+        <button type="submit" className="searchButton" onClick={handleSearch}>
           <img
             alt="search icon"
             src="https://img.icons8.com/metro/26/000000/search.png"
@@ -26,10 +28,10 @@ const SearchBar = () => {
           className="searchInput"
           type="text"
           placeholder="Search Twitter"
-          value={search}
           onChange={(e) => setSearch(e.target.value)}
+          value={search}
         />
-        </form>
+      </form>
     </div>
   );
 };

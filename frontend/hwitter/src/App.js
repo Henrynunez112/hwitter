@@ -5,6 +5,7 @@ import NavBar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import SearchResults from "./Components/SearchResults";
+import SearchBar from "./Components/SearchBar"
 import Users from "./Components/Users";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
@@ -27,7 +28,7 @@ function App() {
           <ProtectedRoute exact path="/users/:id">
             <IndividualUsers />
           </ProtectedRoute>
-          <ProtectedRoute exact path="/hashtags/:search">
+          <ProtectedRoute exact path="/search/:search">
             <SearchResults />
           </ProtectedRoute>
           <AuthRoute path="/signup">

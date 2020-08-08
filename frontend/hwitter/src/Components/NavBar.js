@@ -14,7 +14,7 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-          <NavLink exact to={"/search"}>
+          <NavLink to={"/"}>
             <SearchBar />
           </NavLink>
           <div className="hweetButton">
