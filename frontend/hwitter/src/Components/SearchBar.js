@@ -27,7 +27,7 @@ const SearchBar = () => {
         <input
           className="searchInput"
           type="text"
-          placeholder="Search Twitter"
+          placeholder="Search where the hashtag was used (no need for the #)"
           onChange={(e) => setSearch(e.target.value)}
           value={search}
         />
