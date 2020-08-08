@@ -23,7 +23,7 @@ const SearchResult = () => {
   return (
     <div className="searchResultsContainer">
       <div className="searchHeader">
-      <h1> Search Results for #{search}</h1>
+      <h1 id="searchH1"> Search Results for #{search}</h1>
       </div>
       <div className="resultContainer">
       {result.length === 0 ? (
@@ -33,11 +33,13 @@ const SearchResult = () => {
           {result.map((post) => {
             return (
               <div className="resultLiContainer">
-                <li>
-                  <h3>
+                <li id="resultLi">
+                  <div className="resultNameDiv">
+                  <h3 id="resultName">
                     {post.firstname}, {post.lastname}
                   </h3>
-                  <p>{post.content}</p>
+                  </div>
+                  <p id="resultPost">{post.content}</p>
                 </li>
               </div>
             );

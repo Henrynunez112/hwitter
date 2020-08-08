@@ -12,7 +12,7 @@
 
 .homeComponent {
   display: grid;
-  border: 1px solid var(--lightGrey);
+  /* border: 1px solid var(--lightGrey); */
   width: auto;
   height: 100%;
   grid-template: 15% 85%;
