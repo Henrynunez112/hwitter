@@ -4,7 +4,7 @@ const {
   getHashtagFromPost,
   addNewHashtag,
   deleteHashtag,
-  gatherAllHashtags
+  gatherAllHashtags,
 } = require("../../queries/Hashtags/Hashtags");
 
 hashtagsRouter.get("/all", gatherAllHashtags); //tested

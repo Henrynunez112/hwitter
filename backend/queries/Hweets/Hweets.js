@@ -84,7 +84,7 @@ const getHweetsByUserId = async (req, res, next) => {
   let { hweets_id } = req.params;
 
   try {
-    let userHweets = await db.any("SELECT * FROM hweets WHERE hweets_id = $1", [
+    let userHweets = await db.any("SELECT * FROM hweets WHERE hweets_id = $1 ORDER BY time_stamp DESC", [
       hweets_id,
     ]);
     res.status(200).json({

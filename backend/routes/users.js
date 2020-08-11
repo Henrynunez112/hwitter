@@ -10,7 +10,7 @@ const {
 const { checkFirebaseToken } = require("../middleware/auth");
 
 // checkFirebaseToken
-users.post("/", checkFirebaseToken, createUser);
+users.post("/", createUser);
 users.get("/:id", selectSingleUser);
 users.get("/", fetchAllUsers);
 users.delete("/:id", deleteUsers);

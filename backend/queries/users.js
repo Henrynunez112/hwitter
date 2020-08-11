@@ -1,8 +1,6 @@
 const db = require("../db/index");
 
 
-
-
 const createUser = async (req, res, next) => {
   try {
     await db.one(

@@ -7,6 +7,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import "../Css/UserHweet.css";
 
 const UserHweet = ({ fetchPosts }) => {
+
   const { token } = useContext(AuthContext);
   // let contentObj = useInput("");
   const [hweet, setHweet] = useState("");

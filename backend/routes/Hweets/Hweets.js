@@ -8,7 +8,7 @@ const {
 } = require("../../queries/Hweets/Hweets");
 const { checkFirebaseToken } = require("../../middleware/auth");
 
-hweetsRouter.get("/", joinHweetsWithUsers);
+hweetsRouter.get("/", joinHweetsWithUsers);//tested
 // hweetsRouter.get("/", getAllHweets); //tested
 hweetsRouter.get("/:hweets_id", getHweetsByUserId); //tested
 hweetsRouter.put("/:id", updateHweet); //tested
