@@ -6,7 +6,7 @@ const searchResults = async (req, res, next) => {
       `SELECT users.firstname, users.lastname, full_hweet.* FROM(
         SELECT hweets.*, array_remove(ARRAY_AGG(hashtags.hweet_tags), NULL) AS hweet_tags
         FROM hweets JOIN hashtags ON hweets.id = hashtags.post_id
-         GROUP BY hweets.id, hweets.content, hweets.content, hweets.time_stamp
+         GROUP BY hweets.id, hweets.content, hweets.time_stamp
       ) AS full_hweet
       JOIN users ON users.id = full_hweet.hweets_id
       WHERE '#${req.params.search}' = ANY(full_hweet.hweet_tags) ORDER BY time_stamp DESC`

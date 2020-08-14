@@ -66,7 +66,7 @@ const strBuilder = (post_id, arr) => {
 const addNewHashtag = async (req, res, next) => {
   try {
     const { post_id, hweet_tags } = req.body;
-    let newHashtag = await db.one(
+    let newHashtag = await db.any(
       "INSERT INTO hashtags (post_id, hweet_tags) VALUES" +
         strBuilder(post_id, hweet_tags)
     );
