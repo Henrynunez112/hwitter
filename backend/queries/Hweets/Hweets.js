@@ -19,7 +19,7 @@ const getAllHweets = async (req, res, next) => {
 
 const addNewHweet = async (req, res, next) => {
   try {
-    const hweets_id = req.user_id;
+    const { hweets_id } = req.user_id;
     const { content } = req.body;
     let newHweet = await db.one(
       `INSERT INTO hweets (hweets_id, content) VALUES($1, $2) RETURNING *`,
@@ -84,9 +84,10 @@ const getHweetsByUserId = async (req, res, next) => {
   let { hweets_id } = req.params;
 
   try {
-    let userHweets = await db.any("SELECT * FROM hweets WHERE hweets_id = $1 ORDER BY time_stamp DESC", [
-      hweets_id,
-    ]);
+    let userHweets = await db.any(
+      "SELECT * FROM hweets WHERE hweets_id = $1 ORDER BY time_stamp DESC",
+      [hweets_id]
+    );
     res.status(200).json({
       status: "succes",
       message: `all the hweets by users with hweets_id of ${hweets_id} retrieved`,
