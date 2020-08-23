@@ -23,63 +23,62 @@ const SignUp = () => {
   const history = useHistory();
   const API = apiURL();
 
-  const handleImageAsFile = (e) => {
-    const image = e.target.files[0];
-    const types = ["image/png", "image/jpeg", "image/jpg"];
-    if (types.every((type) => image.type !== type)) {
-      alert(`${image.type} is not a supported format`);
-    } else {
-      setImageAsFile((imageFile) => image);
-    }
-  };
-  const handleFirebasePictureUpload = () => {
+  // const handleImageAsFile = (e) => {
+  //   const image = e.target.files[0];
+  //   const types = ["image/png", "image/jpeg", "image/jpg"];
+  //   if (types.every((type) => image.type !== type)) {
+  //     alert(`${image.type} is not a supported format`);
+  //   } else {
+  //     setImageAsFile((imageFile) => image);
+  //   }
+  // };
+  // const handleFirebasePictureUpload = () => {
+  //   debugger
   
-    if (imageAsFile === "") {
-      alert(`Please choose a valid file before uploading`);
-    } else if (imageAsFile !== null) {
-      const uploadTask = storage
-        .ref(`/images/${imageAsFile.name}`)
-        .put(imageAsFile);
-      uploadTask.on(
-        "state_changed",
-        (snapShot) => {
-          var progress =
-            (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          console.log(snapShot);
-        },
-        (err) => {
-          console.log(err);
-        },
-        () => {
-          storage
-            .ref("images")
-            .child(imageAsFile.name)
-            .getDownloadURL()
-            .then((fireBaseUrl) => {
-              setImageAsUrl(fireBaseUrl);
-            });
-        }
-      );
-      setToggleUploadMsg(true);
-    } else {
-      setToggleUploadMsg(false);
-    }
-  };
+  //   if (imageAsFile === "") {
+  //     alert(`Please choose a valid file before uploading`);
+  //   } else if (imageAsFile !== null) {
+  //     const uploadTask = storage
+  //       .ref(`/images/${imageAsFile.name}`)
+  //       .put(imageAsFile);
+  //     uploadTask.on(
+  //       "state_changed",
+  //       (snapShot) => {
+  //         var progress =
+  //           (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
+  //         console.log("Upload is " + progress + "% done");
+  //         console.log(snapShot);
+  //       },
+  //       (err) => {
+  //         console.log(err);
+  //       },
+  //       () => {
+  //         storage
+  //           .ref("images")
+  //           .child(imageAsFile.name)
+  //           .getDownloadURL()
+  //           .then((fireBaseUrl) => {
+  //             setImageAsUrl(fireBaseUrl);
+  //           });
+  //       }
+  //     );
+  //     setToggleUploadMsg(true);
+  //   } else {
+  //     setToggleUploadMsg(false);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let res = await signUp(email, password);
-      
       await axios.post(`${API}/users`, {
         id: res.user.uid,
         email,
         firstname,
         lastname,
-        imgurl: imageAsFile.name
+        // imgurl: imageAsFile.name
       });
-    
       history.push("/users");
     } catch (error) {
       setError(error.message);

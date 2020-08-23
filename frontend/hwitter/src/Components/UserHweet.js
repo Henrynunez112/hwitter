@@ -7,8 +7,8 @@ import { AuthContext } from "../Providers/AuthProvider";
 import "../Css/UserHweet.css";
 
 const UserHweet = ({ fetchPosts }) => {
-
   const { token } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
   // let contentObj = useInput("");
   const [hweet, setHweet] = useState("");
   const API = apiURL();
@@ -16,7 +16,6 @@ const UserHweet = ({ fetchPosts }) => {
   const findHashtags = async (postId, str) => {
     //this is the code that puts all hashtags into an array
     let hashtagArr = str.match(/#\S+/g);
-    debugger;
     if (hashtagArr) {
       try {
         await axios({
@@ -39,6 +38,7 @@ const UserHweet = ({ fetchPosts }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      debugger;
       let res = await axios({
         method: "POST",
         url: `${API}/hweets`,
@@ -51,8 +51,8 @@ const UserHweet = ({ fetchPosts }) => {
       });
       let postId = res.data.body.id;
       findHashtags(postId, hweet);
-      setHweet("");
       fetchPosts();
+      setHweet("");
     } catch (error) {
       console.log(error.message);
     }
