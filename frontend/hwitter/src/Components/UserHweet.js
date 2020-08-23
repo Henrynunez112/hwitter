@@ -38,7 +38,6 @@ const UserHweet = ({ fetchPosts }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      debugger;
       let res = await axios({
         method: "POST",
         url: `${API}/hweets`,

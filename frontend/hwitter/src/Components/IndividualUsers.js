@@ -10,6 +10,7 @@ const IndividualUsers = () => {
   const [email, setEmail] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const [image, setImage] = useState("");
   const [posts, setPost] = useState([]);
 
   const match = useRouteMatch();
@@ -27,9 +28,10 @@ const IndividualUsers = () => {
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
+      debugger
+      setImage(res.data.body.imgurl);
     };
     const userHweet = async (id) => {
-        debugger
       let res = await axios({
           method: "GET",
           url: `${API}/hweets/${id}`,
@@ -50,6 +52,7 @@ const IndividualUsers = () => {
           {firstname}, {lastname}
         </h1>
         <h3 id="individualEmail">{email}</h3>
+        <img src={image} alt={`${firstname}'s profile`} />
       </div>
       <div className="individualPostContainter">
         <ul className="individualUl">

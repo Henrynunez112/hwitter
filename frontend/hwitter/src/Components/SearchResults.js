@@ -12,7 +12,6 @@ const SearchResult = () => {
 
   useEffect(() => {
     const getResult = async (search) => {
-      debugger;
       let res = await axios.get(`${API}/search/${search}`);
       setResult(res.data.body);
       setSearch(search);

@@ -19,10 +19,11 @@ const Home = () => {
       params: {
         textFormat: "Raw",
         safeSearch: "Off",
-        count: "5",
+        count: "10",
       },
     })
       .then((res) => {
+        debugger
         //   console.log(res.data.value);
         setTrending(res.data.value);
       })
@@ -35,8 +36,10 @@ const Home = () => {
   }, []);
 
   const trendingNews = trending.map((news) => {
+    debugger
     return (
       <div key={news.id} className="trendingNews">
+        <a href={news.newsSearchUrl}>
         <li key={news.id} className="newsLi">
           <img
             alt="images of the news"
@@ -48,6 +51,7 @@ const Home = () => {
           </h4>
           <p className="queryHeader">{news.query.text}</p>
         </li>
+        </a>
       </div>
     );
   });
