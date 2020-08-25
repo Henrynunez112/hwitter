@@ -28,7 +28,6 @@ const IndividualUsers = () => {
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
-      debugger
       setImage(res.data.body.imgurl);
     };
     const userHweet = async (id) => {

@@ -23,7 +23,6 @@ const Home = () => {
       },
     })
       .then((res) => {
-        debugger
         //   console.log(res.data.value);
         setTrending(res.data.value);
       })
@@ -36,21 +35,20 @@ const Home = () => {
   }, []);
 
   const trendingNews = trending.map((news) => {
-    debugger
     return (
       <div key={news.id} className="trendingNews">
         <a href={news.newsSearchUrl}>
-        <li key={news.id} className="newsLi">
-          <img
-            alt="images of the news"
-            src={news.image.url}
-            className="newsImg"
-          />
-          <h4 key={news.id} className="newsHeader">
-            {news.name}
-          </h4>
-          <p className="queryHeader">{news.query.text}</p>
-        </li>
+          <li key={news.id} className="newsLi">
+            <img
+              alt="images of the news"
+              src={news.image.url}
+              className="newsImg"
+            />
+            <h4 key={news.id} className="newsHeader">
+              {news.name}
+            </h4>
+            <p className="queryHeader">{news.query.text}</p>
+          </li>
         </a>
       </div>
     );

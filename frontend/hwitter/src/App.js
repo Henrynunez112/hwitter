@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
 import "./App.css";
 import Modal from "react-modal";
 import NavBar from "./Components/NavBar";
@@ -16,7 +18,6 @@ import IndividualUsers from "./Components/IndividualUsers";
 
 Modal.setAppElement("#root");
 function App() {
-
   return (
     <div className="App">
       <AuthProvder>
