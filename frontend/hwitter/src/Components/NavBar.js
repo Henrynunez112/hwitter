@@ -7,7 +7,6 @@ import { logOut } from "../Util/firebaseFunction";
 import "../Css/NavBar.css";
 
 export default function NavBar() {
-
   const { currentUser } = useContext(AuthContext);
 
   const buttonDisplay = () => {
@@ -60,6 +59,8 @@ export default function NavBar() {
                 to={"/signup"}
                 className="inactiveSignUp"
                 activeClassName="activeSignUp"
+                data-toggle="modal"
+                data-target="#exampleModal"
               >
                 Sign Up
               </NavLink>
@@ -74,12 +75,11 @@ export default function NavBar() {
     height: "32px",
   };
 
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <NavLink exact to={"/"} className="navbar-brand">
         <img alt="twitter logo" src={Logo} style={imgWandH} />
-        <span id='brandTitle'>Hwitter</span>
+        <span id="brandTitle">Hwitter</span>
       </NavLink>
       <button
         class="navbar-toggler"
@@ -92,7 +92,10 @@ export default function NavBar() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarSupportedContent"
+      >
         <ul className="navbar-nav justify-content-end">{buttonDisplay()}</ul>
       </div>
     </nav>
