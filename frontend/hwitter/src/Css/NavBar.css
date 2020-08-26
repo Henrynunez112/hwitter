@@ -10,101 +10,24 @@
   --inputText: #253441;
 }
 
-.navBar {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  background-color: var(--newTwitterBlue);
-  border: 1px solid var(--lightGrey);
+.navbar{
+  background-color: var(--newTwitterBlue) !important;
 }
-
-.navBar > .navUl {
-  list-style-type: none;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  width: 100%;
-  z-index: 2;
+#brandTitle{
+  color: var(--babyBlue) !important;
 }
-
-.loginButton {
-  padding: 6px;
-  border: 1px solid var(--babyBlue);
-  border-radius: 50px 50px;
-  width: 69px;
-  height: 13px;
+.nav-item{
+  padding: 5px 30px;
+  margin: 0px 10px;
 }
-.loginButton:hover {
-  background-color: var(--newTwitterBlue);
-  opacity: 0.2;
-}
-.signUpButton {
-  padding: 6px;
-  border: 1px solid var(--babyBlue);
-  background-color: var(--babyBlue);
-  border-radius: 50px 50px;
-  width: 69px;
-  height: 13px;
-}
-.signUpButton:hover {
-  background-color: var(--babyBlue);
-  opacity: 0.5;
-}
-.inactiveSignUp {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  top: -3px;
-}
-.inactiveLogin {
-  color: var(--babyBlue);
-  background-color: var(--newTwitterBlue);
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  top: -3px;
-}
-.activeLogin {
-  color: var(--babyBlue);
-  background-color: var(--newTwitterBlue);
-  text-decoration: none;
-  font-weight: bold;
-}
-.hweetButton {
-  padding: 6px;
-  border: 1px solid var(--babyBlue);
-  background-color: var(--babyBlue);
-  border-radius: 50px 50px;
-  width: 100px;
-  height: 18px;
-}
-
-.inactiveHweet {
-  background-color: var(--babyBlue);
-  color: var(--white);
+#signUpId{
+  background-color: var(--babyBlue) !important;
   border-radius: 13px;
-  width: 110px;
-  font-weight: bold;
-  text-decoration: none;
 }
-.hweetButton:hover {
-  background-color: var(--babyBlue);
-  opacity: 0.5;
-  color: var(--white);
-  font-weight: bold;
-  text-decoration: none;
+#signUpId:hover{
+  background-color: var(--white) !important;
+  color: var(--white) !important;
 }
-#logoutBtn{
-  background-color: var(--newTwitterBlue);
-  border: 1px solid var(--babyBlue);
-  color: var(--babyBlue);
-  width: 110px;
-  height: 32px;
-  font-weight: bold;
-  border-radius: 50px 50px;
-}
-
-#logoutBtn:hover{
-  background-color: var(--inputText);
+.inactiveSignUp:hover{
+  color: var(--babyBlue) !important;
 }
