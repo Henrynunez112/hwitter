@@ -6,14 +6,12 @@ import { apiURL } from "../Util/apiUrl";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
 import "../Css/SignUp.css";
 import { signUp } from "../Util/firebaseFunction";
-import Modal from "react-modal";
 import { storage } from "../Util/firebase";
 
 const SignUp = () => {
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
   const [toggleUploadMsg, setToggleUploadMsg] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstName] = useState("");
@@ -202,8 +200,9 @@ const SignUp = () => {
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
+              <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
               <h5 class="modal-title" id="exampleModalLabel">
-                Modal title
+                Sign Up to Hwitter
               </h5>
               <button
                 type="button"
@@ -214,7 +213,87 @@ const SignUp = () => {
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body">
+              {/* form for the sign-up modal */}
+              <form>
+                <div className="form-group">
+                  <label for="firstName">First Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="firstName"
+                    aria-describedby="firstName"
+                    placeholder="First Name"
+                    value={firstname}
+                    onChange={(e) => {
+                      setFirstName(e.currentTarget.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="lastName"
+                    aria-describedby="lastName"
+                    placeholder="Last Name"
+                    value={lastname}
+                    onChange={(e) => {
+                      setLastName(e.currentTarget.value);
+                    }}
+                  />
+                </div>
+                <div className="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="emailInput"
+                    aria-describedby="emailHelp"
+                    placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.currentTarget.value);
+                    }}
+                  />
+                  <small id="emailHelp" className="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">
+                    Example file input
+                  </label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="exampleFormControlFile1"
+                    onChange={handleImageAsFile}
+                  />
+                  <button onClick={handleFirebasePictureUpload}>Upload</button>
+                  {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
+                </div>
+                <div className="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="exampleInputPassword1"
+                    placeholder="Password"
+                    autoComplete="on"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.currentTarget.value);
+                    }}
+                  />
+                </div>
+
+                <button type="submit" className="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
             <div class="modal-footer">
               <button
                 type="button"

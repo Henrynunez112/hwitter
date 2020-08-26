@@ -56,7 +56,10 @@ export default function NavBar() {
           <li className="nav-item" id="signUpId">
             <div className="signUpButton">
               <NavLink
-                to={"/signup"}
+              href="#"
+              exact
+              to="/"
+                // to={"/signup"}
                 className="inactiveSignUp"
                 activeClassName="activeSignUp"
                 data-toggle="modal"
