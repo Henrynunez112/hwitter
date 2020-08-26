@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Homebutton from "./Homebutton";
 import { useHistory } from "react-router-dom";
 import { apiURL } from "../Util/apiUrl";
 import Logo from "../Imgs/Twitter_Logo_WhiteOnImage.png";
-import "../Css/SignUp.css";
 import { signUp } from "../Util/firebaseFunction";
 import { storage } from "../Util/firebase";
+import "../Css/SignUp.css";
 
 const SignUp = () => {
   const [imageAsFile, setImageAsFile] = useState("");
@@ -88,107 +87,6 @@ const SignUp = () => {
 
   return (
     <div className="signUpContainer">
-      {/* <Modal
-        isOpen={modalIsOpen}
-        style={{
-          overlay: {
-            backgroundColor: "rgb(0,0,0, 0.5)",
-          },
-          content: {
-            backgroundColor: "#15212b",
-            color: "#E1E8ED",
-            top: "51px",
-            bottom: "80px",
-            left: "350px",
-            right: "350px",
-            border: "1px solid #15212b",
-            borderRadius: "15px",
-            boxShadow: "0 6px 20px 0 rgba(255, 255, 255, 0.8)",
-          },
-        }}
-      >
-        {error ? <div className="errorSignUp">{error}</div> : null}
-        <form onSubmit={handleSubmit} className="formSignUp">
-          <div className="modalHeader">
-            <div className="signUpLogo">
-              <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
-            </div>
-            <div className="signUpNextBttn">
-              <input type="submit" value="next" id="nextBttn" />
-            </div>
-          </div>
-          <div className="signUpTitle">
-            <h3>Create an account</h3>
-          </div>
-          <div className="signUpEmailContainer">
-            <div className="signUpEmail">
-              <label className="emailLabel">First Name</label>
-            </div>
-            <input
-              type="text"
-              id="inputSignUpEmail"
-              value={firstname}
-              onChange={(e) => {
-                setFirstName(e.currentTarget.value);
-              }}
-            />
-          </div>
-          <br></br>
-          <div className="signUpEmailContainer">
-            <div className="signUpEmail">
-              <label className="emailLabel">Last Name</label>
-            </div>
-            <input
-              type="text"
-              id="inputSignUpEmail"
-              value={lastname}
-              onChange={(e) => {
-                setLastName(e.currentTarget.value);
-              }}
-            />
-          </div>
-          <br></br>
-          <div className="signUpEmailContainer">
-            <div className="signUpEmail">
-              <label className="emailLabel">Email</label>
-            </div>
-            <input
-              type="text"
-              id="inputSignUpEmail"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.currentTarget.value);
-              }}
-            />
-          </div>
-          <div className="signUpProfilePictureContainer">
-            <div className="profilePictureContainer">
-              <label className="uploadImgUpload">Upload Img</label>
-            </div>
-            <input type="file" onChange={handleImageAsFile} />
-            <button onClick={handleFirebasePictureUpload}>Upload</button>
-            {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
-          </div>
-          <br></br>
-          <div className="signUpPasswordContainer">
-            <div className="signUpPassword">
-              <label className="passwordLabel">Password</label>
-            </div>
-            <input
-              type="password"
-              id="inputSignUpPassword"
-              autoComplete="on"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.currentTarget.value);
-              }}
-            />
-          </div>
-        </form>
-        <div>
-          <Homebutton />
-        </div>
-      </Modal> */}
       <div
         class="modal fade"
         id="exampleModal"
@@ -198,10 +96,10 @@ const SignUp = () => {
         aria-hidden="true"
       >
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+          <div class="modal-content signUpModal">
             <div class="modal-header">
-              <img alt="twitter logo on modal" src={Logo} style={imgWandH} />
-              <h5 class="modal-title" id="exampleModalLabel">
+              <img alt="twitter logo on modal" src={Logo} style={imgWandH} id="twitterLogo" />
+              <h5 class="modal-title hwitterTitleSignUp" id="signUpHeader">
                 Sign Up to Hwitter
               </h5>
               <button
@@ -215,7 +113,7 @@ const SignUp = () => {
             </div>
             <div class="modal-body">
               {/* form for the sign-up modal */}
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label for="firstName">First Name</label>
                   <input
@@ -263,7 +161,7 @@ const SignUp = () => {
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlFile1">
-                    Example file input
+                    Upload Profile Picture
                   </label>
                   <input
                     type="file"
@@ -289,12 +187,18 @@ const SignUp = () => {
                   />
                 </div>
 
-                <button type="submit" className="btn btn-primary">
+                <button
+                  type="submit"
+                  className="btn btn-primary"
+                  data-dismiss="modal"
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </form>
             </div>
-            <div class="modal-footer">
+            {/* This is the end of the modal */}
+            {/* <div class="modal-footer">
               <button
                 type="button"
                 class="btn btn-secondary"
@@ -305,7 +209,7 @@ const SignUp = () => {
               <button type="button" class="btn btn-primary">
                 Save changes
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

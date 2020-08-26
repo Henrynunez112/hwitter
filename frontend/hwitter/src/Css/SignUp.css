@@ -9,73 +9,17 @@
   --newTwitterBlue: #15212b;
   --inputText: #253441;
 }
-
-
-.modalHeader{
-  display: grid;
-  grid-template-columns: 80% 20%;
-
+.signUpModal{
+  background-color: var(--newTwitterBlue) !important;
+  color: var(--darkGrey) !important;
+  border: 1px solid var(--lightGrey);
 }
-/* .signUpLogo{
-  width: 60%;
-} */
-.signUpNextBttn{
-  background-color: var(--babyBlue);
-  border-radius: 50px;
-  text-align: center;
+#twitterLogo {
+  width: 32px;
+  height: 32px;
+  margin: 0px 20px;
+  margin-left: 20px !important;
 }
-#nextBttn{
-  background-color: var(--babyBlue);
-  border: 0px solid var(--babyBlue);
-  color: var(--white);
-  font-size: large;
-  font-weight: bold;
-  position: relative;
-  top: 5px;
-}
-
-.signUpEmail{
-  width: 411px;
-  background-color: var(--inputText);
-  font-size: smaller;
-  color: var(--lightGrey);
-
-}
-.signUpPassword{
-  width: 411px;
-  background-color: var(--inputText);
-  font-size: smaller;
-  color: var(--lightGrey);
-
- 
-}
-.emailLabel{
-  text-align: left;
-  background-color: var(--inputText);
-  margin-bottom: -18px;
-  
-}
-.passwordLabel{
-  text-align: left;
-  background-color: var(--inputText);
-  margin-bottom: -18px;
-  
-}
-#inputSignUpPassword {
-  background-color: #253441;
-  width: 405px;
-  height: 30px;
-  border: .5px solid #253441;
-  border-bottom: 1px solid var(--lightGrey);
-  color: var(--babyBlue);
-  outline: none;
-}
-#inputSignUpEmail {
-  background-color: #253441;
-  width: 405px;
-  height: 30px;
-  border: .5px solid #253441;
-  border-bottom: 1px solid var(--lightGrey);
-  color: var(--babyBlue);
-  outline: none;
+#signUpHeader{
+  margin: 0px 80px;
 }
