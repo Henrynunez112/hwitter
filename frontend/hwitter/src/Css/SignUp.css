@@ -13,6 +13,8 @@
   background-color: var(--newTwitterBlue) !important;
   color: var(--darkGrey) !important;
   border: 1px solid var(--lightGrey);
+  border-radius: 13px;
+  box-shadow: 3px 3px 8px #253441;
 }
 #twitterLogo {
   width: 32px;

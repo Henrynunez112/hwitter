@@ -54,14 +54,12 @@ const Home = () => {
     );
   });
   return (
-    <div className="homeComponent">
-      <div className="hwitterHomeHeader">
-        <h1 className="hwitterHeader">Welcome to Hwitter</h1>
+    <div className="homeComponent container">
+      <div className="hwitterHomeHeader jumbotron">
+        <h1 id="hwitterHeader">Welcome to Hwitter</h1>
+          <h3 id="trendingHeader">Trending News</h3>
       </div>
       <div className="trendingNewsDiv">
-        <div className="trendingNewsHeader">
-          <h3 id="trendingHeader">Trending News</h3>
-        </div>
         <div className="trendingNewsCard">
           <ul className="trendingUl">{trendingNews}</ul>
         </div>
