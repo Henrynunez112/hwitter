@@ -43,7 +43,7 @@ export default function NavBar() {
     } else {
       return (
         <>
-          <li className="nav-item">
+          <li className="nav-item" id="loginId">
             <div className="loginButton">
               <NavLink
                 to={"/login"}

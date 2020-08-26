@@ -28,6 +28,14 @@
   background-color: var(--white) !important;
   color: var(--white) !important;
 }
-.inactiveSignUp:hover{
-  color: var(--babyBlue) !important;
+
+#loginId{
+  background-color: var(--newTwitterBlue) !important;
+  color: var(--white) !important;
+  border: 1px solid white !important;
+  border-radius: 13px;
+}
+#loginId:hover{
+  background-color: var(--babyBlue) !important;
+  border: 1px solid var(--babyBlue) !important;
 }
