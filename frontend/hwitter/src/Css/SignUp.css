@@ -23,3 +23,23 @@
 #signUpHeader{
   margin: 0px 80px;
 }
+#closeButton{
+  color: var(--babyBlue) !important;
+}
+#uploadImgBtn{
+  background-color: var(--babyBlue);
+  border-radius: 13px;
+  padding: 5px 30px;
+  border: 1px solid var(--babyBlue);
+  color: white;
+}
+#uploadImgBtn:hover{
+  background-color: white;
+  color: var(--babyBlue);
+}
+.signUpSubmitBtn{
+  background-color: var(--newTwitterBlue) !important;
+  padding: 5px 30px;
+  border: 1px solid var(--babyBlue);
+  color: var(--babyBlue) !important;
+}

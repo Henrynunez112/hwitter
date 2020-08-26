@@ -88,30 +88,30 @@ const SignUp = () => {
   return (
     <div className="signUpContainer">
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content signUpModal">
-            <div class="modal-header">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content signUpModal">
+            <div className="modal-header">
               <img alt="twitter logo on modal" src={Logo} style={imgWandH} id="twitterLogo" />
-              <h5 class="modal-title hwitterTitleSignUp" id="signUpHeader">
+              <h5 className="modal-title hwitterTitleSignUp" id="signUpHeader">
                 Sign Up to Hwitter
               </h5>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true" id="closeButton">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               {/* form for the sign-up modal */}
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -159,7 +159,7 @@ const SignUp = () => {
                     We'll never share your email with anyone else.
                   </small>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                   <label for="exampleFormControlFile1">
                     Upload Profile Picture
                   </label>
@@ -169,7 +169,7 @@ const SignUp = () => {
                     id="exampleFormControlFile1"
                     onChange={handleImageAsFile}
                   />
-                  <button onClick={handleFirebasePictureUpload}>Upload</button>
+                  <button onClick={handleFirebasePictureUpload} id="uploadImgBtn">Upload</button>
                   {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
                 </div>
                 <div className="form-group">
@@ -189,7 +189,7 @@ const SignUp = () => {
 
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary signUpSubmitBtn"
                   data-dismiss="modal"
                   onClick={handleSubmit}
                 >

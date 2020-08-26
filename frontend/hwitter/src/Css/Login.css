@@ -20,9 +20,12 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+  border-radius: 13px;
+  box-shadow: 5px 10px 8px #253441;
 }
 .loginHeader {
-  border: 1px solid var(--newTwitterBlue)
+  border: 1px solid var(--newTwitterBlue);
+  color: var(--babyBlue)
 }
 .loginForm {
   border: 1px solid var(--newTwitterBlue);
@@ -95,4 +98,21 @@
   height: 40px;
   opacity: .7;
 }
-
+.loginJumbotron{
+  background-color: var(--inputText) !important;
+  border-radius: 13px;
+  border: 1px solid var(--lightGrey);
+}
+.loginLabel{
+  color: var(--babyBlue);
+}
+.loginBtn{
+  padding: 5px 30px;
+  border-radius: 13px;
+  background-color: var(--babyBlue) !important;
+  color: var(--white) !important;
+}
+.loginBtn:hover{
+  background-color: var(--white) !important;
+  color: var(--babyBlue) !important;
+}

@@ -11,7 +11,8 @@
 
 .App {
   text-align: center;
-  /* background-color: var(--newTwitterBlue); */
+  background-color: var(--newTwitterBlue);
+  height: 100vh;
 }
 
 .App-logo {

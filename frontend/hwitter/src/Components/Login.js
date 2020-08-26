@@ -34,40 +34,48 @@ const Login = () => {
         <img alt="twitter logo" src={Logo} style={imgWandH} />
       </div>
       <div className="loginHeader">
-        <h4>Log In to Twitter</h4>
+        <h4>Log In to Hwitter</h4>
       </div>
       {error ? <div className="errorSignUp">{error}</div> : null}
       <div className="loginForm">
-        <form onSubmit={handleSubmit}>
-          <div className="loginNameContainer">
-            <div className="nameLabel">
-              <label className="loginName">Phone, email, or username</label>
+        <div class="jumbotron loginJumbotron">
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label for="exampleInputEmail1" className="loginLabel">
+                Email address
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+              <small id="emailHelp" className="form-text text-muted">
+                We'll never share your email with anyone else.
+              </small>
             </div>
-            <br></br>
-            <input
-              type="text"
-              id="inputLoginName"
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-            />
-          </div>
-          <div className="loginPasswordContainer">
-            <div className="passwordLabel">
-              <label className="loginPassword">Password</label>
+            <div className="form-group">
+              <label for="exampleInputPassword1" className="loginLabel">
+                Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="exampleInputPassword1"
+                placeholder="Password"
+                autoComplete="on"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
             </div>
-            <br></br>
-            <input
-              type="password"
-              id="inputLoginPassword"
-              autoComplete="on"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-          </div>
-          <div className="loginButtonPage">
-            <input type="submit" value="Login" id="mainLoginButton" />
-          </div>
-        </form>
+            <button type="submit" className="btn btn-primary loginBtn">
+              Login
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
