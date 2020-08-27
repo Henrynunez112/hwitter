@@ -7,11 +7,12 @@ import "../Css/Users.css";
 import UserHweet from "./UserHweet";
 
 const Users = () => {
+  const { token, currentUser } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
-  const API = apiURL();
-  const { token } = useContext(AuthContext);
-  const history = useHistory();
+  const [user, setUser] = useState([]);
 
+  const API = apiURL();
+  const history = useHistory();
 
   const fetchPosts = async () => {
     let res = await axios({
@@ -23,9 +24,21 @@ const Users = () => {
     });
     setPosts(res.data.payload);
   };
+  const fetchCurrentUser = async (id) => {
+    debugger;
+    let res = await axios({
+      method: "GET",
+      url: `${API}/users/${id}`,
+      headers: {
+        AuthToken: token,
+      },
+    });
+    setUser(res.data.body);
+  };
 
   useEffect(() => {
     fetchPosts();
+    fetchCurrentUser(currentUser.uid);
   }, [API]);
   return (
     <div className="userContainer">
@@ -49,9 +62,9 @@ const Users = () => {
                   }}
                 >
                   <div className="h5Container">
-                  <h5 id="nameButton">
-                    {post.firstname} {post.lastname}
-                  </h5>
+                    <h5 id="nameButton">
+                      {post.firstname} {post.lastname}
+                    </h5>
                   </div>
                   <p id="postContent">{post.content}</p>
                 </li>
