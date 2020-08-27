@@ -10,35 +10,61 @@
   --inputText: #253441;
 }
 
-.navbar{
+.navbar {
   background-color: var(--newTwitterBlue) !important;
-  border: 1px solid var(--lightGrey);
+  border: 2px solid var(--lightGrey);
   box-shadow: 0 2px 2px -2px var(--darkGrey);
   padding: 15px;
 }
-#brandTitle{
+#brandTitle {
   color: var(--babyBlue) !important;
 }
-.nav-item{
+.nav-item {
   padding: 5px 30px;
-  margin: 0px 10px;
+  margin: 2px 10px;
 }
-#signUpId{
+#signUpId {
   background-color: var(--babyBlue) !important;
+  color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--white) !important;
   border-radius: 13px;
 }
-#signUpId:hover{
+#signUpId:hover {
   background-color: var(--white) !important;
-  color: var(--white) !important;
+  color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--babyBlue) !important;
 }
 
-#loginId{
+#loginId {
   background-color: var(--newTwitterBlue) !important;
   color: var(--white) !important;
-  border: 1px solid white !important;
+  border: 2px solid white !important;
   border-radius: 13px;
 }
-#loginId:hover{
+#loginId:hover {
   background-color: var(--babyBlue) !important;
-  border: 1px solid var(--babyBlue) !important;
+  border: 2px solid var(--white) !important;
+}
+#hweetBtn{
+  background-color: var(--newTwitterBlue) !important;
+  color: var(--white) !important;
+  border: 2px solid var(--white) !important;
+  border-radius: 13px;
+}
+#hweetBtn:hover{
+  background-color: var(--babyBlue) !important;
+  color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--babyBlue) !important;
+}
+#logOutBtnLi{
+  background-color: var(--babyBlue) !important;
+  color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--white) !important;
+  border-radius: 13px;
+}
+#logOutBtnLi:hover{
+  background-color: var(--white) !important;
+  color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--babyBlue) !important;
+  cursor: pointer !important;
 }

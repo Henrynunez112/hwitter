@@ -13,48 +13,46 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-          <li className="nav-item">
-            <NavLink to={"/"}>
+            {/* <NavLink to={"/"}>
+          <li className="nav-item" id="searchBarLi">
               <SearchBar />
-            </NavLink>
           </li>
-          <li className="nav-item">
-            <div className="hweetButton">
+            </NavLink> */}
               <NavLink
                 exact
                 to={"/users"}
                 className="inactiveHweet"
                 activeClassName="activeHweet"
               >
+                    <li className="nav-item" id="hweetBtn">
+                      <div className="hweetButton">
                 Hweet Here
+            </div>
+          </li>
               </NavLink>
-            </div>
-          </li>
-          <li className="nav-item">
+              <a id="logoutBtn" onClick={logOut}>
+          <li className="nav-item" id="logOutBtnLi">
             <div className="logoutButton">
-              <button id="logoutBtn" onClick={logOut}>
                 Log Out
-              </button>
             </div>
           </li>
+              </a>
         </>
       );
     } else {
       return (
         <>
-          <li className="nav-item" id="loginId">
-            <div className="loginButton">
               <NavLink
                 to={"/login"}
                 className="inactiveLogin"
                 activeClassName="activeLogin"
               >
+                  <li className="nav-item" id="loginId">
+                    <div className="loginButton">
                 Log In
-              </NavLink>
             </div>
           </li>
-          <li className="nav-item" id="signUpId">
-            <div className="signUpButton">
+              </NavLink>
               <NavLink
               href="#"
               exact
@@ -65,10 +63,12 @@ export default function NavBar() {
                 data-toggle="modal"
                 data-target="#exampleModal"
               >
+          <li className="nav-item" id="signUpId">
+            <div className="signUpButton">
                 Sign Up
-              </NavLink>
             </div>
           </li>
+              </NavLink>
         </>
       );
     }
