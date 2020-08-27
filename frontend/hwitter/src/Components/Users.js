@@ -9,7 +9,8 @@ import UserHweet from "./UserHweet";
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
-  const [user, setUser] = useState([]);
+  const [users, setUser] = useState({});
+  const [firstName, setFirstName] = useState("");
 
   const API = apiURL();
   const history = useHistory();
@@ -25,7 +26,6 @@ const Users = () => {
     setPosts(res.data.payload);
   };
   const fetchCurrentUser = async (id) => {
-    debugger;
     let res = await axios({
       method: "GET",
       url: `${API}/users/${id}`,
@@ -34,44 +34,61 @@ const Users = () => {
       },
     });
     setUser(res.data.body);
+    debugger;
+    setFirstName(res.data.body.firstname);
   };
 
   useEffect(() => {
     fetchPosts();
     fetchCurrentUser(currentUser.uid);
   }, [API]);
+
   return (
-    <div className="userContainer">
-      <div className="headerContainer">
-        <h1 id="welcomeTitle">Welcome to Hwitter</h1>
+    <div className="container-fluid usersPage">
+      <div className="row justify-content-md-center headerContainer">
+        <h1 id="welcomeTitle">Hello {firstName}!</h1>
         <h3 id="postTitle">Please Post your hweet below</h3>
       </div>
-      <div className="hweetContainer">
-        <UserHweet fetchPosts={fetchPosts} />
-      </div>
-      <div className="postsContainer">
-        <ul className="postUl">
-          {posts.map((post) => {
-            return (
-              <div className="postLi">
-                <li
-                  key={post.id}
-                  className="eachPost" /*style={{width: "100%"}}*/
-                  onClick={() => {
-                    history.push(`/users/${post.author_id}`);
-                  }}
-                >
-                  <div className="h5Container">
-                    <h5 id="nameButton">
-                      {post.firstname} {post.lastname}
-                    </h5>
-                  </div>
-                  <p id="postContent">{post.content}</p>
-                </li>
-              </div>
-            );
-          })}
-        </ul>
+      <div className="row justify-content-md-center hweetContainer">
+        <div className="col-4 justify-content-center">
+          <div className="row userInformation justify-content-center">
+            <img
+              alt="the users profile"
+              className="img-thumbnail"
+              id="profileImg"
+              src={users.imgurl}
+            />
+
+            <h5>
+              {users.firstname} {users.lastname}
+            </h5>
+          </div>
+        </div>
+        <div className="col-8 postsContainer">
+          <UserHweet fetchPosts={fetchPosts} />
+          <ul className="postUl">
+            {posts.map((post) => {
+              return (
+                <div className="postLi">
+                  <li
+                    key={post.id}
+                    className="eachPost"
+                    onClick={() => {
+                      history.push(`/users/${post.author_id}`);
+                    }}
+                  >
+                    <div className="h5Container">
+                      <h5 id="nameButton">
+                        {post.firstname} {post.lastname}
+                      </h5>
+                    </div>
+                    <p id="postContent">{post.content}</p>
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

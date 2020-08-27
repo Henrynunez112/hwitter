@@ -10,36 +10,53 @@
   --inputText: #253441;
 }
 
-.userContainer {
+/* .userContainer {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 5% 5% 3fr;
+} */
+.usersPage{
+  background-color: var(--newTwitterBlue) !important;
+  height: 100vh;
 }
 .headerContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: 1px solid var(--darkGrey);
+  border: 2px solid var(--darkGrey);
   grid-area: 1/2 / span 1 / span 1;
   color: var(--babyBlue);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 13px;
+  width: 100%;
 }
 #welcomeTitle {
   grid-area: 1/ 2 / span 1 / span 1;
+  padding: 10px;
+  margin: 5px;
 }
 #postTitle {
   grid-area: 2/ 2 / span 1 / span 1;
+  padding: 10px;
+  margin: 5px;
 }
 
 .hweetContainer {
-  grid-area: 2/ 2 / span 1 / span 1;
-  border: 1px solid var(--darkGrey);
-  height: 98%;
+  border: 2px solid var(--darkGrey);
+  height: 100vh;
+  border-radius: 13px;
+  padding: 20px;
+}
+#profileImg{
+  height: auto;
+  width: 300px;
 }
 
-.postsContainer {
+/* .postsContainer {
   grid-area: 3/ 2 / span 1 / span 1;
-  border: 1px solid var(--darkGrey);
+  border: 2px solid var(--darkGrey);
   display: grid;
   width: 100%;
 }
@@ -54,7 +71,7 @@
 }
 .eachPost {
   grid-column: 2 / span 1;
-  border: 1px solid var(--darkGrey);
+  border: 2px solid var(--darkGrey);
   padding: 10px;
   color: var(--white);
   display: grid;
@@ -84,4 +101,4 @@
 }
 #postContent {
   grid-area: 2/ 1 / span 1 / span 2;
-}
+} */

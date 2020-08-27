@@ -17,7 +17,7 @@
   grid-template-rows: 2% 2fr 1fr 1fr 2%;
   grid-column-gap: 10px;
 }
-#inputHweet {
+ #inputHweet {
   grid-area: 2/ 2 / span 3 / span 1;
   background-color: var(--inputText);
   border: 1px solid var(--newTwitterBlue);
@@ -46,7 +46,4 @@ textarea {
   /* position: relative;
   top: -56px;
   left: 14px; */
-}
-@keyframes blinker {
-
 }

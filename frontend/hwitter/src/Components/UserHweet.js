@@ -59,10 +59,11 @@ const UserHweet = ({ fetchPosts }) => {
 
   return (
     <form onSubmit={handleSubmit} className="formHweetContainer">
+      <div className="form-group">
       <img />
       <textarea
-        type="text"
         placeholder="What's Happening?"
+        className="form-control"
         value={hweet}
         onChange={(e) => {
           setHweet(e.currentTarget.value);
@@ -72,6 +73,7 @@ const UserHweet = ({ fetchPosts }) => {
         id="inputHweet"
       />
       <input type="submit" value="Hweet" id="hweetButton" />
+    </div>
     </form>
   );
 };
