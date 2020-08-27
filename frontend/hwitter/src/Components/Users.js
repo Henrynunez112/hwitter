@@ -34,7 +34,6 @@ const Users = () => {
       },
     });
     setUser(res.data.body);
-    debugger;
     setFirstName(res.data.body.firstname);
   };
 
@@ -50,7 +49,7 @@ const Users = () => {
         <h3 id="postTitle">Please Post your hweet below</h3>
       </div>
       <div className="row justify-content-md-center hweetContainer">
-        <div className="col-4 justify-content-center">
+        <div className="col-4 justify-content-center userInfoDiv">
           <div className="row userInformation justify-content-center">
             <img
               alt="the users profile"
@@ -59,13 +58,20 @@ const Users = () => {
               src={users.imgurl}
             />
 
-            <h5>
+          </div>
+          <div className="row justify-content-center userProfileName">
+            <h5 id="userProfileName">
               {users.firstname} {users.lastname}
             </h5>
-          </div>
+        </div>
         </div>
         <div className="col-8 postsContainer">
+          <div className="row userHweetDiv">
           <UserHweet fetchPosts={fetchPosts} />
+          </div>
+{/* break */}
+          <div className="row userHweetFeed">
+          <div className="userHweetCard">
           <ul className="postUl">
             {posts.map((post) => {
               return (
@@ -82,12 +88,16 @@ const Users = () => {
                         {post.firstname} {post.lastname}
                       </h5>
                     </div>
+                    <div className="postPTag">
                     <p id="postContent">{post.content}</p>
+                    </div>
                   </li>
                 </div>
               );
             })}
           </ul>
+          </div>
+          </div>
         </div>
       </div>
     </div>

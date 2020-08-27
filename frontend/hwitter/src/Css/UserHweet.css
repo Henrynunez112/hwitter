@@ -10,29 +10,35 @@
   --inputText: #253441;
 }
 .formHweetContainer {
-  height: 100%;
+  padding: 10px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr 2%;
-  grid-template-rows: 2% 2fr 1fr 1fr 2%;
-  grid-column-gap: 10px;
+  grid-template-columns: 80% 1fr;
 }
- #inputHweet {
-  grid-area: 2/ 2 / span 3 / span 1;
+
+#inputHweet {
   background-color: var(--inputText);
   border: 1px solid var(--newTwitterBlue);
   border-radius: 13px;
+  height: 87px;
 }
-#hweetButton {
-  grid-area: 3/3 / span 1 / span 1;
+.hweetSubmitButton {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: repeat(3, auto);
+}
+#hweetSubmitButton {
+  grid-area: 2/ 2 / span 1 / span 1;
   background-color: var(--newTwitterBlue);
-  border: 1px solid var(--babyBlue);
+  border: 2px solid var(--babyBlue);
   border-radius: 13px;
   color: var(--babyBlue);
   font-weight: bold;
+  padding: 2px;
+  margin: 2px;
 }
-#hweetButton:hover {
-  background-color: var(--inputText);
+#hweetSubmitButton:hover {
+  background-color: var(--inputText)!important;
   cursor: pointer;
 }
 textarea {
@@ -43,7 +49,4 @@ textarea {
 }
 ::placeholder {
   color: var(--babyBlue);
-  /* position: relative;
-  top: -56px;
-  left: 14px; */
 }

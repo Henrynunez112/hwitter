@@ -60,20 +60,21 @@ const UserHweet = ({ fetchPosts }) => {
   return (
     <form onSubmit={handleSubmit} className="formHweetContainer">
       <div className="form-group">
-      <img />
-      <textarea
-        placeholder="What's Happening?"
-        className="form-control"
-        value={hweet}
-        onChange={(e) => {
-          setHweet(e.currentTarget.value);
-        }}
-        maxLength={280}
-        required
-        id="inputHweet"
-      />
-      <input type="submit" value="Hweet" id="hweetButton" />
-    </div>
+        <textarea
+          placeholder="What's Happening?"
+          className="form-control"
+          value={hweet}
+          onChange={(e) => {
+            setHweet(e.currentTarget.value);
+          }}
+          maxLength={280}
+          required
+          id="inputHweet"
+        />
+      </div>
+      <div className="form-group hweetSubmitButton">
+        <input type="submit" value="Hweet" id="hweetSubmitButton" />
+      </div>
     </form>
   );
 };

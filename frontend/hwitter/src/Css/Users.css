@@ -16,9 +16,9 @@
   grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 5% 5% 3fr;
 } */
-.usersPage{
+.usersPage {
   background-color: var(--newTwitterBlue) !important;
-  height: 100vh;
+  height: fit-content;
 }
 .headerContainer {
   display: grid;
@@ -45,60 +45,99 @@
 
 .hweetContainer {
   border: 2px solid var(--darkGrey);
-  height: 100vh;
+  height: fit-content;
   border-radius: 13px;
   padding: 20px;
+  background-color: var(--newTwitterBlue) !important;
 }
-#profileImg{
-  height: auto;
-  width: 300px;
+.userInfoDiv {
+  /* background-color: var(--newTwitterBlue) !important; */
+  padding: 5px;
 }
-
-/* .postsContainer {
-  grid-area: 3/ 2 / span 1 / span 1;
-  border: 2px solid var(--darkGrey);
-  display: grid;
-  width: 100%;
-}
-
-.postUl {
-  padding: 15px;
-  list-style: none;
-}
-.postLi {
-  display: grid;
-  grid-template-columns: 2% 3fr 2%;
-}
-.eachPost {
-  grid-column: 2 / span 1;
-  border: 2px solid var(--darkGrey);
+.userInformation {
   padding: 10px;
-  color: var(--white);
-  display: grid;
-  grid-template-columns: 1fr 3fr 2%;
-  grid-template-rows: 1fr 1fr;
 }
-.eachPost:hover {
-  background-color: var(--inputText);
-  color: var(--white);
-  cursor: pointer;
+
+#profileImg {
+  height: auto;
+  width: 250px;
 }
-.h5Container {
-  display: grid;
-  grid-template-columns: 2% 3fr 2%;
-  grid-area: 1/ 1 / span 1 / span 1;
-  background-color: var(--babyBlue);
+.userProfileName {
+  padding: 10px;
+}
+#userProfileName {
+  padding: 10px;
+  color: var(--lightGrey) !important;
+  border: 2px solid var(--lightGrey) !important;
   border-radius: 13px;
 }
-.h5Container:hover{
-  background-color: var(--newTwitterBlue);
-  color: var(--babyBlue);
+.postsContainer {
+  background-color: var(--newTwitterBlue) !important;
+  border: 2px solid var(--lightGrey) !important;
+  border-radius: 13px;
+  padding: 20px;
+  grid-row-gap: 10px;
+}
+.userHweetDiv {
+  border: 2px solid var(--lightGrey);
+  padding: 10px;
+  border-radius: 13px;
+  margin: 10px 0px;
+}
+.userHweetFeed {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  overflow: scroll;
+  height: 80vh;
+  border: 2px solid var(--lightGrey);
+  border-radius: 13px;
+  background-color: var(--inputText) !important;
+  padding: 20px;
+}
+.userHweetCard{
+  grid-column: 2/ span 1;
+}
+.postUl{
+  padding: 1%;
+  list-style-type: none;
+  color: white !important;
+}
+.postLi{
+  border: 2px solid var(--lightGrey) !important;
+  margin: 10px 2px;
+  border-radius: 13px;
+}
+.postLi:hover{
+  background-color: var(--newTwitterBlue) !important;
   cursor: pointer;
+  color: var(--lightGrey) !important;
 }
-#nameButton {
-  grid-area: 2/ 2 / span 1/ span 1;
-  text-transform: uppercase;
+.eachPost{
+  display: grid;
+  grid-template-columns: 25% 10% 40% 25%;
+  grid-template-rows: repeat(4, 25%);
 }
-#postContent {
-  grid-area: 2/ 1 / span 1 / span 2;
-} */
+.h5Container{
+  grid-area: 1/ 1/ span 2/ span 1;
+  padding: 10px;
+  margin: 10px;
+  color: var(--white) !important;
+}
+#nameButton:hover{
+  color: var(--newTwitterBlue) !important;
+  background-color: var(--white) !important;
+}
+#nameButton{
+  background-color: var(--babyBlue) !important;
+  border-radius: 13px;
+  padding: 10px;
+  margin: 5px;
+  width: fit-content;
+}
+.postPTag{
+  grid-area: 2/3/ span 2/ span 2;
+  padding: 10px;
+  margin: 10px;
+  overflow: scroll;
+}
+
