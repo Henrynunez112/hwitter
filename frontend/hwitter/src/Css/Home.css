@@ -12,6 +12,7 @@
 
 .homeComponent {
   display: grid;
+  padding: 20px;
   /* border: 1px solid var(--lightGrey); */
   width: auto;
   height: auto;
@@ -40,17 +41,24 @@
 }
 .trendingNewsDiv {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   /* grid-template-rows: 10% auto; */
-  height: 55vh;
+  height: 50vh;
   overflow: scroll;
-  border: 1px solid var(--babyBlue);
+  border: 2px solid var(--babyBlue);
   border-radius: 13px;
   padding: 10px;
 }
 .trendingNews {
   grid-column: 2 / span 1;
-  border: 1px solid var(--lightGrey);
+  border: 2px solid var(--lightGrey);
+  padding: 10px;
+  border-radius: 13px;
+  margin: 30px 0px;
+}
+.trendingNews:hover{
+  background-color: var(--inputText);
+  color: var(--babyBlue) !important;
 }
 .trendingNewsCard {
   grid-area: 2 / 2 / span 1 / span 1;
@@ -64,24 +72,36 @@
 }
 .newsLi {
   display: grid;
-  grid-template-columns: 15% 70% 15%;
-  grid-template-rows: repeat(4, 25%);
-}
-.trendingNews {
-  border-radius: 13px;
-  margin: 30px 0px;
+  grid-template-columns: 25% 10% 45% 20%;
+  grid-template-rows: repeat(3, 25%);
 }
 .newsImg {
   border: 1px solid var(--lightGrey);
   border-radius: 13px;
   grid-area: 1/ 1 / span 1 / span 1;
-  padding: 10%;
+  padding: 10px;
+  margin: 5px;
+}
+.newsImg:hover{
+  background-color: var(--babyBlue);
 }
 .newsHeader {
-  padding: 6%;
   color: var(--lightGrey);
+  padding: 10px;
+  margin: 10px;
+  grid-area: 2/3/ span 1/ span 1;
+  justify-self: center;
+}
+.newsHeader:hover{
+  color: var(--babyBlue) !important;
 }
 .queryHeader {
-  grid-area: 3 / 2 / span 1 / span 1;
+  grid-area: 3 / 3 / span 1 / span 1;
   color: var(--white);
+  justify-self: center;
+  padding: 10px;
+  margin: 10px;
+}
+.queryHeader:hover{
+  color: var(--babyBlue);
 }
