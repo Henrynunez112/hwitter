@@ -13,11 +13,11 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-            {/* <NavLink to={"/"}>
+            <>
           <li className="nav-item" id="searchBarLi">
               <SearchBar />
           </li>
-            </NavLink> */}
+            </>
               <NavLink
                 exact
                 to={"/users"}

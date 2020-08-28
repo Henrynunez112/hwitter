@@ -44,9 +44,9 @@
 textarea {
   resize: none;
   font-family: inherit;
-  color: var(--lightGrey);
+  color: var(--white) !important;
   outline: none;
 }
 ::placeholder {
-  color: var(--babyBlue);
+  color: var(--babyBlue) !important;
 }

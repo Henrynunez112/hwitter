@@ -25,7 +25,6 @@ const IndividualUsers = () => {
           Authtoken: token,
         },
       });
-      debugger
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
