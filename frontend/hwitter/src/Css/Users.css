@@ -114,7 +114,7 @@
 }
 .eachPost{
   display: grid;
-  grid-template-columns: 25% 10% 40% 25%;
+  grid-template-columns: 25% 5% 45% 25%;
   grid-template-rows: repeat(4, 25%);
 }
 .h5Container{

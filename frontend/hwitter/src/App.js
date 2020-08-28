@@ -35,6 +35,7 @@ function App() {
           <AuthRoute path="/login">
             <Login />
           </AuthRoute>
+
           <Route exact path="/">
             <Home />
             <SignUp />

@@ -54,10 +54,10 @@ export default function NavBar() {
           </li>
               </NavLink>
               <NavLink
-              href="#"
+              href="/"
               exact
-              to="/"
-                // to={"/signup"}
+              // to="/"
+                to={"/"}
                 className="inactiveSignUp"
                 activeClassName="activeSignUp"
                 data-toggle="modal"

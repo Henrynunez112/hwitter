@@ -12,37 +12,66 @@
 
 .individualUsersContainer {
   display: grid;
-  grid-template-columns: 25% 3fr 10%;
+  grid-template-columns: 25% 75%;
+  background-color: var(--newTwitterBlue) !important;
+  height: fit-content;
+  padding: 10px;
 }
 .individualHeader {
   grid-column: 1 / span 1;
+  padding: 20px;
+  margin: 20px 5px;
+}
+.individualTitle{
+  justify-content: center;
+  color: var(--babyBlue) !important;
+  margin: 10px 2px;
+  padding: 10px;
+}
+#individualName{
+  padding: 10px;
+  margin: 1px;
+}
+#individualEmail{
+  padding: 10px;
+  margin: 1px;
+}
+
+.individualImgDiv{
+  justify-content: center;
+  padding: 20px;
+  margin: 10px 2px;
+}
+#individualImg{
+  height: auto;
+  width: 200px;
+  border-radius: 13px;
+}
+.individualPostContainter{
+  grid-column: 2/ span 1;
+  border: 2px solid var(--lightGrey);
+  border-radius: 13px;
+  height: 100%;
+  /* width: fit-content; */
+  padding: 20px;
+  /* margin: 10px; */
+  overflow: scroll;
   display: grid;
-  grid-template-rows: 10% 5%;
-  color: var(--white);
-  text-transform: uppercase;
+  grid-template-columns: 10% 80% 10%;
 }
-.individualPostContainter {
-  grid-column: 2 / span 1;
-  border: 1px solid var(--darkGrey);
+.individualUlDiv{
+  grid-column: 2/ span 1;
 }
-.individualUl {
-  padding: 15px;
-  list-style: none;
+.individualUl{
+  padding: 1%;
+  list-style-type: none;
+  color: white !important;
 }
 .individualLiContainer{
-    display: grid;
-    grid-template-columns: 2% 3fr 2%;
-    padding: 10px;
-}
-.individualLi{
-    grid-column: 2/ span 1;
-    padding: 10px;
-    border: 1px solid var(--darkGrey);
-    border-radius: 13px;
-    color: var(--babyBlue);
-}
-.individualLi:hover{
-    background-color: var(--inputText);
-    color: var(--white);
-    cursor: pointer;
+  border: 2px solid var(--lightGrey) !important;
+  margin: 10px 2px;
+  border-radius: 13px;
+  overflow: scroll;
+  padding: 20px;
+  color: var(--babyBlue) !important;
 }

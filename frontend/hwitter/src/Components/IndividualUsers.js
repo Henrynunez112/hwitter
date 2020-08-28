@@ -25,6 +25,7 @@ const IndividualUsers = () => {
           Authtoken: token,
         },
       });
+      debugger
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
@@ -45,15 +46,20 @@ const IndividualUsers = () => {
     userHweet(match.params.id);
   }, []);
   return (
-    <div className="individualUsersContainer">
-      <div className="individualHeader">
+    <div className="individualUsersContainer container-fluid">
+      <div className="col individualHeader">
+        <div className="row individualTitle">
         <h1 id="individualName">
-          {firstname}, {lastname}
+          {firstname} {lastname}
         </h1>
         <h3 id="individualEmail">{email}</h3>
-        <img src={image} alt={`${firstname}'s profile`} />
+        </div>
+        <div className="row individualImgDiv">
+        <img src={image} id="individualImg" /*className="img-fluid"*/ alt={`${firstname}'s profile`} />
+        </div>
       </div>
-      <div className="individualPostContainter">
+      <div className="col individualPostContainter justify-content-center">
+        <div className="individualUlDiv">
         <ul className="individualUl">
           {posts.map((post) => {
             return (
@@ -63,6 +69,7 @@ const IndividualUsers = () => {
             );
           })}
         </ul>
+          </div>
       </div>
     </div>
   );
