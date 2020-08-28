@@ -10,64 +10,89 @@
   --inputText: #253441;
 }
 .searchResultsContainer {
-  position: relative;
-  top: 5px;
   display: grid;
-  grid-template-rows: 15% 75% 10%;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 20% 80%;
+  padding: 20px;
+  height: 90vh;
 }
-
 .searchHeader {
-  grid-row: 1 / span 1;
+  grid-area: 1/ 2 / span 1 / span 1;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  border: 1px solid var(--darkGrey);
+  grid-template-rows: repeat(4, 25%);
+  border: 2px solid var(--darkGrey);
+  border-radius: 13px;
   padding: 10px;
   height: 100%;
+  overflow: scroll;
 }
 #searchH1 {
-  grid-column: 2 / span 1;
+  grid-area: 2 / 2 / span 1 / span 1;
   color: var(--babyBlue);
+  justify-self: center;
 }
-
 .resultContainer {
-  grid-row: 2 / span 1;
+  grid-area: 2/ 2 / span 1 / span 1;
+  justify-content: center;
+  color: var(--white) !important;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid var(--babyBlue) !important;
+  border-radius: 13px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
 }
-
+#noResult{
+  grid-column: 2/ span 1;
+}
 .resultUl {
-  padding: 15px;
+  padding: 10px;
   list-style: none;
+  grid-column: 2/ span 1;
 }
 .resultLiContainer {
-  display: grid;
-  grid-template-columns: 2% 3fr 2%;
   padding: 10px;
-  height: 100%;
-  color: var(--white);
-  /* border: 1px solid var(--darkGrey); */
+  border-radius: 13px;
+  margin: 10px;
+  border: 2px solid var(--lightGrey);
 }
 #resultLi {
-  grid-column: 2 / span 1;
-  border: 1px solid var(--darkGrey);
   display: grid;
-  grid-template-columns: 2fr 3fr 1fr;
-  grid-template-rows: repeat(2, 50%);
-  border-radius: 13px 0 0 13px;
+  grid-template-columns: 2fr 3fr;
+
+  border-radius: 13px;
+  border: 2px solid var(--newTwitterBlue);
 }
 .resultNameDiv {
-  grid-area: 1/ 1/ span 2/ span 1;
+  grid-column: 1/ span 1;
   background-color: var(--babyBlue);
-  border-radius: 13px;
+  border-radius: 10px 0px 0px 10px;
+  border: 2px solid var(--babyBlue);
 }
 .resultNameDiv:hover{
-    background-color: var(--inputText);
+  background-color: var(--inputText);
+  border: 2px solid var(--inputText);
+  color: var(--babyBlue) !important;
 }
 #resultName{
-    color: var(--white);
-    text-transform: uppercase;
+  color: var(--white);
 }
-#resultName:hover{
-    color: var(--babyBlue);
+.resultPostDiv{
+  grid-column: 2/ span 1;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(4, 25%);
 }
 #resultPost{
-    grid-area: 1/ 2/ span 2/ span 1;
+  grid-area: 2/ 2/ span 2/ span 1;
+  /* padding: 5px; */
+  /* margin: 5px; */
+}
+.resultPostDiv:hover{
+  background-color: var(--inputText) !important;
+  color: var(--babyBlue) !important;
+  border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
 }
