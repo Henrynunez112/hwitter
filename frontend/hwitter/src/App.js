@@ -34,6 +34,7 @@ function App() {
           </ProtectedRoute>
           <AuthRoute path="/login">
             <Login />
+            <SignUp />
           </AuthRoute>
 
           <Route exact path="/">
