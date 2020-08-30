@@ -34,10 +34,6 @@ function App() {
           <ProtectedRoute exact path="/search/:search">
             <SearchResults />
           </ProtectedRoute>
-          <AuthRoute path="/login">
-            <SignUp />
-          </AuthRoute>
-
           <Route exact path="/">
             <Login />
             <SignUp />

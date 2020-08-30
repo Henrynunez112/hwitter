@@ -24,7 +24,7 @@ export const ProtectedRoute = ({ children, ...rest }) => {
       <Route
         {...rest}
         render={({ location }) => {
-          return currentUser ? children : <Redirect to="/login" />;
+          return currentUser ? children : <Redirect to="/" />;
         }}
       />
     );
