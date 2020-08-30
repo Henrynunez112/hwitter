@@ -10,7 +10,7 @@ import "../Css/SignUp.css";
 const SignUp = () => {
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
-  const [toggleUploadMsg, setToggleUploadMsg] = useState(false);
+  // const [toggleUploadMsg, setToggleUploadMsg] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstName] = useState("");
@@ -28,7 +28,8 @@ const SignUp = () => {
       setImageAsFile((imageFile) => image);
     }
   };
-  const handleFirebasePictureUpload = () => {
+
+  const handleFirebasePictureUpload = async () => {
     if (imageAsFile === "") {
       alert(`Please choose a valid file before uploading`);
     } else if (imageAsFile !== null) {
@@ -53,17 +54,18 @@ const SignUp = () => {
             .getDownloadURL()
             .then((fireBaseUrl) => {
               setImageAsUrl(fireBaseUrl);
+              signUpUser(fireBaseUrl);
             });
         }
       );
-      setToggleUploadMsg(true);
-    } else {
-      setToggleUploadMsg(false);
+      // setToggleUploadMsg(true);
+
+      // } else {
+      //   setToggleUploadMsg(false);
+      // }
     }
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const signUpUser = async (fireBaseUrl) => {
     try {
       let res = await signUp(email, password);
       await axios.post(`${API}/users`, {
@@ -71,13 +73,20 @@ const SignUp = () => {
         email,
         firstname,
         lastname,
-        imgurl: imageAsUrl,
+        imgurl: fireBaseUrl,
       });
+
+      debugger
       history.push("/users");
     } catch (error) {
       setError(error.message);
       console.log("ALERT", error.message);
     }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    handleFirebasePictureUpload();
   };
   const imgWandH = {
     width: "32px",
@@ -98,7 +107,12 @@ const SignUp = () => {
         <div className="modal-dialog" role="document">
           <div className="modal-content signUpModal">
             <div className="modal-header">
-              <img alt="twitter logo on modal" src={Logo} style={imgWandH} id="twitterLogo" />
+              <img
+                alt="twitter logo on modal"
+                src={Logo}
+                style={imgWandH}
+                id="twitterLogo"
+              />
               <h5 className="modal-title hwitterTitleSignUp" id="signUpHeader">
                 Sign Up to Hwitter
               </h5>
@@ -108,11 +122,15 @@ const SignUp = () => {
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <span aria-hidden="true" id="closeButton">&times;</span>
+                <span aria-hidden="true" id="closeButton">
+                  &times;
+                </span>
               </button>
             </div>
             <div className="modal-body">
               {/* form for the sign-up modal */}
+              {error ? <div className="errorSignUp">{error}</div> : null}
+
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label for="firstName">First Name</label>
@@ -169,8 +187,13 @@ const SignUp = () => {
                     id="exampleFormControlFile1"
                     onChange={handleImageAsFile}
                   />
-                  <button onClick={handleFirebasePictureUpload} id="uploadImgBtn">Upload</button>
-                  {toggleUploadMsg ? <h5>Upload successful!</h5> : null}
+                  {/* <button
+                    onClick={handleFirebasePictureUpload}
+                    id="uploadImgBtn"
+                  >
+                    Upload
+                  </button>
+                  {toggleUploadMsg ? <h5>Upload successful!</h5> : null} */}
                 </div>
                 <div className="form-group">
                   <label for="exampleInputPassword1">Password</label>
@@ -186,30 +209,13 @@ const SignUp = () => {
                     }}
                   />
                 </div>
-
-                <button
+                <input
                   type="submit"
                   className="btn btn-primary signUpSubmitBtn"
-                  data-dismiss="modal"
-                  onClick={handleSubmit}
-                >
-                  Submit
-                </button>
+                  value="submit"
+                />
               </form>
             </div>
-            {/* This is the end of the modal */}
-            {/* <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
