@@ -7,14 +7,13 @@ import NavBar from "./Components/NavBar";
 import { Switch, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import SearchResults from "./Components/SearchResults";
-import SearchBar from "./Components/SearchBar"
+// import SearchBar from "./Components/SearchBar"
 import Users from "./Components/Users";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/Login";
 import AuthProvder from "./Providers/AuthProvider";
 import { AuthRoute, ProtectedRoute } from "./Util/routesUtil";
 import IndividualUsers from "./Components/IndividualUsers";
-
 
 Modal.setAppElement("#root");
 function App() {
@@ -24,21 +23,23 @@ function App() {
         <NavBar />
         <Switch>
           <ProtectedRoute exact path="/users">
-              <Users />
+            <Home />
           </ProtectedRoute>
           <ProtectedRoute exact path="/users/:id">
             <IndividualUsers />
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/hweet">
+            <Users />
           </ProtectedRoute>
           <ProtectedRoute exact path="/search/:search">
             <SearchResults />
           </ProtectedRoute>
           <AuthRoute path="/login">
-            <Login />
             <SignUp />
           </AuthRoute>
 
           <Route exact path="/">
-            <Home />
+            <Login />
             <SignUp />
           </Route>
         </Switch>
