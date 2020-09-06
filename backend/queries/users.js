@@ -1,6 +1,5 @@
 const db = require("../db/index");
 
-
 const createUser = async (req, res, next) => {
   try {
     await db.one(
@@ -97,10 +96,12 @@ const updateUserInfo = async (req, res, next) => {
   }
 };
 
+
+
 module.exports = {
   createUser,
   fetchAllUsers,
   selectSingleUser,
   deleteUsers,
-  updateUserInfo,
+  updateUserInfo
 };

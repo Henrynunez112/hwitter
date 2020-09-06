@@ -123,6 +123,24 @@ const updateHweet = async (req, res, next) => {
     });
   }
 };
+const getUsersImg = async (req, res, next) => {
+  try {
+    let userImg = await db.any(
+      `SELECT * FROM users JOIN hweets ON users.id = hweets.hweets_id`
+    );
+    res.status(200).json({
+      status: "success",
+      message: "Got all the users with image",
+      body: userImg,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({
+      status: "error",
+      message: "could not get user image",
+    });
+  }
+};
 
 module.exports = {
   addNewHweet,
@@ -131,4 +149,5 @@ module.exports = {
   getAllHweets,
   getHweetsByUserId,
   updateHweet,
+  getUsersImg
 };
