@@ -81,13 +81,16 @@ const Users = () => {
                     key={post.id}
                     className="eachPost"
                     onClick={() => {
-                      history.push(`/users/${post.author_id}`);
+                      history.push(`/users/${post.hweets_id}`);
                     }}
                   >
                     <div className="h5Container">
                       <h5 id="nameButton">
                         {post.firstname} {post.lastname}
                       </h5>
+                    </div>
+                    <div className='usersImgContainer'>
+                      <img id="hweetsImg" alt={post.firstname} src={post.imgurl}/>
                     </div>
                     <div className="postPTag">
                     <p id="postContent">{post.content}</p>

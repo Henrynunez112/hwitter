@@ -140,3 +140,8 @@
   overflow: auto;
 }
 
+#hweetsImg{
+  border-radius: 75%;
+  width: 100px;
+  height: auto;
+}
