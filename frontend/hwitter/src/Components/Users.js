@@ -23,7 +23,7 @@ const Users = () => {
         AuthToken: token,
       },
     });
-    setPosts(res.data.payload);
+    setPosts(res.data.body);
   };
   const fetchCurrentUser = async (id) => {
     let res = await axios({
@@ -74,6 +74,7 @@ const Users = () => {
           <div className="userHweetCard">
           <ul className="postUl">
             {posts.map((post) => {
+              
               return (
                 <div className="postLi">
                   <li
