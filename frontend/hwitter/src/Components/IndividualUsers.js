@@ -18,6 +18,7 @@ const IndividualUsers = () => {
 
   useEffect(() => {
     const getUser = async (id) => {
+      debugger
       let res = await axios({
         method: "GET",
         url: `${API}/users/${id}`,

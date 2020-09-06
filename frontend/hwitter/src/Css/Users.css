@@ -116,6 +116,7 @@
   display: grid;
   grid-template-columns: 25% 5% 45% 25%;
   grid-template-rows: repeat(4, 25%);
+  height: fit-content;
 }
 .h5Container{
   grid-area: 1/ 1/ span 2/ span 1;
@@ -136,8 +137,6 @@
 }
 .postPTag{
   grid-area: 2/3/ span 2/ span 2;
-  padding: 10px;
-  margin: 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 

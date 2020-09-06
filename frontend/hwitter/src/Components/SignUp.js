@@ -10,7 +10,6 @@ import "../Css/SignUp.css";
 const SignUp = () => {
   const [imageAsFile, setImageAsFile] = useState("");
   const [imageAsUrl, setImageAsUrl] = useState("");
-  // const [toggleUploadMsg, setToggleUploadMsg] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstName] = useState("");
@@ -58,11 +57,6 @@ const SignUp = () => {
             });
         }
       );
-      // setToggleUploadMsg(true);
-
-      // } else {
-      //   setToggleUploadMsg(false);
-      // }
     }
   };
   const signUpUser = async (fireBaseUrl) => {
@@ -76,7 +70,6 @@ const SignUp = () => {
         imgurl: fireBaseUrl,
       });
 
-      debugger
       history.push("/users");
     } catch (error) {
       setError(error.message);
@@ -187,13 +180,6 @@ const SignUp = () => {
                     id="exampleFormControlFile1"
                     onChange={handleImageAsFile}
                   />
-                  {/* <button
-                    onClick={handleFirebasePictureUpload}
-                    id="uploadImgBtn"
-                  >
-                    Upload
-                  </button>
-                  {toggleUploadMsg ? <h5>Upload successful!</h5> : null} */}
                 </div>
                 <div className="form-group">
                   <label for="exampleInputPassword1">Password</label>
@@ -209,11 +195,12 @@ const SignUp = () => {
                     }}
                   />
                 </div>
-                <input
+                <button
                   type="submit"
                   className="btn btn-primary signUpSubmitBtn"
-                  value="submit"
-                />
+                  onClick={handleSubmit}
+                  data-dismiss="modal"
+                >Submit</button>
               </form>
             </div>
           </div>

@@ -80,7 +80,7 @@ export default function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg sticky-top navbar-light bg-light">
-      <NavLink exact to={"/"} className="navbar-brand">
+      <NavLink exact to={"/users"} className="navbar-brand">
         <img alt="twitter logo" src={Logo} style={imgWandH} />
         <span id="brandTitle">Hwitter</span>
       </NavLink>
