@@ -17,8 +17,13 @@ const Users = () => {
   const history = useHistory();
 
   const displayEditBtn = (post) => {
-    if (post === currentUser) {
-      return <p>Henry you are our master</p>;
+    if (post.hweets_id === currentUser.uid) {
+      return (
+        <div id="editHweet">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      );
     }
   };
 
@@ -83,39 +88,6 @@ const Users = () => {
                   if (post.imgurl === "undefined") {
                     post.imgurl = NoImg;
                   }
-                  if (post.hweets_id === currentUser.uid) {
-                    return (
-                      <div className="postLi container">
-                        <li
-                          key={post.id}
-                          className="eachPost"
-                          onClick={() => {
-                            history.push(`/users/${post.hweets_id}`);
-                          }}
-                        >
-                          <div className="col-1 userNameImg">
-                            <div className="h5Container">
-                              <h5 id="nameButton">
-                                {post.firstname} {post.lastname}
-                              </h5>
-                            </div>
-                            <div className="usersImgContainer">
-                              <img
-                                id="hweetsImg"
-                                alt={post.firstname}
-                                src={post.imgurl}
-                              />
-                            </div>
-                          </div>
-                          <div className="postPTag col">
-                            <p id="postContent">{post.content}</p>
-                            <p id="postTimeStamp">{moment(post.time_stamp).calendar()}</p>
-                            <button id="editHweet">Edit</button>
-                          </div>
-                        </li>
-                      </div>
-                    );
-                  }
                   return (
                     <div className="postLi container">
                       <li
@@ -141,7 +113,10 @@ const Users = () => {
                         </div>
                         <div className="postPTag col">
                           <p id="postContent">{post.content}</p>
-                          <p id="postTimeStamp">{moment(post.time_stamp).calendar()}</p>
+                          <p id="postTimeStamp">
+                            {moment(post.time_stamp).calendar()}
+                          </p>
+                          {displayEditBtn(post)}
                         </div>
                       </li>
                     </div>
