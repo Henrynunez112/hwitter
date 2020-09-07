@@ -8,8 +8,9 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    history.push(`search/${search}`);
-    setSearch("");
+      history.push(`/search/${search}`);
+      setSearch("");
+
   };
 
   return (
@@ -29,6 +30,7 @@ const SearchBar = () => {
           className="form-control"
           placeholder="search for hashtags"
           aria-label=""
+          required
           aria-describedby="basic-addon1"
           onChange={(e) => setSearch(e.target.value)}
           value={search}

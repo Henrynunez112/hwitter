@@ -9,10 +9,10 @@ const {
 } = require("../../queries/Hweets/Hweets");
 const { checkFirebaseToken } = require("../../middleware/auth");
 
-hweetsRouter.get("/", joinHweetsWithUsers); //tested
-hweetsRouter.get("/images", getUsersImg); //tested
+// hweetsRouter.get("/", joinHweetsWithUsers); //tested
+hweetsRouter.get("/", getUsersImg); //tested
 hweetsRouter.get("/:hweets_id", checkFirebaseToken, getHweetsByUserId); //tested
-hweetsRouter.put("/:id", updateHweet); //tested
+hweetsRouter.patch("/:id", updateHweet); //tested
 hweetsRouter.post("/", checkFirebaseToken, addNewHweet); //tested
 hweetsRouter.delete("/:id", deleteSingleHweet); //tested
 

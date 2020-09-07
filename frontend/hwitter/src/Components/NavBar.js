@@ -13,11 +13,9 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-          <NavLink to={"*"}>
-            <li className="nav-item" id="searchBarLi">
-              <SearchBar />
-            </li>
-          </NavLink>
+          <li className="nav-item" id="searchBarLi">
+            <SearchBar />
+          </li>
           <NavLink
             exact
             to={"/hweet"}
