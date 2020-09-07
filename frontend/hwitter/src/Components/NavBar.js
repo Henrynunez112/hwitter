@@ -13,62 +13,50 @@ export default function NavBar() {
     if (currentUser) {
       return (
         <>
-            <NavLink to ={"*"}>
-          <li className="nav-item" id="searchBarLi">
+          <NavLink to={"*"}>
+            <li className="nav-item" id="searchBarLi">
               <SearchBar />
-          </li>
-            </NavLink>
-              <NavLink
-                exact
-                to={"/hweet"}
-                className="inactiveHweet"
-                activeClassName="activeHweet"
-              >
-                    <li className="nav-item" id="hweetBtn">
-                      <div className="hweetButton">
-                Hweet Here
-            </div>
-          </li>
-              </NavLink>
-              <a id="logoutBtn" onClick={logOut}>
-          <li className="nav-item" id="logOutBtnLi">
-            <div className="logoutButton">
-                Log Out
-            </div>
-          </li>
-              </a>
+            </li>
+          </NavLink>
+          <NavLink
+            exact
+            to={"/hweet"}
+            className="inactiveHweet"
+            activeClassName="activeHweet"
+          >
+            <li className="nav-item" id="hweetBtn">
+              <div className="hweetButton">Hweet Here</div>
+            </li>
+          </NavLink>
+          <a id="logoutBtn" onClick={logOut}>
+            <li className="nav-item" id="logOutBtnLi">
+              <div className="logoutButton">Log Out</div>
+            </li>
+          </a>
         </>
       );
     } else {
       return (
         <>
-              <NavLink
-                to={"/"}
-                className="inactiveLogin"
-                activeClassName="activeLogin"
-              >
-                  <li className="nav-item" id="loginId">
-                    <div className="loginButton">
-                Log In
-            </div>
-          </li>
-              </NavLink>
-              <NavLink
-              href="/"
-              exact
-              // to="/"
-                to={"/"}
-                className="inactiveSignUp"
-                activeClassName="activeSignUp"
-                data-toggle="modal"
-                data-target="#exampleModal"
-              >
-          <li className="nav-item" id="signUpId">
-            <div className="signUpButton">
-                Sign Up
-            </div>
-          </li>
-              </NavLink>
+          <NavLink
+            to={"/"}
+            className="inactiveLogin"
+            activeClassName="activeLogin"
+          >
+            <li className="nav-item" id="loginId">
+              <div className="loginButton">Log In</div>
+            </li>
+          </NavLink>
+          <NavLink
+            exact
+            to={"/signup"}
+            className="inactiveSignUp"
+            activeClassName="activeSignUp"
+          >
+            <li className="nav-item" id="signUpId">
+              <div className="signUpButton">Sign Up</div>
+            </li>
+          </NavLink>
         </>
       );
     }

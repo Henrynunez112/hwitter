@@ -89,7 +89,8 @@ const SignUp = () => {
 
   return (
     <div className="signUpContainer">
-      <div
+      <h1 style={{color: "white"}}>Hello World</h1>
+      {/* <div
         className="modal fade"
         id="exampleModal"
         tabindex="-1"
@@ -121,7 +122,7 @@ const SignUp = () => {
               </button>
             </div>
             <div className="modal-body">
-              {/* form for the sign-up modal */}
+  
               {error ? <div className="errorSignUp">{error}</div> : null}
 
               <form onSubmit={handleSubmit}>
@@ -205,7 +206,7 @@ const SignUp = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
