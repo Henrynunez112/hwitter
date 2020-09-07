@@ -4,6 +4,7 @@ import axios from "axios";
 import { useRouteMatch } from "react-router-dom";
 import "../Css/IndividualUsers.css";
 import { AuthContext } from "../Providers/AuthProvider";
+import NoImg from '../Css/images/No_image_available.svg.png';
 
 const IndividualUsers = () => {
   const { token } = useContext(AuthContext);
@@ -18,7 +19,6 @@ const IndividualUsers = () => {
 
   useEffect(() => {
     const getUser = async (id) => {
-      debugger
       let res = await axios({
         method: "GET",
         url: `${API}/users/${id}`,
@@ -29,7 +29,12 @@ const IndividualUsers = () => {
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
-      setImage(res.data.body.imgurl);
+      if(res.data.body.imgurl === "undefined"){
+        setImage(NoImg);
+      }else{
+        setImage(res.data.body.imgurl);
+      }
+      debugger
     };
     const userHweet = async (id) => {
       let res = await axios({
