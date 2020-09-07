@@ -10,12 +10,6 @@
   --inputText: #253441;
 }
 
-/* .userContainer {
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 5% 5% 3fr;
-} */
 .usersPage {
   background-color: var(--newTwitterBlue) !important;
   height: fit-content;
@@ -147,13 +141,15 @@
   filter: invert(100%);
 }
 .postPTag {
-  /* grid-area: 1/3 / span 4 / span 2; */
   overflow: auto;
   align-self: center;
   border: 1px solid var(--lightGrey);
   height: 100%;
   border-radius: 13px;
   padding: 20px;
+  display: grid;
+  grid-template-rows: 90% 10%;
+  width: 70vh;
 }
 
 #hweetsImg {

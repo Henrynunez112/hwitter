@@ -4,7 +4,8 @@ import axios from "axios";
 import { useRouteMatch } from "react-router-dom";
 import "../Css/IndividualUsers.css";
 import { AuthContext } from "../Providers/AuthProvider";
-import NoImg from '../Css/images/No_image_available.svg.png';
+import NoImg from "../Css/images/No_image_available.svg.png";
+import moment from 'moment';
 
 const IndividualUsers = () => {
   const { token } = useContext(AuthContext);
@@ -29,21 +30,21 @@ const IndividualUsers = () => {
       setEmail(res.data.body.email);
       setFirstname(res.data.body.firstname);
       setLastname(res.data.body.lastname);
-      if(res.data.body.imgurl === "undefined"){
+      if (res.data.body.imgurl === "undefined") {
         setImage(NoImg);
-      }else{
+      } else {
         setImage(res.data.body.imgurl);
       }
-      debugger
     };
     const userHweet = async (id) => {
       let res = await axios({
-          method: "GET",
-          url: `${API}/hweets/${id}`,
-          headers: {
-              AuthToken: token
-          }
+        method: "GET",
+        url: `${API}/hweets/${id}`,
+        headers: {
+          AuthToken: token,
+        },
       });
+      debugger;
       setPost(res.data.body);
     };
 
@@ -54,27 +55,34 @@ const IndividualUsers = () => {
     <div className="individualUsersContainer container-fluid">
       <div className="col individualHeader">
         <div className="row individualTitle">
-        <h1 id="individualName">
-          {firstname} {lastname}
-        </h1>
-        <h3 id="individualEmail">{email}</h3>
+          <h1 id="individualName">
+            {firstname} {lastname}
+          </h1>
+          <h3 id="individualEmail">{email}</h3>
         </div>
         <div className="row individualImgDiv">
-        <img src={image} id="individualImg" /*className="img-fluid"*/ alt={`${firstname}'s profile`} />
+          <img
+            src={image}
+            id="individualImg"
+            /*className="img-fluid"*/ alt={`${firstname}'s profile`}
+          />
         </div>
       </div>
       <div className="col individualPostContainter justify-content-center">
         <div className="individualUlDiv">
-        <ul className="individualUl">
-          {posts.map((post) => {
-            return (
-              <div className="individualLiContainer">
-                <li className="individualLi">{post.content}</li>
-              </div>
-            );
-          })}
-        </ul>
-          </div>
+          <ul className="individualUl">
+            {posts.map((post) => {
+              return (
+                <div className="individualLiContainer">
+                  <li className="individualLi">
+                    <p>{post.content}</p>
+                    <p>{moment(post.time_stamp).calendar()}</p>
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );

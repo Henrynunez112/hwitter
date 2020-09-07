@@ -5,8 +5,8 @@ import { apiURL } from "../Util/apiUrl";
 import axios from "axios";
 import "../Css/Users.css";
 import UserHweet from "./UserHweet";
-import NoImg from '../Css/images/No_image_available.svg.png';
-
+import NoImg from "../Css/images/No_image_available.svg.png";
+import moment from "moment";
 
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
@@ -76,8 +76,8 @@ const Users = () => {
             <div className="userHweetCard">
               <ul className="postUl">
                 {posts.map((post) => {
-                  if(post.imgurl === "undefined"){
-                    post.imgurl = NoImg
+                  if (post.imgurl === "undefined") {
+                    post.imgurl = NoImg;
                   }
                   return (
                     <div className="postLi container">
@@ -104,6 +104,7 @@ const Users = () => {
                         </div>
                         <div className="postPTag col">
                           <p id="postContent">{post.content}</p>
+                          <p>{moment(post.time_stamp).calendar()}</p>
                         </div>
                       </li>
                     </div>
