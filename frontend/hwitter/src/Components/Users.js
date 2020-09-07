@@ -57,50 +57,54 @@ const Users = () => {
               id="profileImg"
               src={users.imgurl}
             />
-
           </div>
           <div className="row justify-content-center userProfileName">
             <h5 id="userProfileName">
               {users.firstname} {users.lastname}
             </h5>
-        </div>
+          </div>
         </div>
         <div className="col-8 postsContainer">
           <div className="row userHweetDiv">
-          <UserHweet fetchPosts={fetchPosts} />
+            <UserHweet fetchPosts={fetchPosts} />
           </div>
-{/* break */}
+          {/* break */}
           <div className="row userHweetFeed">
-          <div className="userHweetCard">
-          <ul className="postUl">
-            {posts.map((post) => {
-              
-              return (
-                <div className="postLi">
-                  <li
-                    key={post.id}
-                    className="eachPost"
-                    onClick={() => {
-                      history.push(`/users/${post.hweets_id}`);
-                    }}
-                  >
-                    <div className="h5Container">
-                      <h5 id="nameButton">
-                        {post.firstname} {post.lastname}
-                      </h5>
+            <div className="userHweetCard">
+              <ul className="postUl">
+                {posts.map((post) => {
+                  return (
+                    <div className="postLi container">
+                      <li
+                        key={post.id}
+                        className="eachPost"
+                        onClick={() => {
+                          history.push(`/users/${post.hweets_id}`);
+                        }}
+                      >
+                        <div className="col-1 userNameImg">
+                          <div className="h5Container">
+                            <h5 id="nameButton">
+                              {post.firstname} {post.lastname}
+                            </h5>
+                          </div>
+                          <div className="usersImgContainer">
+                            <img
+                              id="hweetsImg"
+                              alt={post.firstname}
+                              src={post.imgurl}
+                            />
+                          </div>
+                        </div>
+                        <div className="postPTag col">
+                          <p id="postContent">{post.content}</p>
+                        </div>
+                      </li>
                     </div>
-                    <div className='usersImgContainer'>
-                      <img id="hweetsImg" alt={post.firstname} src={post.imgurl}/>
-                    </div>
-                    <div className="postPTag">
-                    <p id="postContent">{post.content}</p>
-                    </div>
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
-          </div>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
