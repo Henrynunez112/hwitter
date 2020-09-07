@@ -75,8 +75,8 @@ const IndividualUsers = () => {
               return (
                 <div className="individualLiContainer">
                   <li className="individualLi">
-                    <p>{post.content}</p>
-                    <p>{moment(post.time_stamp).calendar()}</p>
+                    <p id="individualPostContent">{post.content}</p>
+                    <p id="individualPostTime">{moment(post.time_stamp).calendar()}</p>
                   </li>
                 </div>
               );
