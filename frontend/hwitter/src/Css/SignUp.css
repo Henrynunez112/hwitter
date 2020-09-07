@@ -9,42 +9,50 @@
   --newTwitterBlue: #15212b;
   --inputText: #253441;
 }
-.signUpModal{
+.signUpContainer {
   background-color: var(--newTwitterBlue) !important;
-  color: var(--darkGrey) !important;
+  color: var(--babyBlue) !important;
   border: 1px solid var(--lightGrey);
   border-radius: 13px;
   box-shadow: 3px 3px 8px #253441;
+  padding: 10px;
+  margin-top: 15px;
+
 }
-#twitterLogo {
-  width: 32px;
-  height: 32px;
-  margin: 0px 20px;
-  margin-left: 20px !important;
+.signUpForm {
+  padding: 20px;
 }
-#signUpHeader{
-  margin: 0px 80px;
+.signUpHeader{
+  display: grid;
+  grid-template-rows: 50% 50%;
 }
-#closeButton{
-  color: var(--babyBlue) !important;
+#twitterLogo{
+  justify-self: center;
 }
-#uploadImgBtn{
+#uploadImgBtn {
   background-color: var(--babyBlue);
   border-radius: 13px;
   padding: 5px 30px;
   border: 1px solid var(--babyBlue);
   color: white;
 }
-#uploadImgBtn:hover{
+#uploadImgBtn:hover {
   background-color: white;
   color: var(--babyBlue);
 }
-.signUpSubmitBtn{
+.signUpSubmitBtn {
   background-color: var(--newTwitterBlue) !important;
   padding: 5px 30px;
   border: 1px solid var(--babyBlue);
   color: var(--babyBlue) !important;
 }
-.errorSignUp{
+.errorSignUp {
   color: hotpink !important;
+}
+
+.signUpBody{
+  border: 1px solid var(--lightGrey) !important;
+  border-radius: 13px;
+  padding: 20px;
+  background-color: var(--inputText) !important;
 }

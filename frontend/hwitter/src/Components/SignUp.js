@@ -82,131 +82,108 @@ const SignUp = () => {
     handleFirebasePictureUpload();
   };
   const imgWandH = {
-    width: "32px",
-    height: "32px",
-    marginLeft: "184px",
+    width: "43.9px",
+    height: "44.9px",
+    // marginLeft: "184px",
   };
 
   return (
-    <div className="signUpContainer">
-      <h1 style={{color: "white"}}>Hello World</h1>
-      {/* <div
-        className="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog" role="document">
-          <div className="modal-content signUpModal">
-            <div className="modal-header">
-              <img
-                alt="twitter logo on modal"
-                src={Logo}
-                style={imgWandH}
-                id="twitterLogo"
-              />
-              <h5 className="modal-title hwitterTitleSignUp" id="signUpHeader">
-                Sign Up to Hwitter
-              </h5>
-              <button
-                type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <span aria-hidden="true" id="closeButton">
-                  &times;
-                </span>
-              </button>
-            </div>
-            <div className="modal-body">
-  
-              {error ? <div className="errorSignUp">{error}</div> : null}
+    <div className="signUpContainer container">
+      <div className="container signUpForm">
+      <div className="row signUpHeader justify-content-center">
+      <img
+        alt="twitter logo on modal"
+        src={Logo}
+        style={imgWandH}
+        id="twitterLogo"
+      />
+      <h5 className=" hwitterTitleSignUp" id="signUpTitle">
+        Sign Up to Hwitter
+      </h5>
+      </div>
 
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label for="firstName">First Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="firstName"
-                    aria-describedby="firstName"
-                    placeholder="First Name"
-                    value={firstname}
-                    onChange={(e) => {
-                      setFirstName(e.currentTarget.value);
-                    }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="lastName"
-                    aria-describedby="lastName"
-                    placeholder="Last Name"
-                    value={lastname}
-                    onChange={(e) => {
-                      setLastName(e.currentTarget.value);
-                    }}
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="emailInput"
-                    aria-describedby="emailHelp"
-                    placeholder="Enter email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.currentTarget.value);
-                    }}
-                  />
-                  <small id="emailHelp" className="form-text text-muted">
-                    We'll never share your email with anyone else.
-                  </small>
-                </div>
-                <div className="form-group">
-                  <label for="exampleFormControlFile1">
-                    Upload Profile Picture
-                  </label>
-                  <input
-                    type="file"
-                    class="form-control-file"
-                    id="exampleFormControlFile1"
-                    onChange={handleImageAsFile}
-                  />
-                </div>
-                <div className="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input
-                    type="password"
-                    className="form-control"
-                    id="exampleInputPassword1"
-                    placeholder="Password"
-                    autoComplete="on"
-                    value={password}
-                    onChange={(e) => {
-                      setPassword(e.currentTarget.value);
-                    }}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary signUpSubmitBtn"
-                  onClick={handleSubmit}
-                  data-dismiss="modal"
-                >Submit</button>
-              </form>
-            </div>
+      <div className="body signUpBody justify-content-center">
+        {error ? <div className="errorSignUp">{error}</div> : null}
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="firstName"
+              aria-describedby="firstName"
+              placeholder="First Name"
+              value={firstname}
+              onChange={(e) => {
+                setFirstName(e.currentTarget.value);
+              }}
+            />
           </div>
-        </div>
-      </div> */}
+          <div className="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="lastName"
+              aria-describedby="lastName"
+              placeholder="Last Name"
+              value={lastname}
+              onChange={(e) => {
+                setLastName(e.currentTarget.value);
+              }}
+            />
+          </div>
+          <div className="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              className="form-control"
+              id="emailInput"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              value={email}
+              onChange={(e) => {
+                setEmail(e.currentTarget.value);
+              }}
+            />
+            <small id="emailHelp" className="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
+          </div>
+          <div className="form-group">
+            <label for="exampleFormControlFile1">Upload Profile Picture</label>
+            <input
+              type="file"
+              class="form-control-file"
+              id="exampleFormControlFile1"
+              onChange={handleImageAsFile}
+            />
+          </div>
+          <div className="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              autoComplete="on"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.currentTarget.value);
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary signUpSubmitBtn"
+            onClick={handleSubmit}
+            data-dismiss="modal"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+      </div>
     </div>
   );
 };
