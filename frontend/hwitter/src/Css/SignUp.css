@@ -28,6 +28,7 @@
 .signUpHeader{
   display: grid;
   grid-template-rows: 50% 50%;
+  grid-row-gap: 5px;
 }
 #twitterLogo{
   justify-self: center;
@@ -46,9 +47,15 @@
 .signUpSubmitBtn {
   background-color: var(--newTwitterBlue) !important;
   padding: 5px 30px;
-  border: 1px solid var(--babyBlue);
+  border: 2px solid var(--babyBlue);
   color: var(--babyBlue) !important;
 }
+.signUpSubmitBtn:hover{
+  background-color: var(--babyBlue) !important;
+  border: 2px solid var(--white);
+  color: var(--white) !important;
+}
+
 .errorSignUp {
   color: hotpink !important;
 }

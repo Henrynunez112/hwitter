@@ -7,6 +7,7 @@ import "../Css/Users.css";
 import UserHweet from "./UserHweet";
 import NoImg from '../Css/images/No_image_available.svg.png';
 
+
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
@@ -75,7 +76,6 @@ const Users = () => {
             <div className="userHweetCard">
               <ul className="postUl">
                 {posts.map((post) => {
-                  debugger
                   if(post.imgurl === "undefined"){
                     post.imgurl = NoImg
                   }

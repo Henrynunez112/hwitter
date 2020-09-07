@@ -69,7 +69,7 @@ const SignUp = () => {
         lastname,
         imgurl: fireBaseUrl,
       });
-
+      debugger
       history.push("/users");
     } catch (error) {
       setError(error.message);
@@ -97,7 +97,7 @@ const SignUp = () => {
         style={imgWandH}
         id="twitterLogo"
       />
-      <h5 className=" hwitterTitleSignUp" id="signUpTitle">
+      <h5 className="hwitterTitleSignUp" id="signUpTitle">
         Sign Up to Hwitter
       </h5>
       </div>
@@ -154,8 +154,7 @@ const SignUp = () => {
             <label for="exampleFormControlFile1">Upload Profile Picture</label>
             <input
               type="file"
-              class="form-control-file"
-              id="exampleFormControlFile1"
+              className="form-control-file"
               onChange={handleImageAsFile}
             />
           </div>
@@ -177,7 +176,6 @@ const SignUp = () => {
             type="submit"
             className="btn btn-primary signUpSubmitBtn"
             onClick={handleSubmit}
-            data-dismiss="modal"
           >
             Submit
           </button>
