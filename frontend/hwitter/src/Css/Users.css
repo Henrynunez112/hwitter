@@ -167,4 +167,7 @@
 }
 #editHweet {
   grid-area: 2/2 / span 1 / span 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1%;
 }

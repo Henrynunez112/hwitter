@@ -21,7 +21,7 @@ const Users = () => {
       return (
         <div id="editHweet">
           <button>Edit</button>
-          <button>Delete</button>
+          <button>x</button>
         </div>
       );
     }
