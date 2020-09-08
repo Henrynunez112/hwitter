@@ -19,6 +19,7 @@ const Users = () => {
 
   const displayEditBtn = (post) => {
     if (post.hweets_id === currentUser.uid) {
+      debugger
       return (
         <div id="editHweet">
           <button
@@ -137,7 +138,7 @@ const Users = () => {
                           {displayEditBtn(post)}
                         </div>
                       </li>
-                      <EditPost />
+                      <EditPost fetchPosts={fetchPosts} />
                     </div>
                   );
                 })}

@@ -1,8 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
+import { apiURL } from "../Util/apiUrl";
 
-const EditPost = () => {
-  const { currentUser } = useContext(AuthContext);
+const EditPost = ({fetchPosts}) => {
+  const { currentUser, token } = useContext(AuthContext);
+  const [newPost, setNewPost] = useState("");
+
+  const handleSubmit = () =>{
+
+  }
+
+  useEffect(() =>{
+    fetch
+  })
+
   return (
     <div
       class="modal fade"
@@ -15,9 +28,7 @@ const EditPost = () => {
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-              
-            </h5>
+            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
             <button
               type="button"
               class="close"

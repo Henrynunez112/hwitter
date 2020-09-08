@@ -8,7 +8,6 @@ import "../Css/UserHweet.css";
 
 const UserHweet = ({ fetchPosts }) => {
   const { token } = useContext(AuthContext);
-  const { currentUser } = useContext(AuthContext);
   // let contentObj = useInput("");
   const [hweet, setHweet] = useState("");
   const API = apiURL();
