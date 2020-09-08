@@ -7,6 +7,7 @@ import "../Css/Users.css";
 import UserHweet from "./UserHweet";
 import NoImg from "../Css/images/No_image_available.svg.png";
 import moment from "moment";
+import EditPost from "./EditPost";
 
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
@@ -20,7 +21,13 @@ const Users = () => {
     if (post.hweets_id === currentUser.uid) {
       return (
         <div id="editHweet">
-          <button>Edit</button>
+          <button
+            type="button"
+            data-toggle="modal"
+            data-target="#editModal"
+          >
+            Edit
+          </button>
           <button>x</button>
         </div>
       );
@@ -90,20 +97,24 @@ const Users = () => {
                   }
                   return (
                     <div className="postLi container">
-                      <li
-                        key={post.id}
-                        className="eachPost"
-                        onClick={() => {
-                          history.push(`/users/${post.hweets_id}`);
-                        }}
-                      >
+                      <li key={post.id} className="eachPost">
                         <div className="col-1 userNameImg">
-                          <div className="h5Container">
+                          <div
+                            className="h5Container"
+                            onClick={() => {
+                              history.push(`/users/${post.hweets_id}`);
+                            }}
+                          >
                             <h5 id="nameButton">
                               {post.firstname} {post.lastname}
                             </h5>
                           </div>
-                          <div className="usersImgContainer">
+                          <div
+                            className="usersImgContainer"
+                            onClick={() => {
+                              history.push(`/users/${post.hweets_id}`);
+                            }}
+                          >
                             <img
                               id="hweetsImg"
                               alt={post.firstname}
@@ -112,13 +123,21 @@ const Users = () => {
                           </div>
                         </div>
                         <div className="postPTag col">
-                          <p id="postContent">{post.content}</p>
+                          <p
+                            id="postContent"
+                            onClick={() => {
+                              history.push(`/users/${post.hweets_id}`);
+                            }}
+                          >
+                            {post.content}
+                          </p>
                           <p id="postTimeStamp">
                             {moment(post.time_stamp).calendar()}
                           </p>
                           {displayEditBtn(post)}
                         </div>
                       </li>
+                      <EditPost />
                     </div>
                   );
                 })}
