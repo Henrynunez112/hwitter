@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { apiURL } from "../Util/apiUrl";
+import "../Css/EditPost.css"
 
 const EditPost = ({post}) => {
   const [content, setContent] = useState("");
@@ -13,8 +14,6 @@ const EditPost = ({post}) => {
     })
     window.location.reload();
   }
-
-
 
   return (
     <div
