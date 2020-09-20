@@ -8,6 +8,7 @@ import UserHweet from "./UserHweet";
 import NoImg from "../Css/images/No_image_available.svg.png";
 import moment from "moment";
 import EditPost from "./EditPost";
+import DeletePost from "./DeletePost";
 
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
@@ -25,10 +26,11 @@ const Users = () => {
             type="button"
             data-toggle="modal"
             data-target="#editModal"
+            id="editDisplayButton"
           >
             Edit
           </button>
-          <button>x</button>
+          <button id="deleteHweetButton" type="button" data-toggle="modal" data-target="#deleteModal">x</button>
         </div>
       );
     }
@@ -138,6 +140,7 @@ const Users = () => {
                         </div>
                       </li>
                       <EditPost post={post} />
+                      <DeletePost post={post} />
                     </div>
                   );
                 })}
