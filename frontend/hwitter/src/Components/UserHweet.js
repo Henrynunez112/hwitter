@@ -1,6 +1,4 @@
 import React, { useContext, useState } from "react";
-//in case I wanted to implement a custom hook
-// import { useInput } from "../Util/useInput";
 import axios from "axios";
 import { apiURL } from "../Util/apiUrl";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -8,7 +6,6 @@ import "../Css/UserHweet.css";
 
 const UserHweet = ({ fetchPosts }) => {
   const { token } = useContext(AuthContext);
-  // let contentObj = useInput("");
   const [hweet, setHweet] = useState("");
   const API = apiURL();
 

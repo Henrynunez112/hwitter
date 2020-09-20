@@ -44,7 +44,6 @@ const IndividualUsers = () => {
           AuthToken: token,
         },
       });
-      debugger;
       setPost(res.data.body);
     };
 
