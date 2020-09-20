@@ -2,7 +2,7 @@ const hweetsRouter = require("express").Router();
 const {
   addNewHweet,
   deleteSingleHweet,
-  joinHweetsWithUsers,
+  getSingleHweetByUser,
   getHweetsByUserId,
   updateHweet,
   getUsersImg
@@ -11,7 +11,8 @@ const { checkFirebaseToken } = require("../../middleware/auth");
 
 // hweetsRouter.get("/", joinHweetsWithUsers); //tested
 hweetsRouter.get("/", getUsersImg); //tested
-hweetsRouter.get("/:hweets_id", checkFirebaseToken, getHweetsByUserId); //tested
+hweetsRouter.get("/:hweets_id", getHweetsByUserId); //tested
+hweetsRouter.get("/:hweets_id/:id", getSingleHweetByUser)
 hweetsRouter.patch("/:id", updateHweet); //tested
 hweetsRouter.post("/", checkFirebaseToken, addNewHweet); //tested
 hweetsRouter.delete("/:id", deleteSingleHweet); //tested

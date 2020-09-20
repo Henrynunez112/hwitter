@@ -102,6 +102,30 @@ const getHweetsByUserId = async (req, res, next) => {
   }
 };
 
+const getSingleHweetByUser = async (req, res, next) =>{
+  let {hweets_id} = req.params;
+  let {id} = req.params;
+  try{
+    let singleHweetByUser = await db.any(
+      "SELECT * FROM hweets WHERE hweets_id = $1 AND id = $2",
+      [hweets_id, id]
+    );
+    res.status(200).json({
+      status: "success",
+      message: "this is the single hweet",
+      body: singleHweetByUser
+    })
+  }catch(err){
+    console.log(err);
+    res.status(400).json({
+      status: "Fail",
+      message: "this is not the single hweet",
+      body: err
+    })
+
+  }
+}
+
 const updateHweet = async (req, res, next) => {
   let { id } = req.params;
   let { content } = req.body;
@@ -149,5 +173,6 @@ module.exports = {
   getAllHweets,
   getHweetsByUserId,
   updateHweet,
-  getUsersImg
+  getUsersImg,
+  getSingleHweetByUser
 };
