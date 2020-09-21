@@ -53,12 +53,12 @@ const EditPost = ({ post }) => {
           <div className="modal-footer editModalFooter">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-secondary cancelEditButton"
               data-dismiss="modal"
             >
-              Close
+              Cancel
             </button>
-            <button type="button" className="btn btn-primary" onClick={editPost}>
+            <button type="button" className="btn btn-primary saveChangesEditButton" onClick={editPost}>
               Save changes
             </button>
           </div>

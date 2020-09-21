@@ -34,3 +34,25 @@
     border-top: 1px solid var(--babyBlue) !important;
     border-radius: 0px 0px 12px 12px;
 }
+.cancelEditButton{
+    border-radius: 13px;
+    border: 2px solid var(--white) !important;
+    color: white !important;
+    background-color: var(--newTwitterBlue) !important;
+}
+.cancelEditButton:hover{
+    border: 2px solid var(--babyBlue) !important;
+    color: var(--newTwitterBlue)!important;
+    background-color: var(--babyBlue) !important;
+}
+.saveChangesEditButton{
+    border-radius: 13px;
+    border: 2px solid var(--white) !important;
+    color: var(--newTwitterBlue);
+    background-color: var(--babyBlue) !important;
+}
+.saveChangesEditButton:hover{
+    border: 2px solid var(--babyBlue) !important;
+    background-color: var(--white) !important;
+    color: var(--newTwitterBlue) !important;
+}
