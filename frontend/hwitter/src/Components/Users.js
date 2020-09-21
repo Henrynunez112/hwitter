@@ -30,7 +30,16 @@ const Users = () => {
           >
             Edit
           </button>
-          <button id="deleteHweetButton" type="button" data-toggle="modal" data-target="#deleteModal">x</button>
+          <button
+            id="deleteHweetButton"
+            type="button"
+            data-toggle="modal"
+            data-target="#deleteModal"
+          >
+            Delete
+          </button>
+          <EditPost post={post} />
+          <DeletePost post={post} />
         </div>
       );
     }
@@ -139,8 +148,6 @@ const Users = () => {
                           {displayEditBtn(post)}
                         </div>
                       </li>
-                      <EditPost post={post} />
-                      <DeletePost post={post} />
                     </div>
                   );
                 })}

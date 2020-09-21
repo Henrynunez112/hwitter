@@ -1,68 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../Providers/AuthProvider";
 import { apiURL } from "../Util/apiUrl";
-import "../Css/EditPost.css"
+import "../Css/EditPost.css";
 
-const EditPost = ({post}) => {
+const EditPost = ({ post }) => {
   const [content, setContent] = useState("");
+  const {currentUser} = useContext(AuthContext)
   const API = apiURL();
-  
-  const editPost = async (e) =>{
+
+  const editPost = async (e) => {
+    debugger
     e.preventDefault();
-    await axios.patch(`${API}/hweets/${post.id}`, {
-      content
-    })
+    await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
+      content,
+    });
     window.location.reload();
-  }
+  };
 
   return (
     <div
-      class="modal fade"
+      className="modal fade"
       id="editModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="editModalTitle"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content editPostModal">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+      <div className="modal-dialog modal-dialog-centered" role="document">
+        <div className="modal-content editPostModal">
+          <div className="modal-header editModalHeader">
+            <h5 className="modal-title" id="editModalHeaderText">
+              Edit Your Hweet
+            </h5>
           </div>
-          <div class="modal-body">
+          <div className="modal-body editModalBody">
             <form onSubmit={editPost}>
-            <div className="form-group">
+              <div className="form-group">
                 <label for="caption" id="labelitem">
                   New Caption
                 </label>
-                <input
-                  type="text"
+                <textarea
+                  type="textarea"
                   className="form-control"
                   value={content}
                   placeholder={content}
-                  id='content'
                   onChange={(e) => setContent(e.currentTarget.value)}
                 />
               </div>
             </form>
           </div>
-          <div class="modal-footer">
+          <div className="modal-footer editModalFooter">
             <button
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-secondary"
               data-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary" onClick={editPost}>
+            <button type="button" className="btn btn-primary" onClick={editPost}>
               Save changes
             </button>
           </div>

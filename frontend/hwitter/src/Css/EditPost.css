@@ -9,7 +9,28 @@
   --newTwitterBlue: #15212b;
   --inputText: #253441;
 }
-
+.form-control{
+    color: black !important;
+}
 .editPostModal{
-    border: 3px solid var(--babyBlue) !important;
+    border: 2px solid var(--babyBlue) !important;
+    border-radius: 13px;
+}
+.editModalHeader{
+    background-color: var(--newTwitterBlue) !important;
+    justify-content: center;
+    border-bottom: 2px solid var(--babyBlue) !important;
+    border-radius: 12px 12px 0px 0px;
+}
+#editModalHeaderText{
+    color: var(--babyBlue) !important;
+}
+.editModalBody{
+    background-color: var(--inputText) !important;
+    border-bottom: 1px solid var(--babyBlue) !important;
+}
+.editModalFooter{
+    background-color: var(--newTwitterBlue) !important;
+    border-top: 1px solid var(--babyBlue) !important;
+    border-radius: 0px 0px 12px 12px;
 }
