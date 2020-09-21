@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiURL } from "../Util/apiUrl";
+import moment from "moment";
 import "../Css/EditPost.css";
 
 const EditPost = ({ post }) => {
@@ -14,7 +15,9 @@ const EditPost = ({ post }) => {
     e.preventDefault();
     await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
       content,
+      time_stamp: moment().calendar()
     });
+    setContent("");
     window.location.reload();
   };
 
