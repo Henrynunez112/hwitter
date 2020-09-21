@@ -13,7 +13,7 @@ const { checkFirebaseToken } = require("../../middleware/auth");
 hweetsRouter.get("/", getUsersImg); //tested
 hweetsRouter.get("/:hweets_id", checkFirebaseToken, getHweetsByUserId); //tested
 hweetsRouter.get("/:hweets_id/:id", checkFirebaseToken, getSingleHweetByUser)
-hweetsRouter.patch("/:id", updateHweet); //tested
+hweetsRouter.patch("/:hweets_id/:id", updateHweet); //tested
 hweetsRouter.post("/", checkFirebaseToken, addNewHweet); //tested
 hweetsRouter.delete("/:id", deleteSingleHweet); //tested
 

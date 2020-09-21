@@ -127,12 +127,12 @@ const getSingleHweetByUser = async (req, res, next) =>{
 }
 
 const updateHweet = async (req, res, next) => {
-  let { id } = req.params;
+  let { id, hweets_id } = req.params;
   let { content } = req.body;
   try {
     let newHweet = await db.one(
-      `UPDATE hweets SET  content = $1 WHERE id = $2 RETURNING *`,
-      [content, id]
+      `UPDATE hweets SET  content = $1 WHERE hweets_id = $2 AND id = $3 RETURNING *`,
+      [content, hweets_id, id]
     );
     res.status(200).json({
       status: "success",
