@@ -1,0 +1,54 @@
+:root {
+  --babyBlue: #1da1f2;
+  --black: #14171a;
+  --darkGrey: #657786;
+  --lightGrey: #aab8c2;
+  --extraLightGray: #e1e8ed;
+  --extraExtraLightGray: #f5f8fa;
+  --white: #ffffff;
+  --newTwitterBlue: #15212b;
+  --inputText: #253441;
+}
+.deletePostModal {
+  border: 2px solid var(--babyBlue) !important;
+  border-radius: 13px;
+}
+.deletePostModalHeader {
+  justify-content: center;
+  border-bottom: 2px solid var(--babyBlue) !important;
+  border-radius: 12px 12px 0px 0px;
+  background-color: var(--newTwitterBlue) !important;
+  color: var(--babyBlue) !important;
+}
+.deletePostModalBody {
+  background-color: var(--inputText) !important;
+  border-bottom: 1px solid var(--babyBlue) !important;
+}
+.deletePostModalFooter {
+  border-top: 1px solid var(--babyBlue) !important;
+  border-radius: 0px 0px 12px 12px;
+  background-color: var(--newTwitterBlue) !important;
+  justify-content: center;
+}
+.cancelDelete {
+  border-radius: 13px;
+  border: 2px solid var(--white) !important;
+  color: white !important;
+  background-color: var(--newTwitterBlue) !important;
+}
+.cancelDelete:hover {
+  border: 2px solid var(--babyBlue) !important;
+  color: var(--newTwitterBlue) !important;
+  background-color: var(--babyBlue) !important;
+}
+.confirmDelete {
+  border-radius: 13px;
+  border: 2px solid var(--white) !important;
+  color: var(--newTwitterBlue);
+  background-color: var(--babyBlue) !important;
+}
+.confirmDelete:hover {
+  border: 2px solid var(--babyBlue) !important;
+  background-color: var(--white) !important;
+  color: var(--newTwitterBlue) !important;
+}

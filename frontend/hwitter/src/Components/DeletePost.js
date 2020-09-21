@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { apiURL } from "../Util/apiUrl";
+import "../Css/DeletePost.css";
 
 const DeletePost = ({ post }) => {
   const API = apiURL();
@@ -12,38 +13,30 @@ const DeletePost = ({ post }) => {
   
   return (
     <div
-      class="modal fade"
+      className="modal fade"
       id="deleteModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalCenterTitle"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-              Modal title
+      <div className="modal-dialog modal-dialog-centered" role="document">
+        <div className="modal-content deletePostModal">
+          <div className="modal-header deletePostModalHeader">
+            <h5 className="modal-title" id="exampleModalLongTitle">
+              Delete Post?
             </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
           </div>
-          <div class="modal-body">Are You sure</div>
-          <div class="modal-footer">
+          <div className="modal-body deletePostModalBody">Are You sure?</div>
+          <div className="modal-footer deletePostModalFooter">
             <button
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-secondary cancelDelete"
               data-dismiss="modal"
             >
               No
             </button>
-            <button type="button" class="btn btn-primary" onClick={deleteHweet}>
+            <button type="button" className="btn btn-primary confirmDelete" onClick={deleteHweet}>
               Yes
             </button>
           </div>

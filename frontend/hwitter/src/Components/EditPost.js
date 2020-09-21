@@ -11,7 +11,6 @@ const EditPost = ({ post }) => {
   const API = apiURL();
 
   const editPost = async (e) => {
-    debugger
     e.preventDefault();
     await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
       content,
