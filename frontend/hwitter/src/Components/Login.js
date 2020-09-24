@@ -23,11 +23,13 @@ const Login = () => {
   };
 
   const guestLogin = async () => {
-    debugger
+    debugger;
     try {
-      alert("guest Login")
+      await logIn("batman09@gmail.com", "admin123");
+      history.push("/users");
     } catch (err) {
       console.log(err);
+      setError(err.message);
     }
   };
 
