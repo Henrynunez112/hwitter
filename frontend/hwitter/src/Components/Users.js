@@ -14,6 +14,7 @@ import DeletePost from "./DeletePost";
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
   console.log(showDeleteModal);
   const [posts, setPosts] = useState([]);
   const [users, setUser] = useState({});
@@ -21,15 +22,14 @@ const Users = () => {
   const API = apiURL();
   const history = useHistory();
 
-  const deletePost = (id) =>{
-    let postIndex = posts.findIndex(el => el.id === id)
-    if(postIndex > -1){
+  const deletePost = (id) => {
+    let postIndex = posts.findIndex((el) => el.id === id);
+    if (postIndex > -1) {
       let newPosts = [...posts];
       newPosts.splice(postIndex, 1);
       setPosts(newPosts);
     }
-
-  }
+  };
 
   const displayEditBtn = (post) => {
     if (post.hweets_id === currentUser.uid) {
@@ -37,9 +37,10 @@ const Users = () => {
         <div id="editHweet">
           <button
             type="button"
-            data-toggle="modal"
-            data-target="#editModal"
             id="editDisplayButton"
+            onClick={() => {
+              setShowEditModal(true);
+            }}
           >
             Edit
           </button>
@@ -54,10 +55,26 @@ const Users = () => {
           >
             Delete
           </button>
-          <EditPost post={post} />
+          {showEditModal ? (
+            <Card>
+              <EditPost
+                post={post}
+                fetchPosts={fetchPosts}
+                closeModal={() => {
+                  setShowEditModal(false);
+                }}
+              />
+            </Card>
+          ) : null}
           {showDeleteModal ? (
             <Card>
-              <DeletePost post={post} deletePost={deletePost} closeModal={()=>{setShowDeleteModal(false)}} />
+              <DeletePost
+                post={post}
+                deletePost={deletePost}
+                closeModal={() => {
+                  setShowDeleteModal(false);
+                }}
+              />
             </Card>
           ) : null}
         </div>

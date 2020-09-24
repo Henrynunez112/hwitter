@@ -5,29 +5,32 @@ import { apiURL } from "../Util/apiUrl";
 import moment from "moment";
 import "../Css/EditPost.css";
 
-const EditPost = ({ post }) => {
+const EditPost = ({ post, closeModal, fetchPosts }) => {
   const [content, setContent] = useState("");
   const {currentUser} = useContext(AuthContext)
   const API = apiURL();
 
   const editPost = async (e) => {
     e.preventDefault();
-    await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
-      content,
-      time_stamp: moment().calendar()
-    });
-    setContent("");
-    window.location.reload();
+    try{
+      await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
+        content,
+        time_stamp: moment().calendar()
+      });
+      fetchPosts();
+      setContent("");
+      closeModal();
+    }catch(err){
+      console.log(err)
+    }
   };
 
   return (
     <div
-      className="modal fade"
       id="editModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="editModalTitle"
-      aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content editPostModal">

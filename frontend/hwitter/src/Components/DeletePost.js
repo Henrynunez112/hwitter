@@ -36,7 +36,6 @@ const DeletePost = ({ post, deletePost, closeModal }) => {
             <button
               type="button"
               className="btn btn-secondary cancelDelete"
-              // data-dismiss="modal"
               onClick={closeModal}
             >
               No
