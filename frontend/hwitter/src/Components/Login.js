@@ -25,7 +25,7 @@ const Login = () => {
   const guestLogin = async () => {
     debugger;
     try {
-      await logIn("batman09@gmail.com", "admin123");
+      await logIn("guest@gmail.com", "admin123");
       history.push("/users");
     } catch (err) {
       console.log(err);
