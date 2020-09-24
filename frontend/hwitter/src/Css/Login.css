@@ -116,3 +116,7 @@
   background-color: var(--white) !important;
   color: var(--babyBlue) !important;
 }
+.buttonLogin{
+  display: flex;
+  justify-content: space-around;
+}

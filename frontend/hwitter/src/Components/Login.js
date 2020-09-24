@@ -21,6 +21,16 @@ const Login = () => {
       setError(err.message);
     }
   };
+
+  const guestLogin = async () => {
+    debugger
+    try {
+      alert("guest Login")
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const imgWandH = {
     //creating a size for the twitter bird
     width: "43.9px",
@@ -71,9 +81,18 @@ const Login = () => {
                 value={password}
               />
             </div>
-            <button type="submit" className="btn btn-primary loginBtn">
-              Login
-            </button>
+            <div className="row buttonLogin">
+              <button type="submit" className="btn btn-primary loginBtn">
+                Login
+              </button>
+              <button
+                type="button"
+                className="btn btn-primary loginBtn"
+                onClick={guestLogin}
+              >
+                Guest Login
+              </button>
+            </div>
           </form>
         </div>
       </div>
