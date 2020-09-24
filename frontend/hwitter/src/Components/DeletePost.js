@@ -18,7 +18,6 @@ const DeletePost = ({ post, deletePost, closeModal }) => {
 
   return (
     <div
-      // className="fade"
       id="deleteModal"
       tabindex="-1"
       role="dialog"

@@ -59,7 +59,7 @@ const EditPost = ({ post, closeModal, fetchPosts }) => {
             <button
               type="button"
               className="btn btn-secondary cancelEditButton"
-              data-dismiss="modal"
+              onClick={closeModal}
             >
               Cancel
             </button>
