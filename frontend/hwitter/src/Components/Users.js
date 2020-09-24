@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiURL } from "../Util/apiUrl";
+import Card from "./Card";
 import axios from "axios";
 import "../Css/Users.css";
 import UserHweet from "./UserHweet";
@@ -12,11 +13,23 @@ import DeletePost from "./DeletePost";
 
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  console.log(showDeleteModal);
   const [posts, setPosts] = useState([]);
   const [users, setUser] = useState({});
   const [firstName, setFirstName] = useState("");
   const API = apiURL();
   const history = useHistory();
+
+  const deletePost = (id) =>{
+    let postIndex = posts.findIndex(el => el.id === id)
+    if(postIndex > -1){
+      let newPosts = [...posts];
+      newPosts.splice(postIndex, 1);
+      setPosts(newPosts);
+    }
+
+  }
 
   const displayEditBtn = (post) => {
     if (post.hweets_id === currentUser.uid) {
@@ -33,13 +46,20 @@ const Users = () => {
           <button
             id="deleteHweetButton"
             type="button"
-            data-toggle="modal"
-            data-target="#deleteModal"
+            // data-toggle="modal"
+            // data-target="#deleteModal"
+            onClick={() => {
+              setShowDeleteModal(true);
+            }}
           >
             Delete
           </button>
           <EditPost post={post} />
-          <DeletePost post={post} />
+          {showDeleteModal ? (
+            <Card>
+              <DeletePost post={post} deletePost={deletePost} closeModal={()=>{setShowDeleteModal(false)}} />
+            </Card>
+          ) : null}
         </div>
       );
     }

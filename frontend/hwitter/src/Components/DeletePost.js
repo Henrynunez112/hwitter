@@ -3,22 +3,26 @@ import axios from "axios";
 import { apiURL } from "../Util/apiUrl";
 import "../Css/DeletePost.css";
 
-const DeletePost = ({ post }) => {
+const DeletePost = ({ post, deletePost, closeModal }) => {
   const API = apiURL();
 
   const deleteHweet = async () => {
-    await axios.delete(`${API}/hweets/${post.id}`);
-    window.location.reload();
+    try {
+      await axios.delete(`${API}/hweets/${post.id}`);
+      deletePost(post.id);
+      closeModal();
+    } catch (err) {
+      console.log(err);
+    }
   };
-  
+
   return (
     <div
-      className="modal fade"
+      // className="fade"
       id="deleteModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
     >
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content deletePostModal">
@@ -32,11 +36,16 @@ const DeletePost = ({ post }) => {
             <button
               type="button"
               className="btn btn-secondary cancelDelete"
-              data-dismiss="modal"
+              // data-dismiss="modal"
+              onClick={closeModal}
             >
               No
             </button>
-            <button type="button" className="btn btn-primary confirmDelete" onClick={deleteHweet}>
+            <button
+              type="button"
+              className="btn btn-primary confirmDelete"
+              onClick={deleteHweet}
+            >
               Yes
             </button>
           </div>
