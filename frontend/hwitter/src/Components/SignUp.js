@@ -40,8 +40,8 @@ const SignUp = () => {
         (snapShot) => {
           var progress =
             (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          console.log(snapShot);
+          // console.log("Upload is " + progress + "% done");
+          // console.log(snapShot);
         },
         (err) => {
           console.log(err);
