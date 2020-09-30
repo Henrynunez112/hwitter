@@ -15,7 +15,6 @@ import AuthProvder from "./Providers/AuthProvider";
 import { AuthRoute, ProtectedRoute } from "./Util/routesUtil";
 import IndividualUsers from "./Components/IndividualUsers";
 
-Modal.setAppElement("#root");
 function App() {
   return (
     <div className="App">

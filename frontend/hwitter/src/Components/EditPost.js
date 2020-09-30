@@ -2,11 +2,10 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../Providers/AuthProvider";
 import { apiURL } from "../Util/apiUrl";
-import moment from "moment";
 import "../Css/EditPost.css";
 
 const EditPost = ({ post, closeModal, fetchPosts }) => {
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState(post.content);
   const {currentUser} = useContext(AuthContext)
   const API = apiURL();
 
@@ -14,8 +13,7 @@ const EditPost = ({ post, closeModal, fetchPosts }) => {
     e.preventDefault();
     try{
       await axios.patch(`${API}/hweets/${currentUser.uid}/${post.id}`, {
-        content,
-        time_stamp: moment().calendar()
+        content
       });
       fetchPosts();
       setContent("");
@@ -28,7 +26,7 @@ const EditPost = ({ post, closeModal, fetchPosts }) => {
   return (
     <div
       id="editModal"
-      tabindex="-1"
+      tabIndex="-1"
       role="dialog"
       aria-labelledby="editModalTitle"
     >
@@ -42,7 +40,7 @@ const EditPost = ({ post, closeModal, fetchPosts }) => {
           <div className="modal-body editModalBody">
             <form onSubmit={editPost}>
               <div className="form-group">
-                <label for="caption" id="labelitem">
+                <label htmlFor="caption" id="labelitem">
                   New Caption
                 </label>
                 <textarea

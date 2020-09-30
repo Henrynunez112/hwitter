@@ -71,7 +71,7 @@ export default function NavBar() {
         <span id="brandTitle">Hwitter</span>
       </NavLink>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
@@ -79,10 +79,10 @@ export default function NavBar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse navbar-collapse justify-content-end"
+        className="collapse navbar-collapse justify-content-end"
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav justify-content-end">{buttonDisplay()}</ul>

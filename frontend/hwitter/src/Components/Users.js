@@ -14,8 +14,8 @@ import DeletePost from "./DeletePost";
 const Users = () => {
   const { token, currentUser } = useContext(AuthContext);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [hweetOnFocus, setHweetOnFocus] = useState("");
   const [showEditModal, setShowEditModal] = useState(false);
-  console.log(showDeleteModal);
   const [posts, setPosts] = useState([]);
   const [users, setUser] = useState({});
   const [firstName, setFirstName] = useState("");
@@ -40,6 +40,7 @@ const Users = () => {
             id="editDisplayButton"
             onClick={() => {
               setShowEditModal(true);
+              setHweetOnFocus(post.id);
             }}
           >
             Edit
@@ -47,15 +48,14 @@ const Users = () => {
           <button
             id="deleteHweetButton"
             type="button"
-            // data-toggle="modal"
-            // data-target="#deleteModal"
             onClick={() => {
               setShowDeleteModal(true);
+              setHweetOnFocus(post.id);
             }}
           >
             Delete
           </button>
-          {showEditModal ? (
+          {showEditModal && hweetOnFocus === post.id ? (
             <Card>
               <EditPost
                 post={post}
@@ -66,7 +66,7 @@ const Users = () => {
               />
             </Card>
           ) : null}
-          {showDeleteModal ? (
+          {showDeleteModal && hweetOnFocus === post.id ? (
             <Card>
               <DeletePost
                 post={post}
@@ -144,8 +144,8 @@ const Users = () => {
                     post.imgurl = NoImg;
                   }
                   return (
-                    <div className="postLi container">
-                      <li key={post.id} className="eachPost">
+                    <div key={post.id} className="postLi container">
+                      <li className="eachPost">
                         <div className="col-1 userNameImg">
                           <div
                             className="h5Container"

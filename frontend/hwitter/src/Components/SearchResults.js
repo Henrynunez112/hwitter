@@ -16,11 +16,10 @@ const SearchResult = () => {
     const getResult = async (search) => {
       let res = await axios.get(`${API}/search/${search}`);
       setResult(res.data.body);
-      debugger
       setSearch(search);
     };
     getResult(match.params.search);
-  }, [API]);
+  }, [API, match.params.search]);
 
   return (
     <div className="searchResultsContainer container">
