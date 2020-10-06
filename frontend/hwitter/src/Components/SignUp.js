@@ -40,8 +40,8 @@ const SignUp = () => {
         (snapShot) => {
           var progress =
             (snapShot.bytesTransferred / snapShot.totalBytes) * 100;
-          // console.log("Upload is " + progress + "% done");
-          // console.log(snapShot);
+          console.log("Upload is " + progress + "% done");
+          console.log(snapShot);
         },
         (err) => {
           console.log(err);
@@ -61,6 +61,7 @@ const SignUp = () => {
   };
   const signUpUser = async (fireBaseUrl) => {
     try {
+      debugger
       let res = await signUp(email, password);
       await axios.post(`${API}/users`, {
         id: res.user.uid,

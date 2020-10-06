@@ -36,7 +36,7 @@ const Home = () => {
 
   const trendingNews = trending.map((news) => {
     return (
-      <div key={news.id} className="trendingNews">
+      <div key={news.webSearchUrl} className="trendingNews">
         <a href={news.newsSearchUrl}>
           <li key={news.id} className="newsLi">
             <img

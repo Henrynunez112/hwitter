@@ -2,9 +2,8 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import "./App.css";
-import Modal from "react-modal";
 import NavBar from "./Components/NavBar";
-import { Switch, Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import Home from "./Components/Home";
 import SearchResults from "./Components/SearchResults";
 // import SearchBar from "./Components/SearchBar"
@@ -35,7 +34,7 @@ function App() {
           </ProtectedRoute>
           <AuthRoute exact path="/">
             <Login />
-            </AuthRoute>
+          </AuthRoute>
           <AuthRoute exact path="/signup">
             <SignUp />
           </AuthRoute>

@@ -26,7 +26,7 @@ export default function NavBar() {
               <div className="hweetButton">Hweet Here</div>
             </li>
           </NavLink>
-          <a id="logoutBtn" onClick={logOut}>
+          <a href="/" id="logoutBtn" onClick={logOut}>
             <li className="nav-item" id="logOutBtnLi">
               <div className="logoutButton">Log Out</div>
             </li>

@@ -50,10 +50,10 @@ const Login = () => {
       </div>
       {error ? <div className="errorSignUp">{error}</div> : null}
       <div className="loginForm">
-        <div class="jumbotron loginJumbotron">
+        <div className="jumbotron loginJumbotron">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label for="exampleInputEmail1" className="loginLabel">
+              <label htmlFor="exampleInputEmail1" className="loginLabel">
                 Email address
               </label>
               <input
@@ -70,7 +70,7 @@ const Login = () => {
               </small>
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1" className="loginLabel">
+              <label htmlFor="exampleInputPassword1" className="loginLabel">
                 Password
               </label>
               <input
